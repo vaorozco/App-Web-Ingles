@@ -67,19 +67,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GestionarUsuarios.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="MenúAdmin.aspx" />
+    <Content Include="Recursos\Icono BF.png" />
+    <Content Include="Recursos\icono CF.png" />
+    <Content Include="Recursos\icono CP.png" />
+    <Content Include="Recursos\icono juego.png" />
+    <Content Include="Recursos\Icono Memoria.png" />
+    <Content Include="Recursos\icono pareo.png" />
     <Content Include="Recursos\logo.png" />
     <Content Include="registrar.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionSQL.cs" />
+    <Compile Include="GestionarUsuarios.aspx.cs">
+      <DependentUpon>GestionarUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarUsuarios.aspx.designer.cs">
+      <DependentUpon>GestionarUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenúAdmin.aspx.cs">
+      <DependentUpon>MenúAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenúAdmin.aspx.designer.cs">
+      <DependentUpon>MenúAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registrar.aspx.cs">

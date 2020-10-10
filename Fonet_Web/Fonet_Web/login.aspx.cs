@@ -28,5 +28,10 @@ namespace Fonet_Web
         {
             Response.Redirect("registrar.aspx");
         }
+
+        protected void Ingresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MenúAdmin.aspx");
+        }
     }
 }
