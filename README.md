@@ -1,8 +1,8 @@
 # App-Web-Ingles
 
-Ariel Valverde Ramírez - 2016177544
-
 Bitácora
+
+Ariel Valverde Ramírez - 2016177544
 
 12/10/2020
 Aplicación móvil
