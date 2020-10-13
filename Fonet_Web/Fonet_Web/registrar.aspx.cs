@@ -17,7 +17,7 @@ namespace Fonet_Web
         protected void Button1_Click(object sender, EventArgs e)
         {
             ConexionSQL conexion = new ConexionSQL();
-            conexion.InsertarUSuario(this.TextBox3.Text, this.TextBox4.Text, this.TextBox5.Text, this.TextBox6.Text);
+            conexion.InsertarUsuario(this.TextBox3.Text, this.TextBox4.Text, this.TextBox5.Text, this.TextBox6.Text,2);
         }
     }
 }

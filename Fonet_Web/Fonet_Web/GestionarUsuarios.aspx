@@ -10,15 +10,20 @@
     <form id="form1" runat="server">
         <asp:Panel ID="Panel1" runat="server" Height="33px" style="background-color: #006600">
         </asp:Panel>
-        <asp:Table ID="Table1" runat="server" style="top: 83px; left: 28px; position: absolute; height: 551px; width: 488px">
-        </asp:Table>
         <asp:TextBox ID="TextBox1" runat="server" style="top: 131px; left: 930px; position: absolute; height: 22px; width: 540px"></asp:TextBox>
-        <asp:TextBox ID="TextBox2" runat="server" style="top: 180px; left: 932px; position: absolute; height: 18px; width: 467px"></asp:TextBox>
-        <asp:TextBox ID="TextBox3" runat="server" style="top: 226px; left: 932px; position: absolute; height: 22px; width: 463px; right: -355px"></asp:TextBox>
-        <asp:TextBox ID="TextBox4" runat="server" style="top: 272px; left: 933px; position: absolute; height: 22px; width: 462px"></asp:TextBox>
-        <asp:ImageButton ID="ImageButton1" runat="server" Height="61px" style="top: 349px; left: 1430px; position: absolute" Width="62px" />
-        <asp:ImageButton ID="ImageButton2" runat="server" Height="60px" style="top: 350px; left: 1308px; position: absolute" Width="58px" />
-        <asp:ImageButton ID="ImageButton3" runat="server" Height="61px" style="top: 348px; left: 1179px; position: absolute" Width="56px" />
+        <asp:TextBox ID="TextBox2" runat="server" style="top: 180px; left: 932px; position: absolute; height: 18px; width: 537px"></asp:TextBox>
+        <asp:TextBox ID="TextBox3" runat="server" style="top: 226px; left: 932px; position: absolute; height: 22px; width: 536px; right: 27px"></asp:TextBox>
+        <asp:TextBox ID="TextBox4" runat="server" style="top: 272px; left: 933px; position: absolute; height: 22px; width: 533px"></asp:TextBox>
+        <asp:ImageButton ID="ImageButton1" runat="server" Height="61px" style="top: 348px; left: 1423px; position: absolute" Width="62px" ImageUrl="~/Recursos/anadir.png" OnClick="ImageButton1_Click" />
+        <asp:ImageButton ID="ImageButton2" runat="server" Height="60px" style="top: 350px; left: 1308px; position: absolute" Width="58px" ImageUrl="~/Recursos/comprobar.png" />
+        <asp:ImageButton ID="ImageButton3" runat="server" Height="61px" style="top: 348px; left: 1179px; position: absolute" Width="56px" ImageUrl="~/Recursos/cerrar.png" />
+        <asp:DropDownList ID="DropDownList1" runat="server" style="top: 317px; left: 1322px; position: absolute; height: 22px; width: 152px">
+            <asp:ListItem Value="1">Administrador</asp:ListItem>
+            <asp:ListItem Value="2">Estudiante</asp:ListItem>
+        </asp:DropDownList>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="top: 90px; left: 51px; position: absolute; height: 348px; width: 621px">
+            <SelectedRowStyle BackColor="#33CCFF" />
+        </asp:GridView>
     </form>
 </body>
 </html>

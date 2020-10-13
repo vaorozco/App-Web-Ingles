@@ -1,0 +1,4 @@
+#Sun Oct 11 06:14:01 UTC 2020
+base.0=C\:\\Users\\avalverder.Maquina1VM\\Documents\\GitHub\\App-Web-Ingles\\Proyecto\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

@@ -67,9 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GestionarPalabra.aspx" />
+    <Content Include="GestionarFonema.aspx" />
     <Content Include="GestionarUsuarios.aspx" />
     <Content Include="login.aspx" />
     <Content Include="MenúAdmin.aspx" />
+    <Content Include="Recursos\anadir.png" />
+    <Content Include="Recursos\cerrar.png" />
+    <Content Include="Recursos\comprobar.png" />
     <Content Include="Recursos\Icono BF.png" />
     <Content Include="Recursos\icono CF.png" />
     <Content Include="Recursos\icono CP.png" />
@@ -82,6 +87,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionSQL.cs" />
+    <Compile Include="GestionarPalabra.aspx.cs">
+      <DependentUpon>GestionarPalabra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarPalabra.aspx.designer.cs">
+      <DependentUpon>GestionarPalabra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarFonema.aspx.cs">
+      <DependentUpon>GestionarFonema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarFonema.aspx.designer.cs">
+      <DependentUpon>GestionarFonema.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarUsuarios.aspx.cs">
       <DependentUpon>GestionarUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
