@@ -22,4 +22,22 @@ Gestor de Contenido Web
 
 
 
-Victor Orozco Calderón - 2016
+Victor Orozco Calderón - 2016240613
+
+Aplicación Móvil
+
+4/10/2020
+-Se crea interfaz de Login, Registro y Recuperar Contraseña.
+
+5/10/2020
+-Se agregan estilos de botones, cambio de logo en app y se crea interfaz menú principal.
+
+6/10/2020
+-Se agrega menú de juegos
+
+10/10/2020
+-Código para realizar conexiones en pruebas
+
+12/10/10
+-Se realiza conexión a la base de datos y se ejecutan stored procedures
+
