@@ -6,17 +6,18 @@ Bitácora
 
 12/10/2020
 Aplicación móvil
-Se corrige el problema en la conexión con la base de datos Azure SQL Database.
+-Se corrige el problema en la conexión con la base de datos Azure SQL Database.
 
 Base de Datos
-Se agregan direcciones IP al firewall para permitir la conexión desde cualquier dispositivo.
+-Se agregan direcciones IP al firewall para permitir la conexión desde cualquier dispositivo.
+-Se crean los stored procedures de InsertarFonema, InsertarPalabra.
 
 13/10/2020
 Gestor de Contenido Web
-Se agregan las ventanas de Gestionar Fonemas y Gestionar Palabras.
-Se agregan caracteristicas para la modificación de la ventana de Gestionar Usuarios.
-Se agregan los íconos de agregar, editar y borrar.
-Se carga la lista de usuarios al entrar en la ventana de Gestionar Usuarios.
+-Se agregan las ventanas de Gestionar Fonemas y Gestionar Palabras.
+-Se agregan caracteristicas para la modificación de la ventana de Gestionar Usuarios.
+-Se agregan los íconos de agregar, editar y borrar.
+-Se carga la lista de usuarios al entrar en la ventana de Gestionar Usuarios.
 
 
 
