@@ -19,7 +19,15 @@ Gestor de Contenido Web
 -Se agregan los íconos de agregar, editar y borrar.
 -Se carga la lista de usuarios al entrar en la ventana de Gestionar Usuarios.
 
+14/10/2020
+Gestor de Contenido Web
+-Se agrega la función de login en la conexion con la base de datos.
+-Se agrega la caracteristica para gestionar los fonemas en la ventana de Gestionar Fonemas.
 
+Base de Datos
+-Se crea el storedprocedure de loginCredenciales
+
+https://www.mssqltips.com/sqlservertip/2431/sql-server-column-level-encryption-example-using-symmetric-keys/ esto para intentar encriptar
 
 
 Victor Orozco Calderón - 2016240613
