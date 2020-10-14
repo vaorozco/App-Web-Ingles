@@ -31,7 +31,16 @@ namespace Fonet_Web
 
         protected void Ingresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MenúAdmin.aspx");
+            ConexionSQL conexion = new ConexionSQL();
+            String isTrue = conexion.login(this.TextBox1.Text, this.TextBox2.Text);
+            if (isTrue == "1")
+            {
+                Response.Redirect("MenúAdmin.aspx");
+            }
+            else
+            {
+                ModelState.AddModelError("","Error con el usuario o contraseña");
+            }
         }
     }
 }

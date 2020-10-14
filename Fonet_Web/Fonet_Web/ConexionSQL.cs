@@ -134,6 +134,27 @@ namespace Fonet_Web
                 conn.Close();
                 return table;
             }
-        } 
+        }
+
+        public string login(string correo, string contraseña)
+        {
+            string isTrue = null;
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("loginCredenciales", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@correo", correo));
+                cmd.Parameters.Add(new SqlParameter("@contraseña", contraseña));
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    isTrue = rdr.GetValue(0).ToString();
+                }
+                rdr.Close();
+                conn.Close();
+                return isTrue;
+            }
+        }
     }
 }

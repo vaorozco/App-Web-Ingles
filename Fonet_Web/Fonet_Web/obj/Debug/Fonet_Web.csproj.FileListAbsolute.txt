@@ -114,3 +114,4 @@ C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_W
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.csproj.CopyComplete
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.dll
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.pdb
+C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.csproj.CoreCompileInputs.cache
