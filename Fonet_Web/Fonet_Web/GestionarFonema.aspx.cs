@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Runtime.InteropServices;
+using System.Media;
 
 namespace Fonet_Web
 {
@@ -54,9 +56,22 @@ namespace Fonet_Web
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
         {
-            string pathToFiles = Server.MapPath("../Recursos/correct.wav");
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(pathToFiles);
-            player.Play();
+            string folderPath = Server.MapPath("~/Recursos/");
+
+            //Check whether Directory (Folder) exists.
+            if (!Directory.Exists(folderPath))
+            {
+                //If Directory (Folder) does not exists Create it.
+                Directory.CreateDirectory(folderPath);
+            }
+
+            //Save the File to the Directory (Folder).
+            FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
+
+            SoundPlayer _sm = new SoundPlayer();
+            _sm.SoundLocation = folderPath + Path.GetFileName(FileUpload1.FileName);
+            _sm.PlaySync();
+
         }
     }
 }
