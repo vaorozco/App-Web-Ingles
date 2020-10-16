@@ -82,8 +82,8 @@ public class Registro extends AppCompatActivity {
             try {
                 ConnectionHelper con = new ConnectionHelper();
                 Connection connect = conexionBD();
-                String storedProcudureCall = "{call InsertarUsuario(?,?,?,?,?)};"; //stored procedure a llamar
-                CallableStatement sp = conexionBD().prepareCall(storedProcudureCall); //formato para llamar stored procedures en la base
+                String storedProcedureCall = "{call InsertarUsuario(?,?,?,?,?)};"; //stored procedure a llamar
+                CallableStatement sp = conexionBD().prepareCall(storedProcedureCall); //formato para llamar stored procedures en la base
                 sp.setString(1,nombre.getText().toString());
                 sp.setString(2,apellido.getText().toString());
                 sp.setString(3,correo.getText().toString());
@@ -97,7 +97,7 @@ public class Registro extends AppCompatActivity {
                 e.printStackTrace();
                 return e.getMessage().toString();
             } catch (Exception e) {
-                return "Exception. Please check your code and database.";
+                return "Ha habido un problema con el código o la base de datos.";
             }
         }
 
@@ -106,7 +106,7 @@ public class Registro extends AppCompatActivity {
             ShowSnackBar(result);
             //progressBar.setVisibility(View.GONE);
             registrarme.setVisibility(View.VISIBLE);
-            if (result.equals("Added successfully")) {
+            if (result.equals("Registro exitoso")) {
                 // Clear();
             }
         }
