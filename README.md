@@ -49,3 +49,10 @@ Aplicación Móvil
 12/10/10
 -Se realiza conexión a la base de datos y se ejecutan stored procedures
 
+14/10/10
+-Se modifica interfaz de Login
+-Se realiza prueba de conexión para iniciar sesión
+
+-15/10/10
+-Se realiza inicio de sesión con validación de usuarios
+
