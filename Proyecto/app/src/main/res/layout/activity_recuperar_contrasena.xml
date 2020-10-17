@@ -85,6 +85,7 @@
         android:layout_marginRight="97dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
+        android:hint="Correo Electrónico"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
