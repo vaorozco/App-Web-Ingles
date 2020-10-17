@@ -25,7 +25,14 @@ Gestor de Contenido Web
 -Se agrega la caracteristica para gestionar los fonemas en la ventana de Gestionar Fonemas.
 
 Base de Datos
--Se crea el storedprocedure de loginCredenciales
+-Se crea el store procedure de loginCredenciales.
+
+16/10/2020
+Gestor de Contenido Web
+-Se agregan todas las funcionalidades de la ventana Gestionar Usuarios.
+
+Base de Datos
+-Se crean los store procedure de ModificarUsuario, BorrarUsuario.
 
 https://www.mssqltips.com/sqlservertip/2431/sql-server-column-level-encryption-example-using-symmetric-keys/ esto para intentar encriptar
 
