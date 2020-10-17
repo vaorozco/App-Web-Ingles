@@ -74,6 +74,8 @@ Aplicación Móvil
 -Se modifica interfaz de Login
 -Se realiza prueba de conexión para iniciar sesión
 
--15/10/10
+15/10/10
 -Se realiza inicio de sesión con validación de usuarios
 
+16/10/10
+-Se crea menú desplegable
