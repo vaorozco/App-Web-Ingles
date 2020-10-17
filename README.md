@@ -4,10 +4,19 @@ Bitácora
 
 Ariel Valverde Ramírez - 2016177544
 
-4/10/2020
-Gestor de Contenido Web
--Se crea el proyecto y se agregan la ventana de login.
+3/10/2020
+Base de Datos
+-Se crea la base de datos en Azure SQL Database.
+-Se agregan las tablas.
 
+8/10/2020
+Gestor de Contenido Web
+-Se crea el proyecto y se agrega a GitHub.
+-Se agrega las ventana y caracteristicas de Login.
+
+10/10/2020
+Gestor de Contenido Web
+-Se crean las ventanas y se agregan los componentes de Menu Admin y Gestionar Usuario.
 
 12/10/2020
 Aplicación móvil
