@@ -4,6 +4,11 @@ Bitácora
 
 Ariel Valverde Ramírez - 2016177544
 
+4/10/2020
+Gestor de Contenido Web
+-Se crea el proyecto y se agregan la ventana de login.
+
+
 12/10/2020
 Aplicación móvil
 -Se corrige el problema en la conexión con la base de datos Azure SQL Database.
