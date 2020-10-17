@@ -79,4 +79,6 @@ Aplicación Móvil
 
 16/10/10
 -Se crea menú desplegable
+
+17/10/10
 -Se completa interfaz "Mi Perfil"
