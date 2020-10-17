@@ -34,6 +34,35 @@ namespace Fonet_Web
             }
         }
 
+        public void ModificarUsuario(int id, string nombre, string apellido, string correo, string contraseña, int tipousuario)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("ModificarUsuario", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@id", id));
+                cmd.Parameters.Add(new SqlParameter("@nombre", nombre));
+                cmd.Parameters.Add(new SqlParameter("@apellido", apellido));
+                cmd.Parameters.Add(new SqlParameter("@correo", correo));
+                cmd.Parameters.Add(new SqlParameter("@contraseña", contraseña));
+                cmd.Parameters.Add(new SqlParameter("@tipousuario", tipousuario));
+                SqlDataReader rdr = cmd.ExecuteReader();
+            }
+        }
+
+        public void BorrarUsuario(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("BorrarUsuario", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@id", id));
+                SqlDataReader rdr = cmd.ExecuteReader();
+            }
+        }
+
         public DataTable SeleccionarUsuario()
         {
             System.Data.DataTable table = new DataTable("ParentTable");
