@@ -82,3 +82,6 @@ Aplicación Móvil
 
 17/10/10
 -Se completa interfaz "Mi Perfil"
+-Se implementa menú de navegación en comparar palabra, fonema, mi perfil
+-Se realiza grabación de audio y su reproducción para fonema y palabra
+-Se agrega validación para evitar registro de usuarios repetidos
