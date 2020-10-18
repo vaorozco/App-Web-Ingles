@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MenuPrincipal extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
-    ImageView imagenJuegos;
+    ImageView imagenJuegos, imagenCompararFonemas, imagenCompararPalabras;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
@@ -31,7 +31,7 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar1);
         /*-------------------------------------Toolbar-------------------------------------*/
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         navigationView.bringToFront();
         ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toogle);
@@ -39,10 +39,14 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
-        imagenJuegos = (ImageView) findViewById(R.id.imageView5);
+        imagenJuegos = findViewById(R.id.imageView5);
+        imagenCompararFonemas = findViewById(R.id.imageView3);
+        imagenCompararPalabras = findViewById(R.id.imageView4);
         //botonRegistro = (Button) findViewById(R.id.button3);
         //textoRecuperar = (TextView) findViewById(R.id.textView2);
         imagenJuegos.setOnClickListener(this);
+        imagenCompararFonemas.setOnClickListener(this);
+        imagenCompararPalabras.setOnClickListener(this);
         //botonRegistro.setOnClickListener(this);
         //textoRecuperar.setOnClickListener(this);
     }
@@ -70,28 +74,28 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
             case R.id.nav_exit:
                 Intent intent2 = new Intent(MenuPrincipal.this,Login.class);
                 startActivity(intent2);
+                break;
         }
     drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    /*@Override
-    public void onClick(View v) {
-        abrirRecuperarContrasena();
-    }
-});*/
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.imageView5)
-        {
-            Intent intent=new Intent(getApplicationContext(),Juegos.class);
-            startActivity(intent);
+        if(v.getId()==R.id.imageView5){
+            Intent intent1 =new Intent(getApplicationContext(),Juegos.class);
+            startActivity(intent1);
         }
-        /*else if (v.getId()==R.id.textView2)
+        else if (v.getId()==R.id.imageView3)
         {
-            Intent in=new Intent(getApplicationContext(),RecuperarContrasena.class);
-            startActivity(in);
+            Intent intent2 = new Intent(getApplicationContext(),CompararFonema.class);
+            startActivity(intent2);
         }
+        else if (v.getId()==R.id.imageView4)
+        {
+            Intent intent3 = new Intent(getApplicationContext(),CompararPalabra.class);
+            startActivity(intent3);
+        }/*
         else if (v.getId()==R.id.button2)
         {
             Intent in=new Intent(getApplicationContext(),MenuPrincipal.class);

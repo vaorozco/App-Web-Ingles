@@ -22,6 +22,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
@@ -101,18 +102,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         @Override
         protected String doInBackground(String... params) {
-
             try {
                 ConnectionHelper con = new ConnectionHelper();
                 Connection connect = conexionBD();
-                CallableStatement sp = conexionBD().prepareCall("{ ? = call dbo.loginAPP(?,?) }");
-                sp.registerOutParameter(1, java.sql.Types.INTEGER);
-                sp.setString(2, correo.getText().toString());
-                sp.setString(3, contraseña.getText().toString());
-                sp.execute();
-                int valorRetorno = sp.getInt(1); //valor retorno del sp. 1 si existe usuario, 0 no existe
-                sp.close();
-                conexionBD().close();
+                CallableStatement sp = conexionBD().prepareCall("{call dbo.loginCredenciales(?,?) }");
+                sp.setString(1, correo.getText().toString());
+                sp.setString(2, contraseña.getText().toString());
+                ResultSet rs = sp.executeQuery();
+                rs.next();
+                int valorRetorno = rs.getInt(1);
+                //System.out.println("RESULTADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"+valorRetorno);
                 if (valorRetorno==0){
                     ShowSnackBar("Correo o contraseña incorrectos");
                 }
@@ -120,13 +119,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Intent in = new Intent(getApplicationContext(), MenuPrincipal.class); // si existe se abre menú principal
                     startActivity(in);
                 }
+                sp.close();
+                conexionBD().close();
                 return "¡Bienvenido";
+
             } catch (SQLException e) {
                 e.printStackTrace();
                 return e.getMessage().toString();
-            } //catch (Exception e) {
-               // return "Ha habido un problema con el código o la base de datos.";
-            //}
+            }
         }
     }
 }

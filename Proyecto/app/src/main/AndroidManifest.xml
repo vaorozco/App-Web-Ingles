@@ -3,6 +3,8 @@
     package="com.example.proyecto">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -11,11 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MiPerfil"></activity>
+        <activity android:name=".CompararPalabra"></activity>
+        <activity android:name=".CompararFonema" />
+        <activity android:name=".MiPerfil" />
         <activity android:name=".Juegos" />
-        <activity
-            android:name=".MenuPrincipal"
-             />
+        <activity android:name=".MenuPrincipal" />
         <activity android:name=".Registro" />
         <activity android:name=".RecuperarContrasena" />
         <activity android:name=".MainActivity" />

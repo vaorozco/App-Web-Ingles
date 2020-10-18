@@ -2,14 +2,19 @@ package com.example.proyecto;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.google.android.material.snackbar.Snackbar;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import static com.example.proyecto.ConnectionHelper.conexionBD;
 
@@ -78,8 +83,37 @@ public class Registro extends AppCompatActivity {
         }
 
         @Override
-        protected String doInBackground(String... params) {
+        protected String doInBackground(String... params) {//'Error ya existe este Usuario'
             try {
+                ConnectionHelper con = new ConnectionHelper();
+                Connection connect = conexionBD();
+                CallableStatement sp = conexionBD().prepareCall("{call InsertarUsuario(?,?,?,?,?)}");
+                sp.setString(1,nombre.getText().toString());
+                sp.setString(2,apellido.getText().toString());
+                sp.setString(3,correo.getText().toString());
+                sp.setString(4,contrasena.getText().toString());
+                sp.setInt(5,2);//(5,correo.getText().toString()); número 2 es tipo estudiante
+                ResultSet rs = sp.executeQuery();
+                rs.next();
+                int valorRetorno = rs.getInt(1);
+                //System.out.println("RESULTADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"+valorRetorno);
+                if (valorRetorno==0){
+                    ShowSnackBar("Ya existe una cuenta con ese correo");
+                }
+                else{
+                    Intent in = new Intent(getApplicationContext(), Login.class); // si existe se abre menú principal
+                    startActivity(in);
+                    Toast.makeText(Registro.this,"Ha sido registrado",Toast.LENGTH_SHORT).show();
+                }
+                sp.close();
+                conexionBD().close();
+                return "¡Intente de Nuevo!";
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return e.getMessage().toString();
+            }
+            /*try {
                 ConnectionHelper con = new ConnectionHelper();
                 Connection connect = conexionBD();
                 String storedProcedureCall = "{call InsertarUsuario(?,?,?,?,?)};"; //stored procedure a llamar
@@ -98,7 +132,7 @@ public class Registro extends AppCompatActivity {
                 return e.getMessage().toString();
             } catch (Exception e) {
                 return "Ha habido un problema con el código o la base de datos.";
-            }
+            }*/
         }
 
         @Override
