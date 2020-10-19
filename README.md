@@ -67,21 +67,25 @@ Aplicación Móvil
 10/10/2020
 -Código para realizar conexiones en pruebas
 
-12/10/10
+12/10/2020
 -Se realiza conexión a la base de datos y se ejecutan stored procedures
 
-14/10/10
+14/10/2020
 -Se modifica interfaz de Login
 -Se realiza prueba de conexión para iniciar sesión
 
-15/10/10
+15/10/2020
 -Se realiza inicio de sesión con validación de usuarios
 
-16/10/10
+16/10/2020
 -Se crea menú desplegable
 
-17/10/10
+17/10/2020
 -Se completa interfaz "Mi Perfil"
 -Se implementa menú de navegación en comparar palabra, fonema, mi perfil
 -Se realiza grabación de audio y su reproducción para fonema y palabra
 -Se agrega validación para evitar registro de usuarios repetidos
+
+18/10/2020
+-Se arregla formato de almacenamiento de grabación
+-Se adaptan interfaces a todos los dispositivos móviles Android.
