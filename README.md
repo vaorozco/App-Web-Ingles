@@ -89,3 +89,4 @@ Aplicación Móvil
 18/10/2020
 -Se arregla formato de almacenamiento de grabación
 -Se adaptan interfaces a todos los dispositivos móviles Android.
+-Se modifica stored procedure Insertar Usuario
