@@ -51,7 +51,7 @@ Base de Datos
 https://www.mssqltips.com/sqlservertip/2431/sql-server-column-level-encryption-example-using-symmetric-keys/ esto para intentar encriptar
 
 
-Victor Orozco Calderón - 2016240613
+Víctor Alonso Orozco Calderón - 2016240613
 
 Aplicación Móvil
 
@@ -90,3 +90,4 @@ Aplicación Móvil
 -Se arregla formato de almacenamiento de grabación
 -Se adaptan interfaces a todos los dispositivos móviles Android.
 -Se modifica stored procedure Insertar Usuario
+- Creación de stored procedure obtenerUsuario y clase Usuario
