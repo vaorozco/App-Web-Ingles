@@ -1,31 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".Registro"
     android:id="@+id/conRegistro">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginRight="132dp"
-        android:layout_marginBottom="23dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Por favor ingrese los siguientes datos:"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarRegistro"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:maxHeight="?attr/actionBarSize"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/toolbar_title_Registro"
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Registro"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="155dp"
+                tools:layout_editor_absoluteY="7dp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="256dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="41dp"
+            android:layout_marginEnd="112dp"
+            android:layout_marginRight="112dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Por favor ingrese los siguientes datos:"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro" />
+
+        <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="344dp"
         android:layout_height="53dp"
@@ -42,23 +70,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginLeft="41dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="312dp"
-        android:layout_marginRight="312dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Nombre"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="72dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="289dp"
+            android:layout_marginRight="289dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Nombre"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
-    <EditText
+        <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="342dp"
         android:layout_height="51dp"
@@ -69,29 +97,29 @@
         android:layout_marginRight="27dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
-        android:hint="Apellidos"
+        android:hint="Apellido"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginEnd="304dp"
-        android:layout_marginRight="304dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Apellidos"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="64dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="297dp"
+            android:layout_marginRight="297dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Apellidos"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
 
-    <EditText
+        <EditText
         android:id="@+id/editTextTextEmailAddress2"
         android:layout_width="341dp"
         android:layout_height="52dp"
@@ -109,22 +137,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginLeft="41dp"
-        android:layout_marginEnd="244dp"
-        android:layout_marginRight="244dp"
-        android:fontFamily="@font/montserrat"
-        android:text="CorreoElectrónico"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="152dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="209dp"
+            android:layout_marginRight="209dp"
+            android:fontFamily="@font/montserrat"
+            android:text="CorreoElectrónico"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
 
-    <EditText
+        <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="342dp"
         android:layout_height="56dp"
@@ -142,22 +170,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginEnd="289dp"
-        android:layout_marginRight="289dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Contraseña"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="155dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="206dp"
+            android:layout_marginRight="206dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Contraseña"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
-    <EditText
+        <EditText
         android:id="@+id/editTextTextPassword2"
         android:layout_width="344dp"
         android:layout_height="54dp"
@@ -175,35 +203,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginEnd="215dp"
-        android:layout_marginRight="215dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Confirmar Contraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="305dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginRight="56dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Confirmar Contraseña"
+            app:layout_constraintBottom_toTopOf="@+id/button5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="252dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="142dp"
-        android:layout_marginLeft="142dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginRight="143dp"
-        android:background="@drawable/botones"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Registrarse"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="252dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginLeft="142dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="143dp"
+            android:layout_marginRight="143dp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/botones"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Registrarse"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

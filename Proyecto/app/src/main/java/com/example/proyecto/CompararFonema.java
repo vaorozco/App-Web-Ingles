@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import java.io.File;
 import java.io.IOException;
 import android.Manifest;
 import android.content.Intent;
@@ -37,6 +38,7 @@ public class CompararFonema extends AppCompatActivity implements NavigationView.
     String pathSave = "";
     MediaRecorder mediaRecorder;
     MediaPlayer mediaPlayer;
+
     final int REQUEST_PERMISSION_CODE=1000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +68,12 @@ public class CompararFonema extends AppCompatActivity implements NavigationView.
                     public void onClick (View v){
 
                     if (checkPermissionFromDevice()){
-                    pathSave = Environment.getExternalStorageDirectory().getAbsolutePath() + "/"
-                            + UUID.randomUUID().toString() + "_audio_record.3gp";
-                    if (mediaPlayer != null) {
+                    /*pathSave = Environment.getExternalStorageDirectory().getAbsolutePath() + "/"
+                            + UUID.randomUUID().toString() + "_audio_record.3gp";*/
+                        pathSave = getExternalCacheDir().getAbsolutePath();
+                        pathSave+= "/audiorecordtest.3gp";
+
+                        if (mediaPlayer != null) {
                         mediaPlayer.stop();
                         mediaPlayer.release();
                     }
@@ -79,6 +84,7 @@ public class CompararFonema extends AppCompatActivity implements NavigationView.
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    botonGrabar.setEnabled(false);//se agregó
                     botonParar.setVisibility(View.VISIBLE);
                     botonParar.setEnabled(true);
                     botonEscucharme.setEnabled(false);
@@ -120,17 +126,14 @@ public class CompararFonema extends AppCompatActivity implements NavigationView.
                 }
             });
         }
-
-
     private void setupMediaRecorder(){
         mediaRecorder = new MediaRecorder();
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
         mediaRecorder.setOutputFile(pathSave);
+        mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
 
     }
-
     private void requestPermission(){
         ActivityCompat.requestPermissions(this,new String[]{
                 WRITE_EXTERNAL_STORAGE,

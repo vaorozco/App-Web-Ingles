@@ -24,34 +24,34 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FFFFFF">
+            android:layout_height="match_parent">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar1"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorHeader"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:maxHeight="?attr/actionBarSize"
                 android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:navigationIcon="@drawable/ic_baseline_menu_24">
 
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="0dp"
-                android:layout_height="39dp"
-                android:layout_gravity="center"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="Menú Principal"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                tools:layout_editor_absoluteX="113dp"
-                tools:layout_editor_absoluteY="7dp" />
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="39dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Menú Principal"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    tools:layout_editor_absoluteX="155dp"
+                    tools:layout_editor_absoluteY="7dp" />
 
             </androidx.appcompat.widget.Toolbar>
+
 
             <TextView
                 android:id="@+id/textView12"

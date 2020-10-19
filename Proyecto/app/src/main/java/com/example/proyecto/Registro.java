@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -21,7 +22,7 @@ import static com.example.proyecto.ConnectionHelper.conexionBD;
 public class Registro extends AppCompatActivity {
     EditText nombre, apellido, correo, contrasena, contrasena2;
     Button registrarme;
-    ConstraintLayout constraintLayout;
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class Registro extends AppCompatActivity {
         correo = findViewById(R.id.editTextTextEmailAddress2);
         contrasena = findViewById(R.id.editTextTextPassword);
         contrasena2 = findViewById(R.id.editTextTextPassword2);
-        constraintLayout = findViewById(R.id.conRegistro);
+        scrollView = findViewById(R.id.conRegistro);
         registrarme = findViewById(R.id.button5);
         this.setTitle("Registro"); //título del header
         registrarme.setOnClickListener(new View.OnClickListener() {
@@ -52,15 +53,13 @@ public class Registro extends AppCompatActivity {
             }
         });
     }
-
     public void ShowSnackBar(String message) {
-        Snackbar.make(constraintLayout, message, Snackbar.LENGTH_LONG)
+        Snackbar.make(scrollView, message, Snackbar.LENGTH_LONG)
                 .setAction("CERRAR", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                     }}).setActionTextColor(getResources().getColor(android.R.color.holo_red_light)).show();
     }
-
     public Boolean isEmpty(String strValue) {
         if (strValue == null || strValue.trim().equals(("")))
             return true;
