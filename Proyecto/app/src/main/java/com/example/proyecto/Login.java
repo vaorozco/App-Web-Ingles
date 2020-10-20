@@ -5,6 +5,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
@@ -34,6 +36,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     TextView textoRecuperar;
     EditText correo, contraseña;
     ConstraintLayout constraintLayout;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,8 +99,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             super.onPreExecute();
             Correo = correo.getText().toString();
             Contrasena = contraseña.getText().toString();
-            //progressBar.setVisibility(View.VISIBLE);
-            //botonIniciar.setVisibility(View.GONE);
+            progressDialog = ProgressDialog.show(Login.this,"Verificando Datos","Por favor espere...",false,false);
         }
 
         @Override
@@ -106,18 +108,36 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 ConnectionHelper con = new ConnectionHelper();
                 Connection connect = conexionBD();
                 CallableStatement sp = conexionBD().prepareCall("{call dbo.loginCredenciales(?,?) }");
-                sp.setString(1, correo.getText().toString());
-                sp.setString(2, contraseña.getText().toString());
+                String correoEntrada = correo.getText().toString();
+                String contraseñaEntrada = contraseña.getText().toString();
+                sp.setString(1,correoEntrada);
+                sp.setString(2,contraseñaEntrada);
+                //sp.setString(1, correo.getText().toString());
+                //sp.setString(2, contraseña.getText().toString());
                 ResultSet rs = sp.executeQuery();
                 rs.next();
                 int valorRetorno = rs.getInt(1);
                 //System.out.println("RESULTADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"+valorRetorno);
                 if (valorRetorno==0){
+                    progressDialog.dismiss();
                     ShowSnackBar("Correo o contraseña incorrectos");
                 }
                 else{
                     Intent in = new Intent(getApplicationContext(), MenuPrincipal.class); // si existe se abre menú principal
                     startActivity(in);
+                   /* CallableStatement sp_obtenerUsuario = conexionBD().prepareCall("{call dbo.obtenerUsuario(?) }");
+                   sp_obtenerUsuario.setString(1,correoEntrada);
+                   ResultSet rs2 = sp_obtenerUsuario.executeQuery();
+                   rs2.next();
+                   int valor = rs2.getInt(1);
+                   if (valor==0){
+                    System.out.println("Error no existe usuario");
+                }
+                else{
+                    Usuario usario = new Usuario();
+                    }
+
+                   */
                 }
                 sp.close();
                 conexionBD().close();

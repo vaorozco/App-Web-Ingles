@@ -3,6 +3,7 @@ package com.example.proyecto;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class Registro extends AppCompatActivity {
     EditText nombre, apellido, correo, contrasena, contrasena2;
     Button registrarme;
     ScrollView scrollView;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +45,9 @@ public class Registro extends AppCompatActivity {
                 if (isEmpty(nombre.getText().toString()) || isEmpty(apellido.getText().toString()) ||
                         isEmpty(correo.getText().toString()) || isEmpty(contrasena.getText().toString()) ||
                         isEmpty(contrasena2.getText().toString()))
-                    ShowSnackBar("Por favor complete todos los campos");
+                    Toast.makeText(Registro.this,"Por favor complete todos los campos",Toast.LENGTH_SHORT).show();
                 else if (!contrasena.getText().toString().equals(contrasena2.getText().toString()))
-                    ShowSnackBar("Las contraseñas no coinciden");
+                    Toast.makeText(Registro.this,"Las contraseñas no coinciden",Toast.LENGTH_SHORT).show();
                 else {
                     agregarUsuario agregarUsuario = new agregarUsuario();
                     agregarUsuario.execute("");
@@ -78,7 +80,7 @@ public class Registro extends AppCompatActivity {
             Contrasena = contrasena.getText().toString();
             Contrasena2 = contrasena.getText().toString();
             //progressBar.setVisibility(View.VISIBLE);
-            registrarme.setVisibility(View.GONE);
+            progressDialog = ProgressDialog.show(Registro.this,"Verificando Datos","Por favor espere...",false,false);
         }
 
         @Override
@@ -95,50 +97,33 @@ public class Registro extends AppCompatActivity {
                 ResultSet rs = sp.executeQuery();
                 rs.next();
                 int valorRetorno = rs.getInt(1);
-                //System.out.println("RESULTADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"+valorRetorno);
                 if (valorRetorno==0){
-                    ShowSnackBar("Ya existe una cuenta con ese correo");
+                    progressDialog.dismiss();
+                    sp.close();
+                    conexionBD().close();
+                    //ShowSnackBar("Ya existe una cuenta con ese correo");
                 }
                 else{
-                    Intent in = new Intent(getApplicationContext(), Login.class); // si existe se abre menú principal
-                    startActivity(in);
-                    Toast.makeText(Registro.this,"Ha sido registrado",Toast.LENGTH_SHORT).show();
+                    //progressDialog.dismiss();
+                    //ShowSnackBar("Ha sido registrado");
+                    Intent in = new Intent(Registro.this, Login.class); // si existe se abre menú principal
                 }
                 sp.close();
                 conexionBD().close();
-                return "¡Intente de Nuevo!";
+                return "Ya existe una cuenta con ese correo";
 
             } catch (SQLException e) {
                 e.printStackTrace();
                 return e.getMessage().toString();
             }
-            /*try {
-                ConnectionHelper con = new ConnectionHelper();
-                Connection connect = conexionBD();
-                String storedProcedureCall = "{call InsertarUsuario(?,?,?,?,?)};"; //stored procedure a llamar
-                CallableStatement sp = conexionBD().prepareCall(storedProcedureCall); //formato para llamar stored procedures en la base
-                sp.setString(1,nombre.getText().toString());
-                sp.setString(2,apellido.getText().toString());
-                sp.setString(3,correo.getText().toString());
-                sp.setString(4,contrasena.getText().toString());
-                sp.setInt(5,2);//(5,correo.getText().toString()); número 2 es tipo estudiante
-                sp.executeUpdate();
-                sp.close();
-                conexionBD().close();
-                return "¡Ha sido registrado!";
-            } catch (SQLException e) {
-                e.printStackTrace();
-                return e.getMessage().toString();
-            } catch (Exception e) {
-                return "Ha habido un problema con el código o la base de datos.";
-            }*/
         }
 
         @Override
         protected void onPostExecute(String result) {
             ShowSnackBar(result);
+            //Toast.makeText(Registro.this,result,Toast.LENGTH_SHORT);
             //progressBar.setVisibility(View.GONE);
-            registrarme.setVisibility(View.VISIBLE);
+            //registrarme.setVisibility(View.VISIBLE);
             if (result.equals("Registro exitoso")) {
                 // Clear();
             }

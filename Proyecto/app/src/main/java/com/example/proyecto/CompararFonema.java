@@ -147,9 +147,9 @@ public class CompararFonema extends AppCompatActivity implements NavigationView.
             case REQUEST_PERMISSION_CODE:
             {
                 if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    Toast.makeText(this,"Permission Granted",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"Permiso Obtenido",Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(this,"Permission Denied", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"Permiso Denegado", Toast.LENGTH_SHORT).show();
             }
             break;
         }

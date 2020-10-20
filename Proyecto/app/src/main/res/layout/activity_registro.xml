@@ -38,8 +38,8 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="256dp"
-            android:layout_height="19dp"
+            android:layout_width="311dp"
+            android:layout_height="27dp"
             android:layout_marginStart="43dp"
             android:layout_marginLeft="43dp"
             android:layout_marginTop="41dp"
@@ -50,6 +50,7 @@
             android:text="Por favor ingrese los siguientes datos:"
             app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro" />
 
