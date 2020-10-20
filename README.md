@@ -91,3 +91,7 @@ Aplicación Móvil
 -Se adaptan interfaces a todos los dispositivos móviles Android.
 -Se modifica stored procedure Insertar Usuario
 - Creación de stored procedure obtenerUsuario y clase Usuario
+
+19/10/2020
+-Se realiza función Recuperar Contraseña
+-Arreglo de validaciones
