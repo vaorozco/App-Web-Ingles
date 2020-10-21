@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Runtime.InteropServices;
 using System.Media;
+using System.Drawing;
 
 namespace Fonet_Web
 {
@@ -18,7 +19,7 @@ namespace Fonet_Web
             ConexionSQL conexion = new ConexionSQL();
             if (!this.IsPostBack)
             {
-                DataTable dt = conexion.SeleccionarUsuario();
+                DataTable dt = conexion.SeleccionarFonema();
                 this.GridView1.DataSource = dt;
                 this.GridView1.DataBind();
             }
@@ -26,7 +27,18 @@ namespace Fonet_Web
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
+            ConexionSQL conexion = new ConexionSQL();
+            byte[] sonido;
+            Stream stream = FileUpload2.PostedFile.InputStream;
+            BinaryReader br = new BinaryReader(stream);
+            sonido = br.ReadBytes((Int32)stream.Length);
 
+            int tamaño = FileUpload1.PostedFile.ContentLength;
+            byte[] imagenoriginal = new byte[tamaño];
+            FileUpload1.PostedFile.InputStream.Read(imagenoriginal, 0, tamaño);
+            Bitmap ImagenOriginalBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
+
+            conexion.InsertarFonema(TextBox1.Text, imagenoriginal, sonido);
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,10 +78,10 @@ namespace Fonet_Web
             }
 
             //Save the File to the Directory (Folder).
-            FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
+            FileUpload2.SaveAs(folderPath + Path.GetFileName(FileUpload2.FileName));
 
             SoundPlayer _sm = new SoundPlayer();
-            _sm.SoundLocation = folderPath + Path.GetFileName(FileUpload1.FileName);
+            _sm.SoundLocation = folderPath + Path.GetFileName(FileUpload2.FileName);
             _sm.PlaySync();
 
         }

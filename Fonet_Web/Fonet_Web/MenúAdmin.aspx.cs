@@ -16,7 +16,7 @@ namespace Fonet_Web
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("GestionarUsuarios.aspx");
+            Response.Redirect("MenuGestionar.aspx");
         }
     }
 }

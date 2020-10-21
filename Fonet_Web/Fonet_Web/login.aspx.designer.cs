@@ -42,15 +42,6 @@ namespace Fonet_Web
         protected global::System.Web.UI.WebControls.Panel Panel2;
 
         /// <summary>
-        /// Ingresar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Ingresar;
-
-        /// <summary>
         /// Registrarse control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,24 @@ namespace Fonet_Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox2;
+
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Ingresar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Ingresar;
 
         /// <summary>
         /// Image1 control.

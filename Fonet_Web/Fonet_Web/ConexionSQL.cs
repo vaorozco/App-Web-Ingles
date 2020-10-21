@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -165,6 +166,96 @@ namespace Fonet_Web
             }
         }
 
+        public DataTable SeleccionarFonema()
+        {
+            System.Data.DataTable table = new DataTable("ParentTable");
+            // Declare variables for DataColumn and DataRow objects.
+            DataColumn column;
+
+            // Create new DataColumn, set DataType,
+            // ColumnName and add to DataTable.
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "id";
+            column.ReadOnly = true;
+            column.Unique = true;
+            // Add the Column to the DataColumnCollection.
+            table.Columns.Add(column);
+
+            // Create second column.
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Fonema";
+            column.AutoIncrement = false;
+            column.Caption = "Fonema";
+            column.ReadOnly = false;
+            column.Unique = false;
+            // Add the column to the table.
+            table.Columns.Add(column);
+
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                string strSelect = "Select * From Fonema";
+                SqlCommand cmd = new SqlCommand(strSelect, conn);
+                SqlDataReader myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    // Assuming your desired value is the name as the 3rd field
+                    //Usuarios = myReader.GetValues(2).ToString();
+                    DataRow row = table.NewRow();
+                    row["ID"] = myReader.GetValue(0).ToString();
+                    row["Fonema"] = myReader.GetValue(1).ToString();
+                    table.Rows.Add(row);
+                }
+
+                myReader.Close();
+                conn.Close();
+                return table;
+            }
+        }
+
+        public void InsertarFonema(string nombre, byte[] imagen, byte[] sonido)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("InsertarFonema", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@nombre", nombre));
+                cmd.Parameters.Add(new SqlParameter("@imagen", imagen));
+                cmd.Parameters.Add(new SqlParameter("@sonido", sonido));
+                SqlDataReader rdr = cmd.ExecuteReader();
+            }
+        }
+
+        public void ModificarFonema(int id, string nombre, byte[] imagen, byte[] sonido)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("ModificarFonema", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@id", id));
+                cmd.Parameters.Add(new SqlParameter("@nombre", nombre));
+                cmd.Parameters.Add(new SqlParameter("@imagen", imagen));
+                cmd.Parameters.Add(new SqlParameter("@sonido", sonido));
+                SqlDataReader rdr = cmd.ExecuteReader();
+            }
+        }
+
+        public void BorrarFonema(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("BorrarFonema", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@id", id));
+                SqlDataReader rdr = cmd.ExecuteReader();
+            }
+        }
+
         public string login(string correo, string contraseña)
         {
             string isTrue = null;
@@ -175,6 +266,26 @@ namespace Fonet_Web
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@correo", correo));
                 cmd.Parameters.Add(new SqlParameter("@contraseña", contraseña));
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    isTrue = rdr.GetValue(0).ToString();
+                }
+                rdr.Close();
+                conn.Close();
+                return isTrue;
+            }
+        }
+
+        public string recuperarContraseña(string correo)
+        {
+            string isTrue = null;
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("recuperarContraseña", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@correo", correo));
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
