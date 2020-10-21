@@ -28,10 +28,12 @@ namespace Fonet_Web
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextBox1.Text = GridView1.SelectedRow.Cells[3].Text;
-            TextBox2.Text = GridView1.SelectedRow.Cells[4].Text;
-            TextBox3.Text = GridView1.SelectedRow.Cells[5].Text;
-            TextBox4.Text = GridView1.SelectedRow.Cells[6].Text;
+
+        }
+
+        protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+        {
+
         }
     }
 }

@@ -43,7 +43,10 @@ namespace Fonet_Web
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextBox1.Text = GridView1.SelectedRow.Cells[3].Text;
+            ConexionSQL conexion = new ConexionSQL();
+            Fonema fonema = new Fonema();
+            fonema = conexion.SeleccionarFonema(int.Parse(GridView1.SelectedRow.Cells[1].Text));
+            TextBox1.Text = fonema.nombre;
         }
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)

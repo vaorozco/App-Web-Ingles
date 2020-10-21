@@ -256,6 +256,31 @@ namespace Fonet_Web
             }
         }
 
+        public Fonema SeleccionarFonema(int id)
+        {
+            Fonema fonema = new Fonema();
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SeleccionarFonema", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@id", id));
+                SqlDataReader myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    // Assuming your desired value is the name as the 3rd field
+                    //Usuarios = myReader.GetValues(2).ToString()
+                    fonema.nombre = myReader.GetValue(0).ToString();
+                    fonema.imagen = myReader.GetStream(1);
+                    fonema.sonido = myReader.GetStream(2);
+                }
+
+                myReader.Close();
+                conn.Close();
+                return fonema;
+            }
+        }
+
         public string login(string correo, string contraseña)
         {
             string isTrue = null;

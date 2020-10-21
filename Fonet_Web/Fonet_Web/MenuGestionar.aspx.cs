@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Fonet_Web
 {
-    public partial class MenúAdmin : System.Web.UI.Page
+    public partial class MenuGestionar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
