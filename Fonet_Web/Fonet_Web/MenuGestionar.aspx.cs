@@ -16,7 +16,17 @@ namespace Fonet_Web
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
+            Response.Redirect("GestionarPalabra.aspx");
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
             Response.Redirect("GestionarUsuarios.aspx");
+        }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("GestionarFonema.aspx");
         }
     }
 }

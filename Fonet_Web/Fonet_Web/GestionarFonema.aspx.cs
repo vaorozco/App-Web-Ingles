@@ -9,6 +9,9 @@ using System.Web.UI.WebControls;
 using System.Runtime.InteropServices;
 using System.Media;
 using System.Drawing;
+using System.Data.SqlClient;
+using System.Reflection.Emit;
+using NAudio.Wave;
 
 namespace Fonet_Web
 {
@@ -29,9 +32,8 @@ namespace Fonet_Web
         {
             ConexionSQL conexion = new ConexionSQL();
             byte[] sonido;
-            Stream stream = FileUpload2.PostedFile.InputStream;
-            BinaryReader br = new BinaryReader(stream);
-            sonido = br.ReadBytes((Int32)stream.Length);
+            BinaryReader br = new BinaryReader(FileUpload2.PostedFile.InputStream);
+            sonido = br.ReadBytes((int)FileUpload2.PostedFile.InputStream.Length);
 
             int tamaño = FileUpload1.PostedFile.ContentLength;
             byte[] imagenoriginal = new byte[tamaño];
@@ -47,6 +49,21 @@ namespace Fonet_Web
             Fonema fonema = new Fonema();
             fonema = conexion.SeleccionarFonema(int.Parse(GridView1.SelectedRow.Cells[1].Text));
             TextBox1.Text = fonema.nombre;
+            System.Drawing.Image imagen = System.Drawing.Image.FromStream(fonema.imagen);
+            string folderPath = Server.MapPath("~/Recursos/");
+            imagen.Save(folderPath + "Prueba.png");
+            /*using (WaveFileWriter writer = new WaveFileWriter(folderPath + "Prueba.wav", new WaveFormat(8, 2)))
+            {
+                //int bytesRead;
+                //while ((bytesRead = wavReader.Read(buffer, 0, buffer.Length)) > 0)
+                //{
+                writer.Write(fonema.sonido, 0, fonema.sonido.Length);
+                //}
+            }*/
+            File.WriteAllBytes(folderPath + "Prueba.wav", fonema.sonido);
+            Label1.Text = folderPath + "Prueba.wav";
+            Image1.ImageUrl = "~/Recursos/Prueba.png";
+
         }
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
@@ -65,8 +82,6 @@ namespace Fonet_Web
 
             //Display the Picture in Image control.
             Image1.ImageUrl = "~/Recursos/" + Path.GetFileName(FileUpload1.FileName);
-
-
         }
 
         protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
@@ -87,6 +102,34 @@ namespace Fonet_Web
             _sm.SoundLocation = folderPath + Path.GetFileName(FileUpload2.FileName);
             _sm.PlaySync();
 
+        }
+
+        protected void ImageButton5_Click1(object sender, ImageClickEventArgs e)
+        {
+            SoundPlayer _sm = new SoundPlayer();
+            _sm.SoundLocation = Label1.Text;
+            _sm.PlaySync();
+        }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            ConexionSQL conexion = new ConexionSQL();
+            byte[] sonido;
+            BinaryReader br = new BinaryReader(FileUpload2.PostedFile.InputStream);
+            sonido = br.ReadBytes((int)FileUpload2.PostedFile.InputStream.Length);
+
+            int tamaño = FileUpload1.PostedFile.ContentLength;
+            byte[] imagenoriginal = new byte[tamaño];
+            FileUpload1.PostedFile.InputStream.Read(imagenoriginal, 0, tamaño);
+            Bitmap ImagenOriginalBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
+
+            conexion.ModificarFonema(int.Parse(GridView1.SelectedRow.Cells[1].Text),TextBox1.Text, imagenoriginal, sonido);
+        }
+
+        protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
+        {
+            ConexionSQL conexion = new ConexionSQL();
+            conexion.BorrarFonema(int.Parse(GridView1.SelectedRow.Cells[1].Text));
         }
     }
 }

@@ -53,6 +53,9 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.9.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.9\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -75,6 +78,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -89,18 +93,30 @@
     <Content Include="GestionarUsuarios.aspx" />
     <Content Include="login.aspx" />
     <Content Include="MenuGestionar.aspx" />
+    <Content Include="MenúEstudiante.aspx" />
     <Content Include="MenúAdmin.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
+    <Content Include="Recursos\ajustes.png" />
     <Content Include="Recursos\anadir.png" />
+    <Content Include="Recursos\casa.png" />
     <Content Include="Recursos\cerrar.png" />
     <Content Include="Recursos\comprobar.png" />
+    <Content Include="Recursos\gamepad.png" />
     <Content Include="Recursos\Icono BF.png" />
     <Content Include="Recursos\icono CF.png" />
     <Content Include="Recursos\icono CP.png" />
+    <Content Include="Recursos\Icono G.png" />
+    <Content Include="Recursos\Icono GF.png" />
+    <Content Include="Recursos\Icono GP.png" />
+    <Content Include="Recursos\Icono GU.png" />
     <Content Include="Recursos\icono juego.png" />
     <Content Include="Recursos\Icono Memoria.png" />
     <Content Include="Recursos\icono pareo.png" />
+    <Content Include="Recursos\Letra.png" />
     <Content Include="Recursos\logo.png" />
+    <Content Include="Recursos\menuicon.png" />
+    <Content Include="Recursos\Nombre.PNG" />
+    <Content Include="Recursos\usuario.png" />
     <Content Include="registrar.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -142,6 +158,13 @@
     <Compile Include="MenuGestionar.aspx.designer.cs">
       <DependentUpon>MenuGestionar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MenúEstudiante.aspx.cs">
+      <DependentUpon>MenúEstudiante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenúEstudiante.aspx.designer.cs">
+      <DependentUpon>MenúEstudiante.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MenúAdmin.aspx.cs">
       <DependentUpon>MenúAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -149,7 +172,9 @@
     <Compile Include="MenúAdmin.aspx.designer.cs">
       <DependentUpon>MenúAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Palabra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecuperarC.cs" />
     <Compile Include="RecuperarContraseña.aspx.cs">
       <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

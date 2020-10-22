@@ -19,15 +19,15 @@ namespace Fonet_Web
         protected void Button1_Click(object sender, EventArgs e)
         {
             ConexionSQL conexion = new ConexionSQL();
-            string isTrue = conexion.recuperarContraseña(TextBox1.Text);
-            if (isTrue == "1")
+            RecuperarC recuperarc = conexion.recuperarContraseña(TextBox1.Text);
+            if (recuperarc.isTrue == "1")
             {
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress("appfonet@gmail.com");
                     mail.To.Add(TextBox1.Text);
-                    mail.Subject = "Prueba";
-                    mail.Body = "<h1>Prueba</h1>";
+                    mail.Subject = "Fonet - Recuperar Contraseña";
+                    mail.Body = "¡Hola " + recuperarc.nombre + "!\n" + "Te enviamos este correo porque solicitaste recuperar tu contraseña. Tu contraseña es: "+recuperarc.contraseña;
                     mail.IsBodyHtml = true;
                     //mail.Attachments.Add(new Attachment("C:\\file.zip"));
 

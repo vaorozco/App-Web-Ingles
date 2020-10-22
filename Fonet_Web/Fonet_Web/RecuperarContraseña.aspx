@@ -7,10 +7,10 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 178px;
+            width: 210px;
             height: 19px;
             position: absolute;
-            left: 127px;
+            left: 118px;
             top: 27px;
         }
         .auto-style2 {
@@ -31,7 +31,7 @@
         }
     </style>
 </head>
-<body style="width: 438px; height: 120px">
+<body style="width: 438px; height: 120px; margin-right: 17px; margin-bottom: 16px;">
     <form id="form1" runat="server">
         <div>
             <asp:Panel ID="Panel1" runat="server" Height="118px" Width="440px">

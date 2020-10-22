@@ -11,9 +11,9 @@ namespace Fonet_Web
     {
         public string nombre { get; set; }
         public Stream imagen { get; set; }
-        public Stream sonido { get; set; }
+        public byte[] sonido { get; set; }
 
-        public Fonema(string nombre, Stream imagen, Stream sonido)
+        public Fonema(string nombre, Stream imagen, byte[] sonido)
         {
             this.nombre = nombre;
             this.imagen = imagen;

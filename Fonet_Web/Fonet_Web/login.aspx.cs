@@ -38,7 +38,15 @@ namespace Fonet_Web
             String isTrue = conexion.login(this.TextBox1.Text, this.TextBox2.Text);
             if (isTrue == "1")
             {
-                Response.Redirect("MenúAdmin.aspx");
+                String isTrueAdmin = conexion.loginAdmin(this.TextBox1.Text, this.TextBox2.Text);
+                if(isTrueAdmin == "1")
+                {
+                    Response.Redirect("MenúAdmin.aspx");
+                }
+                else
+                {
+                    Response.Redirect("MenúEstudiante.aspx");
+                }
             }
             else
             {
@@ -48,7 +56,7 @@ namespace Fonet_Web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>window.open('RecuperarContraseña.aspx','ventana1','width = 450, height = 400, scrollbars = NO');</script>");
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>window.open('RecuperarContraseña.aspx','ventana1','width = 450, height = 170, scrollbars = NO');</script>");
         }
     }
 }
