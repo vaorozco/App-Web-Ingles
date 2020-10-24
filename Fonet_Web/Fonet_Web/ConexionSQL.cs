@@ -75,7 +75,7 @@ namespace Fonet_Web
             // ColumnName and add to DataTable.
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "id";
+            column.ColumnName = "ID";
             column.ReadOnly = true;
             column.Unique = true;
             // Add the Column to the DataColumnCollection.
@@ -84,9 +84,9 @@ namespace Fonet_Web
 
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Tipo Usuario";
+            column.ColumnName = "TIPO USUARIO";
             column.AutoIncrement = false;
-            column.Caption = "Tipo Usuario";
+            column.Caption = "TIPO USUARIO";
             column.ReadOnly = false;
             column.Unique = false;
             // Add the column to the table.
@@ -95,9 +95,9 @@ namespace Fonet_Web
             // Create second column.
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Nombre";
+            column.ColumnName = "NOMBRE";
             column.AutoIncrement = false;
-            column.Caption = "Nombre";
+            column.Caption = "NOMBRE";
             column.ReadOnly = false;
             column.Unique = false;
             // Add the column to the table.
@@ -106,9 +106,9 @@ namespace Fonet_Web
             // Create second column.
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Apellido";
+            column.ColumnName = "APELLIDO";
             column.AutoIncrement = false;
-            column.Caption = "Apellido";
+            column.Caption = "APELLIDO";
             column.ReadOnly = false;
             column.Unique = false;
             // Add the column to the table.
@@ -117,9 +117,9 @@ namespace Fonet_Web
             // Create second column.
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Correo";
+            column.ColumnName = "CORREO";
             column.AutoIncrement = false;
-            column.Caption = "Correo";
+            column.Caption = "CORREO";
             column.ReadOnly = false;
             column.Unique = false;
             // Add the column to the table.
@@ -127,9 +127,9 @@ namespace Fonet_Web
 
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Contraseña";
+            column.ColumnName = "CONTRASEÑA";
             column.AutoIncrement = false;
-            column.Caption = "Contraseña";
+            column.Caption = "CONTRASEÑA";
             column.ReadOnly = false;
             column.Unique = false;
             // Add the column to the table.
@@ -146,12 +146,12 @@ namespace Fonet_Web
                     // Assuming your desired value is the name as the 3rd field
                     //Usuarios = myReader.GetValues(2).ToString();
                     DataRow row = table.NewRow();
-                    row["id"] = myReader.GetValue(0).ToString();
-                    row["Tipo Usuario"] = myReader.GetValue(1);
-                    row["Nombre"] = myReader.GetValue(2).ToString();
-                    row["Apellido"] = myReader.GetValue(3).ToString();
-                    row["Correo"] = myReader.GetValue(4).ToString();
-                    row["Contraseña"] = myReader.GetValue(5).ToString();
+                    row["ID"] = myReader.GetValue(0).ToString();
+                    row["TIPO USUARIO"] = myReader.GetValue(1);
+                    row["NOMBRE"] = myReader.GetValue(2).ToString();
+                    row["APELLIDO"] = myReader.GetValue(3).ToString();
+                    row["CORREO"] = myReader.GetValue(4).ToString();
+                    row["CONTRASEÑA"] = myReader.GetValue(5).ToString();
                     Console.WriteLine(myReader.GetValue(0).ToString());
                     Console.WriteLine(myReader.GetValue(1).ToString());
                     Console.WriteLine(myReader.GetValue(2).ToString());
@@ -177,7 +177,7 @@ namespace Fonet_Web
             // ColumnName and add to DataTable.
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "id";
+            column.ColumnName = "ID";
             column.ReadOnly = true;
             column.Unique = true;
             // Add the Column to the DataColumnCollection.
@@ -186,9 +186,9 @@ namespace Fonet_Web
             // Create second column.
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Fonema";
+            column.ColumnName = "FONEMA";
             column.AutoIncrement = false;
-            column.Caption = "Fonema";
+            column.Caption = "FONEMA";
             column.ReadOnly = false;
             column.Unique = false;
             // Add the column to the table.
@@ -206,7 +206,7 @@ namespace Fonet_Web
                     //Usuarios = myReader.GetValues(2).ToString();
                     DataRow row = table.NewRow();
                     row["ID"] = myReader.GetValue(0).ToString();
-                    row["Fonema"] = myReader.GetValue(1).ToString();
+                    row["FONEMA"] = myReader.GetValue(1).ToString();
                     table.Rows.Add(row);
                 }
 
@@ -379,7 +379,7 @@ namespace Fonet_Web
             // ColumnName and add to DataTable.
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "id";
+            column.ColumnName = "ID";
             column.ReadOnly = true;
             column.Unique = true;
             // Add the Column to the DataColumnCollection.
@@ -388,9 +388,9 @@ namespace Fonet_Web
             // Create second column.
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Palabra";
+            column.ColumnName = "PALABRA";
             column.AutoIncrement = false;
-            column.Caption = "Palabra";
+            column.Caption = "PALABRA";
             column.ReadOnly = false;
             column.Unique = false;
             // Add the column to the table.
@@ -408,7 +408,7 @@ namespace Fonet_Web
                     //Usuarios = myReader.GetValues(2).ToString();
                     DataRow row = table.NewRow();
                     row["ID"] = myReader.GetValue(0).ToString();
-                    row["Palabra"] = myReader.GetValue(1).ToString();
+                    row["PALABRA"] = myReader.GetValue(1).ToString();
                     table.Rows.Add(row);
                 }
 
@@ -481,6 +481,19 @@ namespace Fonet_Web
                 myReader.Close();
                 conn.Close();
                 return palabra;
+            }
+        }
+
+        public void InsertarPalabraXFonema(string idfonema,string idpalabra)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("InsertarPalabraXFonema", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@fonema", idfonema));
+                cmd.Parameters.Add(new SqlParameter("@palabra", idpalabra));
+                SqlDataReader rdr = cmd.ExecuteReader();
             }
         }
     }

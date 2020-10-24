@@ -56,8 +56,6 @@ C:\Users\avalverder.Maquina1VM\Desktop\Fonet\Fonet_Web\Fonet_Web\obj\Debug\Fonet
 C:\Users\avalverder.Maquina1VM\Desktop\Fonet\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.dll
 C:\Users\avalverder.Maquina1VM\Desktop\Fonet\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.pdb
 C:\Users\avalverder.Maquina1VM\Desktop\Fonet\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.csprojAssemblyReference.cache
-C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.csproj.CoreCompileInputs.cache
-C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.csprojAssemblyReference.cache
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\Fonet_Web.dll.config
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\Fonet_Web.dll
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\Fonet_Web.pdb
@@ -94,6 +92,7 @@ C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_W
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\NAudio.dll
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\System.Buffers.dll
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\System.Memory.dll
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\System.Numerics.Vectors.dll
@@ -101,12 +100,13 @@ C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_W
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\Microsoft.Extensions.Configuration.Abstractions.xml
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\NAudio.xml
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\System.Buffers.xml
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\System.Memory.xml
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\System.Numerics.Vectors.xml
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.csproj.CoreCompileInputs.cache
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.csproj.CopyComplete
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.dll
 C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.pdb
-C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\NAudio.dll
-C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\bin\NAudio.xml
+C:\Users\avalverder.Maquina1VM\Documents\GitHub\App-Web-Ingles\Fonet_Web\Fonet_Web\obj\Debug\Fonet_Web.csprojAssemblyReference.cache

@@ -28,7 +28,7 @@ namespace Fonet_Web
 
         protected void Registrarse_Click(object sender, EventArgs e)
         {
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>window.open('registrar.aspx','ventana1','width = 450, height = 400, scrollbars = NO');</script>");
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>window.open('registrar.aspx','ventana1','width = 430, height = 450, scrollbars = NO');</script>");
             //Response.Redirect("registrar.aspx");
         }
 
@@ -50,7 +50,9 @@ namespace Fonet_Web
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Error con los datos ingresados');</script>");
+                Label4.Text = "Error con los datos ingresados";
+                Label4.Visible = true;
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Error con los datos ingresados');</script>");
             }
         }
 

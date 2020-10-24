@@ -97,6 +97,7 @@
     <Content Include="MenúAdmin.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="Recursos\ajustes.png" />
+    <Content Include="Recursos\altavoz.png" />
     <Content Include="Recursos\anadir.png" />
     <Content Include="Recursos\casa.png" />
     <Content Include="Recursos\cerrar.png" />
@@ -122,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionSQL.cs" />
+    <Compile Include="ControladorUI.cs" />
     <Compile Include="Fonema.cs" />
     <Compile Include="GestionarPalabra.aspx.cs">
       <DependentUpon>GestionarPalabra.aspx</DependentUpon>

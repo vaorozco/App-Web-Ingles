@@ -18,30 +18,38 @@ namespace Fonet_Web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ConexionSQL conexion = new ConexionSQL();
-            RecuperarC recuperarc = conexion.recuperarContraseña(TextBox1.Text);
-            if (recuperarc.isTrue == "1")
+            try
             {
-                using (MailMessage mail = new MailMessage())
+                ConexionSQL conexion = new ConexionSQL();
+                RecuperarC recuperarc = conexion.recuperarContraseña(TextBox1.Text);
+                if (recuperarc.isTrue == "1")
                 {
-                    mail.From = new MailAddress("appfonet@gmail.com");
-                    mail.To.Add(TextBox1.Text);
-                    mail.Subject = "Fonet - Recuperar Contraseña";
-                    mail.Body = "¡Hola " + recuperarc.nombre + "!\n" + "Te enviamos este correo porque solicitaste recuperar tu contraseña. Tu contraseña es: "+recuperarc.contraseña;
-                    mail.IsBodyHtml = true;
-                    //mail.Attachments.Add(new Attachment("C:\\file.zip"));
-
-                    using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                    using (MailMessage mail = new MailMessage())
                     {
-                        smtp.Credentials = new NetworkCredential("appfonet@gmail.com", "1234fonet5678");
-                        smtp.EnableSsl = true;
-                        smtp.Send(mail);
+                        mail.From = new MailAddress("appfonet@gmail.com");
+                        mail.To.Add(TextBox1.Text);
+                        mail.Subject = "Fonet - Recuperar Contraseña";
+                        mail.Body = "¡Hola " + recuperarc.nombre + "!\n" + "Te enviamos este correo porque solicitaste recuperar tu contraseña. Tu contraseña es: " + recuperarc.contraseña;
+                        mail.IsBodyHtml = true;
+                        //mail.Attachments.Add(new Attachment("C:\\file.zip"));
+
+                        using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                        {
+                            smtp.Credentials = new NetworkCredential("appfonet@gmail.com", "1234fonet5678");
+                            smtp.EnableSsl = true;
+                            smtp.Send(mail);
+                        }
                     }
                 }
+                else
+                {
+                    //Label2.Visible = true;
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Error con los datos ingresados');</script>");
+                }
             }
-            else
+            catch
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Error con los datos ingresados');</script>");
+                Console.WriteLine("No avanzo");
             }
             
         }

@@ -18,5 +18,20 @@ namespace Fonet_Web
         {
             Response.Redirect("MenuGestionar.aspx");
         }
+
+        protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("MenúAdmin.aspx");
+        }
+
+        protected void ImageButton11_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("MenuGestionar.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
     }
 }

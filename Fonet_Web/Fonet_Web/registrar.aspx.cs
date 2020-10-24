@@ -23,7 +23,7 @@ namespace Fonet_Web
             }
             else
             {
-                Console.WriteLine("Algo");
+                Label7.Visible = true;
             }
             
         }
