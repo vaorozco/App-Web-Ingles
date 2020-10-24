@@ -48,8 +48,26 @@ Gestor de Contenido Web
 Base de Datos
 -Se crean los store procedure de ModificarUsuario, BorrarUsuario.
 
-https://www.mssqltips.com/sqlservertip/2431/sql-server-column-level-encryption-example-using-symmetric-keys/ esto para intentar encriptar
+19/10/2020
+Gestor de Contenido Web
+-Se agregan caracteristicas para las funcionalidades de la ventana de Gestionar Fonema.
 
+20/10/2020
+Gestor de Contenido Web
+-Se agregan las funcionalidades para la ventana de Gestionar Fonema.
+
+21/10/2020
+Gestor de Contenido Web
+-Se agregan caracteristicas para las funcionalidades de la ventana de Gestionar Palabra.
+
+22/10/2020
+Gestor de Contenido Web
+-Se agregan las funcionalidades de la ventana de Gestionar Palabra
+-Se modifica el diseño de las ventanas.
+
+23/10/2020
+Gestor de Contenido Web
+-Se modifica el diseño de las ventanas.
 
 Víctor Alonso Orozco Calderón - 2016240613
 
