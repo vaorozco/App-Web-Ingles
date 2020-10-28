@@ -69,6 +69,23 @@ Gestor de Contenido Web
 Gestor de Contenido Web
 -Se modifica el diseño de las ventanas.
 
+24/10/2020
+Gestor de Contenido Web
+-Se agrega la ventana de BancoFonemas.
+-Se mejora el diseño de las ventanas Gestionar.
+
+26/10/2020
+Gestor de Conteido Web
+-Se agrega la ventana de ClickFonema
+-Se mejora el diseño de las ventanas Gestionar.
+
+27/10/2020
+Gestor de Contenido Web
+-Se mejora el diseño de las ventanas Gestionar.
+
+Base de Datos
+-Se crea los stored procedured de seleccionarfonemapalabra y seleccionarpalabrafonema.
+
 Víctor Alonso Orozco Calderón - 2016240613
 
 Aplicación Móvil
