@@ -14,8 +14,10 @@ namespace Fonet_Web
         // and cons. In this example we'll show the simplest of these ways,
         // which, however, doesn't work really well in multithreaded program.
         private static ControladorUI _instance = new ControladorUI();
-        private Stream imagen;
-        private int tamañoimagen;
+        //private Stream imagen;
+        //private int tamañoimagen;
+        private byte[] sonido;
+        private byte[] imagen;
         // This is the static method that controls the access to the singleton
         // instance. On the first run, it creates a singleton object and places
         // it into the static field. On subsequent runs, it returns the client
@@ -32,7 +34,7 @@ namespace Fonet_Web
             }
         }
 
-        public void set_imagen(Stream pimage)
+        /*public void set_imagen(Stream pimage)
         {
             imagen = pimage;
         }
@@ -50,6 +52,26 @@ namespace Fonet_Web
         public int get_tamañoimagen()
         {
             return tamañoimagen;
+        }*/
+
+        public void set_sonido(byte[] psonido)
+        {
+            sonido = psonido;
+        }
+
+        public byte[] get_sonido()
+        {
+            return sonido;
+        }
+
+        public void set_imagen(byte[] pimagen)
+        {
+            imagen = pimagen;
+        }
+
+        public byte[] get_imagen()
+        {
+            return imagen;
         }
     }
 }

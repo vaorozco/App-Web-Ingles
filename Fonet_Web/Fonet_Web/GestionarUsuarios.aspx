@@ -37,16 +37,7 @@
             left: 95px;
             top: 179px;
         }
-        .auto-style2 {
-            height: 40px;
-            position: absolute;
-            left: 13px;
-            top: 16px;
-            width: 99px;
-            right: 833px;
-            margin-top: 0px;
-        }
-
+        
         .auto-style9 {
             top: 160px;
             left: 53px;

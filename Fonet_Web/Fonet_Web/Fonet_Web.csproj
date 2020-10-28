@@ -88,6 +88,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BancoFonemas.aspx" />
+    <Content Include="ClickFonema.aspx" />
     <Content Include="GestionarPalabra.aspx" />
     <Content Include="GestionarFonema.aspx" />
     <Content Include="GestionarUsuarios.aspx" />
@@ -122,6 +124,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BancoFonemas.aspx.cs">
+      <DependentUpon>BancoFonemas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BancoFonemas.aspx.designer.cs">
+      <DependentUpon>BancoFonemas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClickFonema.aspx.cs">
+      <DependentUpon>ClickFonema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClickFonema.aspx.designer.cs">
+      <DependentUpon>ClickFonema.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConexionSQL.cs" />
     <Compile Include="ControladorUI.cs" />
     <Compile Include="Fonema.cs" />

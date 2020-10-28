@@ -97,7 +97,7 @@
             <asp:Panel ID="Panel2" runat="server" BackColor="White" CssClass="auto-style3">
                 <asp:Button ID="Registrarse" runat="server" OnClick="Registrarse_Click" Text="Crear Cuenta" CssClass="auto-style6" />
                 <asp:TextBox ID="TextBox1" runat="server" ForeColor="Gray" OnTextChanged="Page_Load" style="top: 63px; left: 2px; position: absolute; height: 32px; width: 372px; background-color: White; margin-left: 34px; margin-right: 31px;">USUARIO</asp:TextBox>
-                &nbsp;<asp:Label ID="Label1" runat="server" style="top: 12px; left: 14px; position: absolute; height: 22px; width: 132px; font-family: Montserrat-Thin; background-color: White" Text="Iniciar sesión" CssClass="auto-style5"></asp:Label>
+                &nbsp;<asp:Label ID="Label1" runat="server" style="top: 12px; left: 14px; position: absolute; height: 22px; width: 132px; font-family: Arial, Helvetica, sans-serif; background-color: White" Text="Iniciar sesión" CssClass="auto-style5"></asp:Label>
                 <asp:TextBox ID="TextBox2" runat="server" ForeColor="Gray" OnTextChanged="Page_Load" style="background-color: White" TextMode="Password" CssClass="auto-style9">CONTRASEÑA</asp:TextBox>
                 <asp:Button ID="Button1" runat="server" BorderStyle="None" OnClick="Button1_Click" style="background-color: White; color: #3399FF;" Text="¿Olvidaste tu contraseña?" CssClass="auto-style8" />
                 <asp:Button ID="Ingresar" runat="server" BackColor="#33CC33" BorderColor="#009933" Font-Bold="False" Font-Underline="False" ForeColor="White" style="background-color: #009933; font-size: medium; font-family: Arial, Helvetica, sans-serif;" Text="Iniciar Sesión" OnClick="Ingresar_Click" CssClass="auto-style4" />

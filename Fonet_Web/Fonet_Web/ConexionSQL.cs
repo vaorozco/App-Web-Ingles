@@ -20,8 +20,9 @@ namespace Fonet_Web
         {
         }
 
-        public void InsertarUsuario(string nombre, string apellido, string correo, string contraseña, int tipousuario)
+        public string InsertarUsuario(string nombre, string apellido, string correo, string contraseña, int tipousuario)
         {
+            string isTrue = "";
             using (SqlConnection conn = new SqlConnection(conexion))
             {
                 conn.Open();
@@ -33,6 +34,13 @@ namespace Fonet_Web
                 cmd.Parameters.Add(new SqlParameter("@contraseña", contraseña));
                 cmd.Parameters.Add(new SqlParameter("@tipousuario", tipousuario));
                 SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    isTrue = rdr.GetValue(0).ToString();
+                }
+                rdr.Close();
+                conn.Close();
+                return isTrue;
             }
         }
 
@@ -216,8 +224,9 @@ namespace Fonet_Web
             }
         }
 
-        public void InsertarFonema(string nombre, byte[] imagen, byte[] sonido)
+        public string InsertarFonema(string nombre, byte[] imagen, byte[] sonido)
         {
+            string isTrue = "";
             using (SqlConnection conn = new SqlConnection(conexion))
             {
                 conn.Open();
@@ -227,6 +236,13 @@ namespace Fonet_Web
                 cmd.Parameters.Add(new SqlParameter("@imagen", imagen));
                 cmd.Parameters.Add(new SqlParameter("@sonido", sonido));
                 SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    isTrue = rdr.GetValue(0).ToString();
+                }
+                rdr.Close();
+                conn.Close();
+                return isTrue;
             }
         }
 
@@ -272,7 +288,8 @@ namespace Fonet_Web
                     // Assuming your desired value is the name as the 3rd field
                     //Usuarios = myReader.GetValues(2).ToString()
                     fonema.nombre = myReader.GetValue(0).ToString();
-                    fonema.imagen = myReader.GetStream(1);
+                    //fonema.imagen = myReader.GetStream(1);
+                    fonema.imagen = (byte[])myReader["imagen"];
                     fonema.sonido = (byte[])myReader["sonido"];
                 }
 
@@ -418,8 +435,9 @@ namespace Fonet_Web
             }
         }
 
-        public void InsertarPalabra(string nombre, byte[] imagen, byte[] sonido)
+        public string InsertarPalabra(string nombre, byte[] imagen, byte[] sonido)
         {
+            string isTrue = "";
             using (SqlConnection conn = new SqlConnection(conexion))
             {
                 conn.Open();
@@ -429,6 +447,13 @@ namespace Fonet_Web
                 cmd.Parameters.Add(new SqlParameter("@imagen", imagen));
                 cmd.Parameters.Add(new SqlParameter("@sonido", sonido));
                 SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    isTrue = rdr.GetValue(0).ToString();
+                }
+                rdr.Close();
+                conn.Close();
+                return isTrue;
             }
         }
 
@@ -443,6 +468,19 @@ namespace Fonet_Web
                 cmd.Parameters.Add(new SqlParameter("@nombre", nombre));
                 cmd.Parameters.Add(new SqlParameter("@imagen", imagen));
                 cmd.Parameters.Add(new SqlParameter("@sonido", sonido));
+                SqlDataReader rdr = cmd.ExecuteReader();
+            }
+        }
+
+        public void ModificarFonemaPalabra(int idpalabra, int idfonema)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("ModificarFonemaPalabra", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@idpalabra", idpalabra));
+                cmd.Parameters.Add(new SqlParameter("@idfonema", idfonema));
                 SqlDataReader rdr = cmd.ExecuteReader();
             }
         }
@@ -474,7 +512,7 @@ namespace Fonet_Web
                     // Assuming your desired value is the name as the 3rd field
                     //Usuarios = myReader.GetValues(2).ToString()
                     palabra.nombre = myReader.GetValue(0).ToString();
-                    palabra.imagen = myReader.GetStream(1);
+                    palabra.imagen = (byte[])myReader["imagen"];
                     palabra.sonido = (byte[])myReader["sonido"];
                 }
 
@@ -484,8 +522,30 @@ namespace Fonet_Web
             }
         }
 
-        public void InsertarPalabraXFonema(string idfonema,string idpalabra)
+        public String SeleccionarFonemaPalabra(int id)
         {
+            String IDFonema = "";
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SeleccionarFonemaPalabra", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@idpalabra", id));
+                SqlDataReader myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    IDFonema = myReader.GetValue(0).ToString();
+                }
+
+                myReader.Close();
+                conn.Close();
+                return IDFonema;
+            }
+        }
+
+        public string InsertarPalabraXFonema(string idfonema,string idpalabra)
+        {
+            string isTrue = "";
             using (SqlConnection conn = new SqlConnection(conexion))
             {
                 conn.Open();
@@ -494,6 +554,13 @@ namespace Fonet_Web
                 cmd.Parameters.Add(new SqlParameter("@fonema", idfonema));
                 cmd.Parameters.Add(new SqlParameter("@palabra", idpalabra));
                 SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    isTrue = rdr.GetValue(0).ToString();
+                }
+                rdr.Close();
+                conn.Close();
+                return isTrue;
             }
         }
     }

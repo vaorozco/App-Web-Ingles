@@ -33,28 +33,33 @@ namespace Fonet_Web
         {
             
             ConexionSQL conexion = new ConexionSQL();
-            byte[] sonido;
-            BinaryReader br = new BinaryReader(FileUpload2.PostedFile.InputStream);
-            sonido = br.ReadBytes((int)FileUpload2.PostedFile.InputStream.Length);
+            byte[] sonido = ControladorUI.Instance.get_sonido();
+            /*BinaryReader br = new BinaryReader(FileUpload2.PostedFile.InputStream);
+            sonido = br.ReadBytes((int)FileUpload2.PostedFile.InputStream.Length);*/
 
             /*int tamaño = FileUpload1.PostedFile.ContentLength;
             byte[] imagenoriginal = new byte[tamaño];
             FileUpload1.PostedFile.InputStream.Read(imagenoriginal, 0, tamaño);*/
 
-            int tamaño = ControladorUI.Instance.get_tamañoimagen();
-            byte[] imagenoriginal = new byte[tamaño];
-            ControladorUI.Instance.get_imagen().Read(imagenoriginal, 0, tamaño);
+            byte[] imagen = ControladorUI.Instance.get_imagen();
             //Bitmap ImagenOriginalBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
             try
             {
-                conexion.InsertarFonema(TextBox1.Text, imagenoriginal, sonido);
-                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                string isTrue = conexion.InsertarFonema(TextBox1.Text, imagen, sonido);
+                if (isTrue == "0")
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('El fonema no se guardó ya existe');", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Se Registro el Fonema'); window.location='" + Request.ApplicationPath + "GestionarFonema.aspx';", true);
+                }
             }
             catch
             {
-                Console.WriteLine("No se Pudo");
+                Console.WriteLine("Falló");
             }
-        }
+    }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -63,13 +68,17 @@ namespace Fonet_Web
                 ConexionSQL conexion = new ConexionSQL();
                 Fonema fonema = new Fonema();
                 fonema = conexion.SeleccionarFonema(int.Parse(GridView1.SelectedRow.Cells[1].Text));
+                ControladorUI.Instance.set_sonido(fonema.sonido);
+                ControladorUI.Instance.set_imagen(fonema.imagen);
                 TextBox1.Text = fonema.nombre;
-                System.Drawing.Image imagen = System.Drawing.Image.FromStream(fonema.imagen);
+                //System.Drawing.Image imagen = System.Drawing.Image.FromStream(fonema.imagen);
+                System.Drawing.Image imagen = byteArrayToImage(fonema.imagen);
                 string folderPath = Server.MapPath("~/Recursos/");
-                imagen.Save(folderPath + "Prueba.png");
-                File.WriteAllBytes(folderPath + "Prueba.wav", fonema.sonido);
-                Label1.Text = folderPath + "Prueba.wav";
-                Image1.ImageUrl = "~/Recursos/Prueba.png";
+                imagen.Save(folderPath + fonema.nombre + ".png");
+                File.WriteAllBytes(folderPath + fonema.nombre + ".wav", fonema.sonido);
+                Label1.Text = folderPath + fonema.nombre + ".wav";
+                Label5.Text = fonema.nombre + ".wav";
+                Image1.ImageUrl = "~/Recursos/"+ fonema.nombre + ".png";
             }
             catch
             {
@@ -96,8 +105,10 @@ namespace Fonet_Web
                 //Display the Picture in Image control.
                 Image1.ImageUrl = "~/Recursos/" + Path.GetFileName(FileUpload1.FileName);
 
-                ControladorUI.Instance.set_imagen(FileUpload1.PostedFile.InputStream);
-                ControladorUI.Instance.set_tamañoimagen(FileUpload1.PostedFile.ContentLength);
+                int tamaño = FileUpload1.PostedFile.ContentLength;
+                byte[] imagenoriginal = new byte[tamaño];
+                FileUpload1.PostedFile.InputStream.Read(imagenoriginal, 0, tamaño);
+                ControladorUI.Instance.set_imagen(imagenoriginal);
             }
             catch
             {
@@ -158,17 +169,21 @@ namespace Fonet_Web
             try
             {
                 ConexionSQL conexion = new ConexionSQL();
-                byte[] sonido;
+                byte[] sonido = ControladorUI.Instance.get_sonido();
+                /*byte[] sonido;
                 BinaryReader br = new BinaryReader(FileUpload2.PostedFile.InputStream);
-                sonido = br.ReadBytes((int)FileUpload2.PostedFile.InputStream.Length);
+                sonido = br.ReadBytes((int)FileUpload2.PostedFile.InputStream.Length);*/
 
-                int tamaño = FileUpload1.PostedFile.ContentLength;
+                /*int tamaño = FileUpload1.PostedFile.ContentLength;
                 byte[] imagenoriginal = new byte[tamaño];
                 FileUpload1.PostedFile.InputStream.Read(imagenoriginal, 0, tamaño);
-                Bitmap ImagenOriginalBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
+                Bitmap ImagenOriginalBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);*/
 
-                conexion.ModificarFonema(int.Parse(GridView1.SelectedRow.Cells[1].Text), TextBox1.Text, imagenoriginal, sonido);
-                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                byte[] imagen = ControladorUI.Instance.get_imagen();
+
+                conexion.ModificarFonema(int.Parse(GridView1.SelectedRow.Cells[1].Text), TextBox1.Text, imagen, sonido);
+                //Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Se Modifico el Fonema'); window.location='" + Request.ApplicationPath + "GestionarFonema.aspx';", true);
             }
             catch
             {
@@ -182,7 +197,7 @@ namespace Fonet_Web
             {
                 ConexionSQL conexion = new ConexionSQL();
                 conexion.BorrarFonema(int.Parse(GridView1.SelectedRow.Cells[1].Text));
-                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Se Elimino el Fonema'); window.location='" + Request.ApplicationPath + "GestionarFonema.aspx';", true);
             }
             catch
             {
@@ -205,20 +220,44 @@ namespace Fonet_Web
             Response.Redirect("login.aspx");
         }
 
-        public static byte[] Convertir_Imagen_Bytes(System.Drawing.Image img)
+        protected void ImageButton14_Click(object sender, ImageClickEventArgs e)
         {
+            try
+            {
+                string folderPath = Server.MapPath("~/Recursos/");
 
+                //Check whether Directory (Folder) exists.
+                if (!Directory.Exists(folderPath))
+                {
+                    //If Directory (Folder) does not exists Create it.
+                    Directory.CreateDirectory(folderPath);
+                }
 
-            string sTemp = Path.GetTempFileName();
-            FileStream fs = new FileStream(sTemp, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            img.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
-            fs.Position = 0;
+                //Save the File to the Directory (Folder).
+                FileUpload2.SaveAs(folderPath + Path.GetFileName(FileUpload2.FileName));
 
-            int imgLength = Convert.ToInt32(fs.Length);
-            byte[] bytes = new byte[imgLength];
-            fs.Read(bytes, 0, imgLength);
-            fs.Close();
-            return bytes;
+                //Display the Picture in Image control.
+                this.Label5.Text = FileUpload2.FileName;
+                this.Label1.Text = folderPath + FileUpload2.FileName;
+
+                byte[] sonido;
+                BinaryReader br = new BinaryReader(FileUpload2.PostedFile.InputStream);
+                sonido = br.ReadBytes((int)FileUpload2.PostedFile.InputStream.Length);
+                ControladorUI.Instance.set_sonido(sonido);
+            }
+            catch
+            {
+                Console.WriteLine("Falló");
+            }
+        }
+
+        public System.Drawing.Image byteArrayToImage(byte[] bytesArr)
+        {
+            using (MemoryStream memstr = new MemoryStream(bytesArr))
+            {
+                System.Drawing.Image img = System.Drawing.Image.FromStream(memstr);
+                return img;
+            }
         }
     }
 }

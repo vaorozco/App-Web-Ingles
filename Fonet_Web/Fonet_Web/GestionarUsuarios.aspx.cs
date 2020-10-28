@@ -26,8 +26,15 @@ namespace Fonet_Web
             try
             {
                 ConexionSQL conexion = new ConexionSQL();
-                conexion.InsertarUsuario(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, int.Parse(DropDownList1.SelectedValue));
-                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                string isTrue = conexion.InsertarUsuario(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, int.Parse(DropDownList1.SelectedValue));
+                if (isTrue == "0")
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('El usuario no se guardó ya existe');", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Se registro el usuario'); window.location='" + Request.ApplicationPath + "GestionarUsuarios.aspx';", true);
+                }
             }
             catch
             {
@@ -43,6 +50,7 @@ namespace Fonet_Web
                 TextBox2.Text = GridView1.SelectedRow.Cells[4].Text;
                 TextBox3.Text = GridView1.SelectedRow.Cells[5].Text;
                 TextBox4.Text = GridView1.SelectedRow.Cells[6].Text;
+                DropDownList1.SelectedValue = GridView1.SelectedRow.Cells[2].Text;
             }
             catch
             {
@@ -56,7 +64,8 @@ namespace Fonet_Web
             {
                 ConexionSQL conexion = new ConexionSQL();
                 conexion.ModificarUsuario(int.Parse(GridView1.SelectedRow.Cells[1].Text), TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, int.Parse(DropDownList1.SelectedValue));
-                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                //Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect","alert('Se Modifico el Usuario'); window.location='" +Request.ApplicationPath + "GestionarUsuarios.aspx';", true);
             }
             catch
             {
@@ -70,7 +79,7 @@ namespace Fonet_Web
             {
                 ConexionSQL conexion = new ConexionSQL();
                 conexion.BorrarUsuario(int.Parse(GridView1.SelectedRow.Cells[1].Text));
-                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Se Elimino el Usuario'); window.location='" + Request.ApplicationPath + "GestionarUsuarios.aspx';", true);
             }
             catch
             {

@@ -155,9 +155,11 @@
                 <td class="auto-style13">Sonido:</td>
                 <td class="auto-style19">
                     <asp:Label ID="Label1" runat="server" Text="Ruta" CssClass="auto-style13" Visible="False"></asp:Label>
+                    <asp:Label ID="Label5" runat="server" CssClass="auto-style13" Text="Nombre"></asp:Label>
                 </td>
                 <td class="auto-style22">
                     <asp:FileUpload ID="FileUpload2" runat="server" />
+                    <asp:ImageButton ID="ImageButton14" runat="server" Height="22px" ImageUrl="~/Recursos/anadir.png" OnClick="ImageButton14_Click" Width="22px" />
                     <asp:ImageButton ID="ImageButton5" runat="server" Height="22px" ImageUrl="~/Recursos/altavoz.png" Width="22px" OnClick="ImageButton5_Click1" />
                 </td>
             </tr>

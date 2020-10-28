@@ -10,12 +10,12 @@ namespace Fonet_Web
     {
         public string nombre { get; set; }
 
-        public int fonema { get; set; }
+        public string fonema { get; set; }
 
-        public Stream imagen { get; set; }
+        public byte[] imagen { get; set; }
         public byte[] sonido { get; set; }
 
-        public Palabra(string nombre, int fonema, Stream imagen, byte[] sonido)
+        public Palabra(string nombre, string fonema, byte[] imagen, byte[] sonido)
         {
             this.nombre = nombre;
             this.fonema = fonema;
