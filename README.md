@@ -70,6 +70,8 @@ Gestor de Contenido Web
 Gestor de Contenido Web
 -Se modifica el diseño de las ventanas.
 
+-Se realizan las pruebas.
+
 24/10/2020
 Gestor de Contenido Web
 -Se agrega la ventana de BancoFonemas.
@@ -134,6 +136,8 @@ Aplicación Móvil
 
 23/10/2020
 -Se crea stored procedure obtenerFonemas
+
+-Se realizan las pruebas.
 
 27/10/2020
 -Se crea interfaz de banco de fonemas
