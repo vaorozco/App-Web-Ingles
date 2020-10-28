@@ -59,6 +59,7 @@ Gestor de Contenido Web
 21/10/2020
 Gestor de Contenido Web
 -Se agregan caracteristicas para las funcionalidades de la ventana de Gestionar Palabra.
+-Se agregan caracteristicas de la funcion de recuperar contraseña.
 
 22/10/2020
 Gestor de Contenido Web
