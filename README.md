@@ -113,3 +113,10 @@ Aplicación Móvil
 19/10/2020
 -Se realiza función Recuperar Contraseña
 -Arreglo de validaciones
+
+23/10/2020
+-Se crea stored procedure obtenerFonemas
+
+27/10/2020
+-Se crea interfaz de banco de fonemas
+-Se hacen pruebas con obtenerFonemas en la aplicación
