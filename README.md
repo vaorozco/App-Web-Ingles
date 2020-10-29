@@ -89,6 +89,11 @@ Gestor de Contenido Web
 Base de Datos
 -Se crea los stored procedured de seleccionarfonemapalabra y seleccionarpalabrafonema.
 
+28/10/2020
+Gestor de Contenido Web
+-Se prueba la funcionalidad para agregar la imagen de los fonemas de manera dinamica para la ventana de Banco de Fonemas.
+-Se agrega diseño de la ventana de banco de fonemas.
+
 Víctor Alonso Orozco Calderón - 2016240613
 
 Aplicación Móvil
