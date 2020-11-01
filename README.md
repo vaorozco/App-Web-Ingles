@@ -141,9 +141,13 @@ Aplicación Móvil
 
 23/10/2020
 -Se crea stored procedure obtenerFonemas
-
 -Se realizan las pruebas.
 
 27/10/2020
 -Se crea interfaz de banco de fonemas
 -Se hacen pruebas con obtenerFonemas en la aplicación
+
+31/10/2020
+-Arreglo de interfaz de Login
+-Se completa interfaz de Ver Fonema y se añaden los fonemas a esa sección
+-Se completó funcionamiento de Comparar Fonema
