@@ -9,12 +9,18 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.media.ImageWriter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +41,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     Button botonRegistro, botonIniciar;
     TextView textoRecuperar;
     EditText correo, contraseña;
+    String correoEntrada, contraseñaEntrada,nombre, apellido, nombreElemento;
+    int IDUsuario;
+    //String image;
+    //Byte sonido;
+    byte[] imagen, sonido;
     ConstraintLayout constraintLayout;
     ProgressDialog progressDialog;
 
@@ -43,7 +54,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, PackageManager.PERMISSION_GRANTED);
-        //button = (Button) findViewById(R.id.button2);
         botonIniciar = (Button) findViewById(R.id.button2);
         botonRegistro = (Button) findViewById(R.id.button3);
         textoRecuperar = (TextView) findViewById(R.id.textView2);
@@ -69,8 +79,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             else {
                 Login.admitirUsuario admitirUsuario = new Login.admitirUsuario();
                 admitirUsuario.execute("");
-                //Intent in = new Intent(getApplicationContext(), MenuPrincipal.class);
-                //startActivity(in);
             }
         }
     }
@@ -107,40 +115,72 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             try {
                 ConnectionHelper con = new ConnectionHelper();
                 Connection connect = conexionBD();
-                CallableStatement sp = conexionBD().prepareCall("{call dbo.loginCredenciales(?,?) }");
-                String correoEntrada = correo.getText().toString();
-                String contraseñaEntrada = contraseña.getText().toString();
+                CallableStatement sp = conexionBD().prepareCall("{call dbo.loginApp(?,?) }");
+                correoEntrada = correo.getText().toString();
+                contraseñaEntrada = contraseña.getText().toString();
                 sp.setString(1,correoEntrada);
                 sp.setString(2,contraseñaEntrada);
-                //sp.setString(1, correo.getText().toString());
-                //sp.setString(2, contraseña.getText().toString());
                 ResultSet rs = sp.executeQuery();
                 rs.next();
                 int valorRetorno = rs.getInt(1);
-                //System.out.println("RESULTADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"+valorRetorno);
                 if (valorRetorno==0){
+                    sp.close();
+                    conexionBD().close();
                     progressDialog.dismiss();
                     ShowSnackBar("Correo o contraseña incorrectos");
                 }
                 else{
+                    IDUsuario = rs.getInt(2);
+                    nombre = rs.getString(3);
+                    apellido = rs.getString(4);
+                    sp.close(); // se cierra sp de loginAPP
+
+                    //------------------------------Empieza código 2da Iteración------------------------------
+                    //-------------------------------Descargar Fonemas de la BD-------------------------------
+
+                    Usuario usuario = new Usuario(IDUsuario,nombre,apellido,correoEntrada,contraseñaEntrada);
+                    CallableStatement spFonema = conexionBD().prepareCall("{call dbo.obtenerFonemas }");
+                    ResultSet rsFonema = spFonema.executeQuery();
+                    while(rsFonema.next()) {
+                        nombreElemento = rsFonema.getString(1);
+                        byte[] imagen = rsFonema.getBytes(2);
+                        byte[] sonido = rsFonema.getBytes(3);
+                        //byte[] bytes = android.util.Base64.decode(image, Base64.DEFAULT);
+                        //Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                        //imagenPrueba.setImageBitmap(bitmap);
+                        //sonido = rsFonema.getByte(3);
+                        //System.out.println("Nombreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee: "+nombreFonema);
+                        //System.out.println("Imagen: "+imagen);
+                        //System.out.println("Sonido: "+sonido);
+                        Fonema fonema = new Fonema(nombreElemento, imagen, sonido);//, sonido);
+                        fonema.agregarFonema(fonema);
+                    }
+                    rsFonema.close();
+
+                    CallableStatement spPalabra = conexionBD().prepareCall("{call dbo.obtenerPalabras }");
+                    ResultSet rsPalabra = spPalabra.executeQuery();
+                    while(rsPalabra.next()){
+                        nombreElemento = rsPalabra.getString(1);
+                        imagen = rsPalabra.getBytes(2);
+                        sonido = rsPalabra.getBytes(2);
+                        System.out.println("Nombreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee Palabraaaaaaaaaaaaaaaaaaaaaaaaa: "+nombreElemento);
+                        Palabra palabra = new Palabra(nombreElemento, imagen, sonido);
+                        palabra.agregarPalabra(palabra);
+
+                    }
+                    rsPalabra.close();
+                        //System.out.println("Primer Fonema------------------------------: "+fonema.listaFonemas.get(0).getNombre());
+                        //System.out.println("Segundo Fonema------------------------------: "+fonema.listaFonemas.get(1).getNombre());
+
+
+                    //rsFonema.close();//cierra sp obtenerFonemas
+                    //------------------------------Termina código 2da Iteración------------------------------
+
+
+                    conexionBD().close();
                     Intent in = new Intent(getApplicationContext(), MenuPrincipal.class); // si existe se abre menú principal
                     startActivity(in);
-                   /* CallableStatement sp_obtenerUsuario = conexionBD().prepareCall("{call dbo.obtenerUsuario(?) }");
-                   sp_obtenerUsuario.setString(1,correoEntrada);
-                   ResultSet rs2 = sp_obtenerUsuario.executeQuery();
-                   rs2.next();
-                   int valor = rs2.getInt(1);
-                   if (valor==0){
-                    System.out.println("Error no existe usuario");
                 }
-                else{
-                    Usuario usario = new Usuario();
-                    }
-
-                   */
-                }
-                sp.close();
-                conexionBD().close();
                 return "¡Bienvenido";
 
             } catch (SQLException e) {
@@ -148,6 +188,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 return e.getMessage().toString();
             }
         }
+
     }
 }
 

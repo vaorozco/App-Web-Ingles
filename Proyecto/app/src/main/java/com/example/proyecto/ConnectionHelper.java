@@ -25,5 +25,7 @@ public class ConnectionHelper {
         } catch (Exception e) {
             Log.e("ERRO", e.getMessage());
         }
-        return conexion;}
+        return conexion;
     }
+
+}

@@ -10,14 +10,29 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import static android.text.TextUtils.isEmpty;
+import static com.example.proyecto.ConnectionHelper.conexionBD;
 
 public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
         DrawerLayout drawerLayout;
         NavigationView navigationView;
         Toolbar toolbar;
+        TextView textView, nombre, apellido, correo, contraseña;
+        Button modificarPerfil;
+        String nombreModificado, apellidoModificado, contraseñaModificada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +41,27 @@ public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavi
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar4);
+        nombre = findViewById(R.id.nombrePerfil);
+        apellido = findViewById(R.id.apellidoPerfil);
+        correo = findViewById(R.id.correoPerfil);
+        contraseña = findViewById(R.id.contraseñaPerfil);
         /*-------------------------------------Toolbar-------------------------------------*/
         //setSupportActionBar(toolbar);
         navigationView.bringToFront();
-        ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toogle);
         toogle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_profile);
+        View header = navigationView.getHeaderView(0);
+        Usuario usuario = new Usuario();
+        textView = header.findViewById(R.id.nombreMenu);
+        textView.setText(usuario.getNombre()+" "+usuario.getApellido()); //nombre del usuario registrado en el header
+        nombre.setText(usuario.getNombre()); //nombre del usuario registrado
+        apellido.setText(usuario.getApellido()); //nombre del usuario registrado
+        correo.setText(usuario.getCorreo()); //nombre del usuario registrado
+        contraseña.setText(usuario.getContraseña()); //nombre del usuario registrado
     }
-
     @Override
     public void onBackPressed(){
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){

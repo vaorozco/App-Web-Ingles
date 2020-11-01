@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static android.text.TextUtils.isEmpty;
 import static com.example.proyecto.ConnectionHelper.conexionBD;
 
 public class RecuperarContrasena extends AppCompatActivity  implements View.OnClickListener {
@@ -43,31 +44,35 @@ public class RecuperarContrasena extends AppCompatActivity  implements View.OnCl
     }
     @Override
     public void onClick(View v) {
-        try {
-            ConnectionHelper con = new ConnectionHelper();
-            Connection connect = conexionBD();
-            CallableStatement sp = conexionBD().prepareCall("{call dbo.recuperarContraseña(?) }");
-            String email = correo.getText().toString();
-            sp.setString(1,email);
-            ResultSet rs = sp.executeQuery();
-            rs.next();
-            int valorRetorno = rs.getInt(1);
-            if (valorRetorno==0){
+        if (isEmpty(correo.getText().toString()))
+            Toast.makeText(RecuperarContrasena.this, "Debe ingresar su correo electrónico", Toast.LENGTH_SHORT).show();
+        else {
+            try {
+
+                ConnectionHelper con = new ConnectionHelper();
+                Connection connect = conexionBD();
+                CallableStatement sp = conexionBD().prepareCall("{call dbo.recuperarContraseña(?) }");
+                String email = correo.getText().toString();
+                sp.setString(1, email);
+                ResultSet rs = sp.executeQuery();
+                rs.next();
+                int valorRetorno = rs.getInt(1);
+                if (valorRetorno == 0) {
+                    sp.close();
+                    conexionBD().close();
+                    Toast.makeText(RecuperarContrasena.this, "El correo no está registrado", Toast.LENGTH_LONG).show();
+                } else {
+                    nombre = rs.getString(2);
+                    apellido = rs.getString(3);
+                    contraseña = rs.getString(4);
+                    sendEmail(email, nombre, apellido, contraseña);
+                }
                 sp.close();
                 conexionBD().close();
-                Toast.makeText(RecuperarContrasena.this,"El correo no está registrado",Toast.LENGTH_LONG).show();
-            }
-            else{
-                nombre = rs.getString(2);
-                apellido = rs.getString(3);
-                contraseña = rs.getString(4);
-                sendEmail(email,nombre,apellido,contraseña);
-            }
-            sp.close();
-            conexionBD().close();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

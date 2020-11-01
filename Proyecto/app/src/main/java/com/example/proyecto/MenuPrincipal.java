@@ -19,17 +19,22 @@ import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MenuPrincipal extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
-    ImageView imagenJuegos, imagenCompararFonemas, imagenCompararPalabras;
+    ImageView bancoFonemas, imagenJuegos, imagenCompararFonemas, imagenCompararPalabras;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
+        View header = navigationView.getHeaderView(0);
         toolbar = findViewById(R.id.toolbar1);
+        textView = header.findViewById(R.id.nombreMenu);
+        Usuario usuario = new Usuario();
+        textView.setText(usuario.getNombre()+" "+usuario.getApellido()); //nombre del usuario registrado en el header
         /*-------------------------------------Toolbar-------------------------------------*/
         //setSupportActionBar(toolbar);
         navigationView.bringToFront();
@@ -39,14 +44,15 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
+        bancoFonemas = findViewById(R.id.imageView2);
         imagenJuegos = findViewById(R.id.imageView5);
         imagenCompararFonemas = findViewById(R.id.imageView3);
         imagenCompararPalabras = findViewById(R.id.imageView4);
-        //botonRegistro = (Button) findViewById(R.id.button3);
-        //textoRecuperar = (TextView) findViewById(R.id.textView2);
+        bancoFonemas.setOnClickListener(this);
         imagenJuegos.setOnClickListener(this);
         imagenCompararFonemas.setOnClickListener(this);
         imagenCompararPalabras.setOnClickListener(this);
+
         //botonRegistro.setOnClickListener(this);
         //textoRecuperar.setOnClickListener(this);
     }
@@ -95,12 +101,12 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
         {
             Intent intent3 = new Intent(getApplicationContext(),CompararPalabra.class);
             startActivity(intent3);
-        }/*
-        else if (v.getId()==R.id.button2)
+        }
+        else if (v.getId()==R.id.imageView2)
         {
-            Intent in=new Intent(getApplicationContext(),MenuPrincipal.class);
+            Intent in=new Intent(getApplicationContext(),BancoFonemas.class);
             startActivity(in);
-        }*/
+        }
     }
 
 }

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Login"
-    android:id="@+id/conLogin">
+    tools:context=".Login">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView2"
@@ -17,6 +22,7 @@
         android:layout_marginEnd="132dp"
         android:layout_marginRight="132dp"
         android:layout_marginBottom="64dp"
+        android:clickable="true"
         android:fontFamily="@font/montserrat"
         android:text="Olvidé mi contraseña"
         android:textColor="#000000"
@@ -66,21 +72,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="364dp"
-        android:layout_height="256dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.411"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fonet" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="256dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.411"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fonet" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress3"
@@ -118,3 +124,5 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

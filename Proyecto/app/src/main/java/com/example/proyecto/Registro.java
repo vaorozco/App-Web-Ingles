@@ -101,16 +101,18 @@ public class Registro extends AppCompatActivity {
                     progressDialog.dismiss();
                     sp.close();
                     conexionBD().close();
-                    //ShowSnackBar("Ya existe una cuenta con ese correo");
+                    //Toast.makeText(Registro.this,"Ya existe una cuenta con ese correo",Toast.LENGTH_SHORT);
+                    ShowSnackBar("Ya existe una cuenta con ese correo");
                 }
                 else{
-                    //progressDialog.dismiss();
-                    //ShowSnackBar("Ha sido registrado");
-                    Intent in = new Intent(Registro.this, Login.class); // si existe se abre menú principal
+                    progressDialog.dismiss();
+                    ShowSnackBar("Ha sido registrado");
+                    Intent in = new Intent(getApplicationContext(), Login.class); // si existe se envía al login
+                    startActivity(in);
                 }
                 sp.close();
                 conexionBD().close();
-                return "Ya existe una cuenta con ese correo";
+                return "Intente de Nuevo";//"Ya existe una cuenta con ese correo";
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -118,15 +120,12 @@ public class Registro extends AppCompatActivity {
             }
         }
 
-        @Override
+        /*@Override
         protected void onPostExecute(String result) {
             ShowSnackBar(result);
-            //Toast.makeText(Registro.this,result,Toast.LENGTH_SHORT);
-            //progressBar.setVisibility(View.GONE);
-            //registrarme.setVisibility(View.VISIBLE);
             if (result.equals("Registro exitoso")) {
                 // Clear();
             }
-        }
+        }*/
     }
 }
