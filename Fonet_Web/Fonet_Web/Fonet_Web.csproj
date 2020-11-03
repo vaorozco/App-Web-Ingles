@@ -94,9 +94,13 @@
     <Content Include="GestionarFonema.aspx" />
     <Content Include="GestionarUsuarios.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="Memoria.aspx" />
     <Content Include="MenuGestionar.aspx" />
     <Content Include="MenúEstudiante.aspx" />
     <Content Include="MenúAdmin.aspx" />
+    <Content Include="MenúJuegos.aspx" />
+    <Content Include="Pareo.aspx" />
+    <Content Include="PruebaBotones.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="Recursos\ajustes.png" />
     <Content Include="Recursos\altavoz.png" />
@@ -169,6 +173,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Memoria.aspx.cs">
+      <DependentUpon>Memoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Memoria.aspx.designer.cs">
+      <DependentUpon>Memoria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MenuGestionar.aspx.cs">
       <DependentUpon>MenuGestionar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -190,8 +201,29 @@
     <Compile Include="MenúAdmin.aspx.designer.cs">
       <DependentUpon>MenúAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MenúJuegos.aspx.cs">
+      <DependentUpon>MenúJuegos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenúJuegos.aspx.designer.cs">
+      <DependentUpon>MenúJuegos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Palabra.cs" />
+    <Compile Include="Pareo.aspx.cs">
+      <DependentUpon>Pareo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pareo.aspx.designer.cs">
+      <DependentUpon>Pareo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PruebaBotones.aspx.cs">
+      <DependentUpon>PruebaBotones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PruebaBotones.aspx.designer.cs">
+      <DependentUpon>PruebaBotones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RecuperarC.cs" />
     <Compile Include="RecuperarContraseña.aspx.cs">
       <DependentUpon>RecuperarContraseña.aspx</DependentUpon>

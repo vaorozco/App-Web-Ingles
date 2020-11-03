@@ -19,7 +19,7 @@ namespace Fonet_Web
             ConexionSQL conexion = new ConexionSQL();
             if(TextBox4.Text == TextBox5.Text)
             {
-                conexion.InsertarUsuario(this.TextBox2.Text, this.TextBox3.Text, this.TextBox4.Text, this.TextBox5.Text, 2);
+                conexion.InsertarUsuario(this.TextBox1.Text, this.TextBox2.Text, this.TextBox3.Text, this.TextBox4.Text, 2);
             }
             else
             {

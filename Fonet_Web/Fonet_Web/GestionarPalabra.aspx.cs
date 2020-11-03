@@ -162,6 +162,7 @@ namespace Fonet_Web
             try
             {
                 ConexionSQL conexion = new ConexionSQL();
+                conexion.BorrarPalabraFonema(int.Parse(GridView1.SelectedRow.Cells[1].Text));
                 conexion.BorrarPalabra(int.Parse(GridView1.SelectedRow.Cells[1].Text));
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Se Elimino la Palabra'); window.location='" + Request.ApplicationPath + "GestionarPalabra.aspx';", true);
             }

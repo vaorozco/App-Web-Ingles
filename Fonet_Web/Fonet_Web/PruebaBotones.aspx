@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClickFonema.aspx.cs" Inherits="Fonet_Web.ClickFonema" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PruebaBotones.aspx.cs" Inherits="Fonet_Web.PruebaBotones" %>
 
 <!DOCTYPE html>
 
@@ -49,34 +49,12 @@
             color: #FFFFFF;
             font-family: Arial, Helvetica, sans-serif;
         }
-        .auto-style15 {
-            width: 524px;
-            height: 412px;
+        .auto-style21 {
+            width: 1293px;
+            height: 449px;
             position: absolute;
-            left: 51px;
-            top: 192px;
-        }
-        .auto-style16 {
-            height: 415px;
-            position: absolute;
-            left: 796px;
-            top: 194px;
-            width: 41%;
-            margin-top: 0px;
-        }
-        .auto-style17 {
-            height: 102px;
-        }
-        .auto-style18 {
-            height: 102px;
-            width: 217px;
-        }
-        .auto-style19 {
-            height: 102px;
-            width: 216px;
-        }
-        .auto-style20 {
-            background-color: #C0C0C0;
+            left: 49px;
+            top: 146px;
         }
     </style>
 </head>
@@ -94,10 +72,10 @@
                             <asp:ImageButton ID="ImageButton9" runat="server" Height="30px" ImageUrl="~/Recursos/gamepad.png" Width="30px" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton10" runat="server" Height="30px" ImageUrl="~/Recursos/casa.png" Width="30px" OnClick="ImageButton10_Click" />
+                            <asp:ImageButton ID="ImageButton10" runat="server" Height="30px" ImageUrl="~/Recursos/casa.png" Width="30px"  />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton11" runat="server" Height="30px" ImageUrl="~/Recursos/ajustes.png" Width="30px" OnClick="ImageButton11_Click" />
+                            <asp:ImageButton ID="ImageButton11" runat="server" Height="30px" ImageUrl="~/Recursos/ajustes.png" Width="30px" />
                         </td>
                         <td>
                             <asp:ImageButton ID="ImageButton12" runat="server" Height="30px" ImageUrl="~/Recursos/usuario.png" Width="30px" />
@@ -113,30 +91,14 @@
                         <asp:Label ID="Label1" runat="server" Text="Label" CssClass="auto-style14"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:Button ID="Button2" runat="server" BorderStyle="None" CssClass="auto-style13" OnClick="Button2_Click" style="height: 22px" Text="Cerrar Sesión" Width="115px" />
+                        <asp:Button ID="Button2" runat="server" BorderStyle="None" CssClass="auto-style13" style="height: 22px" Text="Cerrar Sesión" Width="115px" />
                     </td>
                 </tr>
             </table>
-            <asp:Label ID="Label2" runat="server" CssClass="auto-style12" Text="Fonema"></asp:Label>
+            <asp:Label ID="Label2" runat="server" CssClass="auto-style12" Text="Banco Fonemas"></asp:Label>
         </p>
-        <asp:Image ID="Image1" runat="server" CssClass="auto-style15" Height="420px" />
-        <table class="auto-style16">
-            <tr>
-                <td class="auto-style19">
-                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-                </td>
-                <td class="auto-style18"></td>
-                <td class="auto-style17">
-                    <asp:ImageButton ID="ImageButton13" runat="server" />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <asp:Panel ID="Panel2" runat="server" CssClass="auto-style20" Height="301px">
-                    </asp:Panel>
-                </td>
-            </tr>
-        </table>
+        <asp:Panel ID="Panel2" runat="server" CssClass="auto-style21">
+        </asp:Panel>
     </form>
 </body>
 </html>

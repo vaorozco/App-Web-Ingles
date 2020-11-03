@@ -33,5 +33,10 @@ namespace Fonet_Web
         {
             Response.Redirect("login.aspx");
         }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            Server.Transfer("PruebaBotones.aspx");
+        }
     }
 }

@@ -497,6 +497,18 @@ namespace Fonet_Web
             }
         }
 
+        public void BorrarPalabraFonema(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("BorrarPalabraFonema", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@idpalabra", id));
+                SqlDataReader rdr = cmd.ExecuteReader();
+            }
+        }
+
         public Palabra SeleccionarPalabra(int id)
         {
             Palabra palabra = new Palabra();
