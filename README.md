@@ -94,6 +94,11 @@ Gestor de Contenido Web
 -Se prueba la funcionalidad para agregar la imagen de los fonemas de manera dinamica para la ventana de Banco de Fonemas.
 -Se agrega diseño de la ventana de banco de fonemas.
 
+2/11/2020
+Gestor de Contenido Web
+-Se añaden las pantallas de Menú Juegos, Memoria y Pareo
+-Se añaden caracteristicas de diseño de la pantalla de Click Fonema
+
 Víctor Alonso Orozco Calderón - 2016240613
 
 Aplicación Móvil
