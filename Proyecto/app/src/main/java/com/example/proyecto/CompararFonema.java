@@ -9,7 +9,6 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import java.io.File;
 import java.io.IOException;
 import android.Manifest;
 import android.content.Intent;
@@ -17,7 +16,6 @@ import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,8 +26,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.UUID;
 
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
@@ -68,14 +64,14 @@ public class CompararFonema extends AppCompatActivity implements NavigationView.
         if(!checkPermissionFromDevice())
             requestPermission();
         //Spinner
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner =  findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, fonema.listaNombres());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
 
-        botonEscucharFonema = findViewById(R.id.botonEscucharFonema);
+        botonEscucharFonema = findViewById(R.id.botonEscucharPalabra);
         botonGrabar = findViewById(R.id.botonGrabar); //button1 boton grabar
         botonParar = findViewById(R.id.botonParar); //button2 boton parar
         botonEscucharme = findViewById(R.id.botonEscucharme); //button3 boton escucharme

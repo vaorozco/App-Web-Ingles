@@ -19,7 +19,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,17 +32,18 @@ import java.util.UUID;
 
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-public class CompararPalabra extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class CompararPalabra extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener{
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    Button botonGrabar, botonParar, botonEscucharme;
+    Button botonGrabar, botonParar, botonEscucharPalabra ,botonEscucharme;
     String pathSave = "";
     MediaRecorder mediaRecorder;
     MediaPlayer mediaPlayer;
     TextView textView;
     final int REQUEST_PERMISSION_CODE=1000;
+    Fonema fonema = new Fonema();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,13 +59,21 @@ public class CompararPalabra extends AppCompatActivity implements NavigationView
         toogle.syncState();
         navigationView.setNavigationItemSelectedListener(this); //esto activa los botones del menú
         View header = navigationView.getHeaderView(0);
-        Usuario usuario = new Usuario();
+
         textView = header.findViewById(R.id.nombreMenu);
         //navigationView.setCheckedItem(R.id.nav_home);
 
         if(!checkPermissionFromDevice())
             requestPermission();
 
+        //Spinner
+        Spinner spinner = (Spinner) findViewById(R.id.spinner3);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, fonema.listaNombres());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+        botonEscucharPalabra = findViewById(R.id.botonEscucharPalabra);
         botonGrabar = findViewById(R.id.botonGrabar); //button1 boton grabar
         botonParar = findViewById(R.id.botonParar); //button2 boton parar
         botonEscucharme = findViewById(R.id.botonEscucharme); //button3 boton escucharme
@@ -126,7 +138,21 @@ public class CompararPalabra extends AppCompatActivity implements NavigationView
         });
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+        botonEscucharPalabra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fonema.reproducirSonido2(fonema.getListaFonemas().get(position).getSonido(),CompararPalabra.this);
+            }
+        });
+        Toast.makeText(getApplicationContext(), "Fonema seleccionado: "+fonema.listaNombres().get(position) ,Toast.LENGTH_SHORT).show();
+    }
 
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 
     private void setupMediaRecorder(){
         mediaRecorder = new MediaRecorder();

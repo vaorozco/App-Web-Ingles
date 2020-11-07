@@ -143,8 +143,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     ResultSet rsFonema = spFonema.executeQuery();
                     while(rsFonema.next()) {
                         nombreElemento = rsFonema.getString(1);
-                        byte[] imagen = rsFonema.getBytes(2);
-                        byte[] sonido = rsFonema.getBytes(3);
+                        imagen = rsFonema.getBytes(2);
+                        sonido = rsFonema.getBytes(3);
                         //byte[] bytes = android.util.Base64.decode(image, Base64.DEFAULT);
                         //Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
                         //imagenPrueba.setImageBitmap(bitmap);
