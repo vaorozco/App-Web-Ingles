@@ -156,3 +156,8 @@ Aplicación Móvil
 -Arreglo de interfaz de Login
 -Se completa interfaz de Ver Fonema y se añaden los fonemas a esa sección
 -Se completó funcionamiento de Comparar Fonema
+
+6/11/10
+-Arreglos en la interfaz de Juegos
+-Creación de Interfaz Memoria
+-Funcionalidad del juego Memoria 50% 
