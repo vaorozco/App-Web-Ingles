@@ -99,6 +99,10 @@ Gestor de Contenido Web
 -Se añaden las pantallas de Menú Juegos, Memoria y Pareo
 -Se añaden caracteristicas de diseño de la pantalla de Click Fonema
 
+7/11/2020
+Gestor de Contenido Web
+-Se mejoran caracteristicas de la pantalla de banco de fonemas
+
 Víctor Alonso Orozco Calderón - 2016240613
 
 Aplicación Móvil
