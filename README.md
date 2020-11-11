@@ -97,11 +97,25 @@ Gestor de Contenido Web
 2/11/2020
 Gestor de Contenido Web
 -Se añaden las pantallas de Menú Juegos, Memoria y Pareo
--Se añaden caracteristicas de diseño de la pantalla de Click Fonema
+-Se añaden caracteristicas de diseño de la ventana de Click Fonema
 
 7/11/2020
 Gestor de Contenido Web
--Se mejoran caracteristicas de la pantalla de banco de fonemas
+-Se mejoran caracteristicas de la ventana de banco de fonemas
+
+8/11/2020
+Gestor de Contenido Web
+-Se agrega la lógica para cargar la imagen en el click fonema.
+
+9/11/2020
+Gestor de Contenido Web
+-Se agregan caracteristicas de diseño a la ventana de Click Fonema para cargar las palabras de ejemplo del fonema.
+-Se agrega la función de cargar las imagenes y el nombre de las palabras de ejemplo del fonema.
+
+10/11/2020
+Gestor de Contenido Web
+-Se agrega las función para reproducir el sonido del fonemas.
+-Se agrega la función para reproducir el sonido de las palabras.
 
 Víctor Alonso Orozco Calderón - 2016240613
 
