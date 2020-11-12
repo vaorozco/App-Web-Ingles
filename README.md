@@ -117,65 +117,74 @@ Gestor de Contenido Web
 -Se agrega las función para reproducir el sonido del fonemas.
 -Se agrega la función para reproducir el sonido de las palabras.
 
+Aplicación Móvil
+
+11/11/2020
+- Se colabora con la aplicación móvil, se ejecutan procedimientos almacenados en Comparar Palabra y se finaliza la funcionalidad.
+
 Víctor Alonso Orozco Calderón - 2016240613
 
 Aplicación Móvil
 
 4/10/2020
--Se crea interfaz de Login, Registro y Recuperar Contraseña.
+- Se crea interfaz de Login, Registro y Recuperar Contraseña.
 
 5/10/2020
--Se agregan estilos de botones, cambio de logo en app y se crea interfaz menú principal.
+- Se agregan estilos de botones, cambio de logo en app y se crea interfaz menú principal.
 
 6/10/2020
--Se agrega menú de juegos
+- Se agrega menú de juegos
 
 10/10/2020
--Código para realizar conexiones en pruebas
+- Código para realizar conexiones en pruebas
 
 12/10/2020
--Se realiza conexión a la base de datos y se ejecutan stored procedures
+- Se realiza conexión a la base de datos y se ejecutan stored procedures
 
 14/10/2020
--Se modifica interfaz de Login
--Se realiza prueba de conexión para iniciar sesión
+- Se modifica interfaz de Login
+- Se realiza prueba de conexión para iniciar sesión
 
 15/10/2020
--Se realiza inicio de sesión con validación de usuarios
+- Se realiza inicio de sesión con validación de usuarios
 
 16/10/2020
--Se crea menú desplegable
+- Se crea menú desplegable
 
 17/10/2020
--Se completa interfaz "Mi Perfil"
--Se implementa menú de navegación en comparar palabra, fonema, mi perfil
--Se realiza grabación de audio y su reproducción para fonema y palabra
--Se agrega validación para evitar registro de usuarios repetidos
+- Se completa interfaz "Mi Perfil"
+- Se implementa menú de navegación en comparar palabra, fonema, mi perfil
+- Se realiza grabación de audio y su reproducción para fonema y palabra
+- Se agrega validación para evitar registro de usuarios repetidos
 
 18/10/2020
--Se arregla formato de almacenamiento de grabación
--Se adaptan interfaces a todos los dispositivos móviles Android.
--Se modifica stored procedure Insertar Usuario
+- Se arregla formato de almacenamiento de grabación
+- Se adaptan interfaces a todos los dispositivos móviles Android.
+- Se modifica stored procedure Insertar Usuario
 - Creación de stored procedure obtenerUsuario y clase Usuario
 
 19/10/2020
--Se realiza función Recuperar Contraseña
--Arreglo de validaciones
+- Se realiza función Recuperar Contraseña
+- Arreglo de validaciones
 
 23/10/2020
--Se crea stored procedure obtenerFonemas
--Se realizan las pruebas.
+- Se crea stored procedure obtenerFonemas
+- Se realizan las pruebas.
 
 27/10/2020
--Se crea interfaz de banco de fonemas
--Se hacen pruebas con obtenerFonemas en la aplicación
+- Se crea interfaz de banco de fonemas
+- Se hacen pruebas con obtenerFonemas en la aplicación
 
 31/10/2020
--Arreglo de interfaz de Login
--Se completa interfaz de Ver Fonema y se añaden los fonemas a esa sección
--Se completó funcionamiento de Comparar Fonema
+- Arreglo de interfaz de Login
+- Se completa interfaz de Ver Fonema y se añaden los fonemas a esa sección
+- Se completó funcionamiento de Comparar Fonema
 
 6/11/10
--Arreglos en la interfaz de Juegos
--Creación de Interfaz Memoria
--Funcionalidad del juego Memoria 50% 
+- Arreglos en la interfaz de Juegos
+- Creación de Interfaz Memoria
+- Funcionalidad del juego Memoria 50% 
+
+11/11/2020
+- Se ejecuta procedimiento almacenado en la sección de ver fonema
+- Se realizan ajustes en la interfaz
