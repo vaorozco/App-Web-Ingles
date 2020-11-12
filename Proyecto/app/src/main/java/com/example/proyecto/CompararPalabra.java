@@ -28,11 +28,16 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.sql.CallableStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.UUID;
 
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static com.example.proyecto.ConnectionHelper.conexionBD;
 
-public class CompararPalabra extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener{
+public class CompararPalabra extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{//, AdapterView.OnItemSelectedListener{
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -44,6 +49,11 @@ public class CompararPalabra extends AppCompatActivity implements NavigationView
     TextView textView;
     final int REQUEST_PERMISSION_CODE=1000;
     Fonema fonema = new Fonema();
+    Spinner spinner, spinner2;
+    Palabra palabra = new Palabra();
+    ArrayList listaNombresPalabras = new ArrayList<>();
+    ArrayList<byte[]> listaSonidosPalabras = new ArrayList<byte[]>();
+    //ArrayList listaSonidosPalabras = new ArrayList<byte[]>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,19 +75,15 @@ public class CompararPalabra extends AppCompatActivity implements NavigationView
 
         if(!checkPermissionFromDevice())
             requestPermission();
-
-        //Spinner
-        Spinner spinner = (Spinner) findViewById(R.id.spinner3);
+        spinner = findViewById(R.id.spinner3);
+        spinner2 = findViewById(R.id.spinner4);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, fonema.listaNombres());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-
         botonEscucharPalabra = findViewById(R.id.botonEscucharPalabra);
         botonGrabar = findViewById(R.id.botonGrabar); //button1 boton grabar
         botonParar = findViewById(R.id.botonParar); //button2 boton parar
         botonEscucharme = findViewById(R.id.botonEscucharme); //button3 boton escucharme
-
 
         botonGrabar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,23 +142,106 @@ public class CompararPalabra extends AppCompatActivity implements NavigationView
                 Toast.makeText(CompararPalabra.this,"Sonando...",Toast.LENGTH_SHORT).show();
             }
         });
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                listaNombresPalabras.removeAll(listaNombresPalabras);
+                listaSonidosPalabras.removeAll(listaSonidosPalabras);
+                try {CallableStatement spIDPalabra = conexionBD().prepareCall("{call dbo.SeleccionarPalabrasFonema(?)}");
+                    spIDPalabra.setInt(1,position+1);
+                    ResultSet rsIDPalabra = spIDPalabra.executeQuery();
+                    while(rsIDPalabra.next()){
+                        int idPalabra = rsIDPalabra.getInt(1);
+                        listaNombresPalabras.add(palabra.getListaPalabra().get(idPalabra-1).getNombre());
+                        byte[] sonido = palabra.getListaPalabra().get(idPalabra-1).getSonido();
+                        listaSonidosPalabras.add(sonido);
+                    }
+                    rsIDPalabra.close();
+                    spIDPalabra.close();
+                    conexionBD().close();
+                }catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+                spinner2.setAdapter(new ArrayAdapter<String>(CompararPalabra.this,android.R.layout.simple_spinner_dropdown_item,
+                        listaNombresPalabras));
+
+                //set divSpinner Visibility to Visible
+                //spinner2.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                // can leave this empty
+            }
+        });
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                Toast.makeText(getApplicationContext(), "Palabra seleccionada: "+listaNombresPalabras.get(position) ,Toast.LENGTH_SHORT).show();
+                botonEscucharPalabra.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //fonema.reproducirSonido2((byte[]) listaSonidosPalabras.get(position),CompararPalabra.this);
+                        fonema.reproducirSonido2(listaSonidosPalabras.get(position),CompararPalabra.this);
+                    }
+                });
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // can leave this empty
+            }
+
+        });
+
+
+
+
+
     }
 
-    @Override
+    /*@Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+        System.out.println("POSITIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"+ position);
+        Toast.makeText(getApplicationContext(), "Fonema seleccionado: "+fonema.listaNombres().get(position) ,Toast.LENGTH_SHORT).show();
+        try {CallableStatement spIDPalabra = conexionBD().prepareCall("{call dbo.SeleccionarPalabrasFonema(?)}");
+        spIDPalabra.setInt(1,position+1);
+        ResultSet rsIDPalabra = spIDPalabra.executeQuery();
+        while(rsIDPalabra.next()){
+            int idPalabra = rsIDPalabra.getInt(1);
+            listaNombresPalabras.add(palabra.getListaPalabra().get(idPalabra-1).getNombre());
+        }
+        rsIDPalabra.close();
+        spIDPalabra.close();
+        conexionBD().close();
+        }catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        spinner2.setAdapter(new ArrayAdapter<String>(CompararPalabra.this,android.R.layout.simple_spinner_dropdown_item,
+                listaNombresPalabras));
+        /*spinner2 = findViewById(R.id.spinner4);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, fonema.listaNombres());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);*/
+
+        //spinner.setAdapter(adapter);
+        /*spinner2.setOnItemSelectedListener(this);
+
         botonEscucharPalabra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fonema.reproducirSonido2(fonema.getListaFonemas().get(position).getSonido(),CompararPalabra.this);
+                fonema.reproducirSonido2(palabra.getListaPalabra().get(position).getSonido(),CompararPalabra.this);
             }
         });
-        Toast.makeText(getApplicationContext(), "Fonema seleccionado: "+fonema.listaNombres().get(position) ,Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
-    }
+    }*/
 
     private void setupMediaRecorder(){
         mediaRecorder = new MediaRecorder();
@@ -221,4 +310,5 @@ public class CompararPalabra extends AppCompatActivity implements NavigationView
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

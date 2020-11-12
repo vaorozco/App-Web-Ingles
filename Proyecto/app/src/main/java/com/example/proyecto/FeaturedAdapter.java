@@ -1,6 +1,8 @@
 package com.example.proyecto;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +41,10 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
     @Override
     public void onBindViewHolder(@NonNull FeaturedViewHolder holder, int position) {
         FeaturedHelperClass featuredHelperClass = featuredLocations.get(position);
-        holder.imagen.setImageResource(featuredHelperClass.getImage());
+        Bitmap bitmapImagen = BitmapFactory.decodeByteArray(featuredHelperClass.getImage(),0,featuredHelperClass.getImage().length);
+        //imagen.setImageBitmap(bitmapImagen);
+        holder.imagen.setImageBitmap(bitmapImagen);
+        //holder.imagen.setImageResource(featuredHelperClass.getImage());
         holder.palabra.setText(featuredHelperClass.getTitle());
         holder.parlante.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,8 +52,8 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
                 //VerFonema verFonema  = new VerFonema();
                 //verFonema.reproducirSonido(featuredHelperClass.getSonido(),context); funciona 100%
 
-                Fonema fonema = new Fonema();
-                fonema.reproducirSonido2(featuredHelperClass.getSonido(),context);
+                Palabra palabra = new Palabra();
+                palabra.reproducirPalabra(featuredHelperClass.getSonido(),context);
             }
         });
 

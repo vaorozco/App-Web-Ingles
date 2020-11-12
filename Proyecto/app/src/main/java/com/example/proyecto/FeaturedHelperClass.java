@@ -9,30 +9,26 @@ import java.io.IOException;
 
 public class FeaturedHelperClass {
 
-    int image;
-    String title, description;
+    byte[] imagen;
+    String nombre;
     byte[] sonido;
 
-    public FeaturedHelperClass(int image, String title, byte[] sonido) {
-        this.image = image;
-        this.title = title;
+    public FeaturedHelperClass(byte[] image, String title, byte[] sonido) {
+        this.imagen = image;
+        this.nombre = title;
         this.sonido = sonido;
     }
 
-    public int getImage() {
-        return image;
+    public byte[] getImage() {
+        return imagen;
     }
 
     public String getTitle() {
-        return title;
+        return nombre;
     }
 
     public byte[] getSonido() {
         return sonido;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
 }
