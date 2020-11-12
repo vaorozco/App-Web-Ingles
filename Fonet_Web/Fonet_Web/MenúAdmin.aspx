@@ -95,7 +95,7 @@
                     </tr>
                 </table>
             </asp:Panel>
-            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Recursos/Icono BF.png" Width="335px" CssClass="auto-style3" />
+            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Recursos/Icono BF.png" Width="335px" CssClass="auto-style3" OnClick="ImageButton1_Click" />
             <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Recursos/icono juego.png" Width="335px" CssClass="auto-style4" OnClick="ImageButton2_Click" />
         </div>
         <p>

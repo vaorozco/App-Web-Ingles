@@ -6,18 +6,6 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style3 {
-            top: 197px;
-            left: 295px;
-            position: absolute;
-            height: 287px;
-        }
-        .auto-style4 {
-            top: 195px;
-            left: 796px;
-            position: absolute;
-            height: 287px;
-        }
         .auto-style5 {
             width: 26%;
             height: 32px;
@@ -61,6 +49,29 @@
             font-family: Arial, Helvetica, sans-serif;
             color: #FFFFFF;
         }
+        .auto-style15 {
+            width: 91%;
+            height: 404px;
+            position: absolute;
+            left: 62px;
+            top: 166px;
+        }
+        .auto-style17 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: x-large;
+            background-color: #FFFFFF;
+        }
+        .auto-style18 {
+            width: 94px;
+            height: 26px;
+            position: absolute;
+            left: 1210px;
+            top: 599px;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            background-color: #009900;
+        }
     </style>
 </head>
 <body style="height: 640px; width: 1365px">
@@ -71,22 +82,20 @@
                 <table class="auto-style5">
                     <tr>
                         <td class="auto-style6">
-                            <asp:ImageButton ID="ImageButton8" runat="server" Height="30px" ImageUrl="~/Recursos/menuicon.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton8" runat="server" Height="30px" ImageUrl="~/Recursos/menuicon.png" Width="30px" OnClick="ImageButton8_Click" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton9" runat="server" Height="30px" ImageUrl="~/Recursos/gamepad.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton9" runat="server" Height="30px" ImageUrl="~/Recursos/gamepad.png" Width="30px" OnClick="ImageButton9_Click" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton10" runat="server" Height="30px" ImageUrl="~/Recursos/casa.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton10" runat="server" Height="30px" ImageUrl="~/Recursos/casa.png" Width="30px" OnClick="ImageButton10_Click" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton12" runat="server" Height="30px" ImageUrl="~/Recursos/usuario.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton12" runat="server" Height="30px" ImageUrl="~/Recursos/usuario.png" Width="30px" OnClick="ImageButton12_Click" />
                         </td>
                     </tr>
                 </table>
             </asp:Panel>
-            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Recursos/Icono BF.png" Width="335px" CssClass="auto-style3" OnClick="ImageButton1_Click" />
-            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Recursos/icono juego.png" Width="335px" CssClass="auto-style4" OnClick="ImageButton2_Click" />
         </div>
         <p>
             <table class="auto-style8">
@@ -99,8 +108,45 @@
                     </td>
                 </tr>
             </table>
-            <asp:Label ID="Label2" runat="server" CssClass="auto-style12" Text="Menú"></asp:Label>
+            <asp:Label ID="Label2" runat="server" CssClass="auto-style12" Text="Memoria"></asp:Label>
         </p>
+        <table class="auto-style15">
+            <tr>
+                <td>
+                    <asp:ImageButton ID="ImageButton13" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                </td>
+                <td>
+                    <asp:Button ID="Button4" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageButton17" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                </td>
+                <td>
+                    <asp:Button ID="Button6" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageButton21" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="Button3" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageButton16" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                </td>
+                <td>
+                    <asp:Button ID="Button5" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                </td>
+                <td>
+                    <asp:ImageButton ID="ImageButton20" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                </td>
+                <td>
+                    <asp:Button ID="Button7" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                </td>
+            </tr>
+        </table>
+        <asp:Button ID="Comenzar" runat="server" BorderStyle="None" CssClass="auto-style18" OnClick="Comenzar_Click" Text="Comenzar" />
     </form>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <style type="text/css">
         .auto-style1 {
             top: 222px;
-            left: 572px;
+            left: 542px;
             position: absolute;
             height: 287px;
         }
@@ -29,8 +29,8 @@
             width: 66px;
         }
         .auto-style7 {
-            top: 228px;
-            left: 1028px;
+            top: 220px;
+            left: 991px;
             position: absolute;
             height: 287px;
         }

@@ -88,7 +88,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BancoFonemas.aspx" />
     <Content Include="ClickFonema.aspx" />
     <Content Include="GestionarPalabra.aspx" />
     <Content Include="GestionarFonema.aspx" />
@@ -100,7 +99,8 @@
     <Content Include="MenúAdmin.aspx" />
     <Content Include="MenúJuegos.aspx" />
     <Content Include="Pareo.aspx" />
-    <Content Include="PruebaBotones.aspx" />
+    <Content Include="BancoFonemas.aspx" />
+    <Content Include="Pruebas.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="Recursos\ajustes.png" />
     <Content Include="Recursos\altavoz.png" />
@@ -128,13 +128,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BancoFonemas.aspx.cs">
-      <DependentUpon>BancoFonemas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BancoFonemas.aspx.designer.cs">
-      <DependentUpon>BancoFonemas.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ClickFonema.aspx.cs">
       <DependentUpon>ClickFonema.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,6 +136,7 @@
       <DependentUpon>ClickFonema.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConexionSQL.cs" />
+    <Compile Include="ControladorJuegos.cs" />
     <Compile Include="ControladorUI.cs" />
     <Compile Include="Fonema.cs" />
     <Compile Include="GestionarPalabra.aspx.cs">
@@ -217,12 +211,19 @@
       <DependentUpon>Pareo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PruebaBotones.aspx.cs">
-      <DependentUpon>PruebaBotones.aspx</DependentUpon>
+    <Compile Include="BancoFonemas.aspx.cs">
+      <DependentUpon>BancoFonemas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PruebaBotones.aspx.designer.cs">
-      <DependentUpon>PruebaBotones.aspx</DependentUpon>
+    <Compile Include="BancoFonemas.aspx.designer.cs">
+      <DependentUpon>BancoFonemas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pruebas.aspx.cs">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pruebas.aspx.designer.cs">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecuperarC.cs" />
     <Compile Include="RecuperarContraseña.aspx.cs">

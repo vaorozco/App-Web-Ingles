@@ -13,5 +13,40 @@ namespace Fonet_Web
         {
 
         }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Memoria.aspx");
+        }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void ImageButton8_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void ImageButton9_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void ImageButton12_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

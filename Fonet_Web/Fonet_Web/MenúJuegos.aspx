@@ -71,22 +71,22 @@
                 <table class="auto-style5">
                     <tr>
                         <td class="auto-style6">
-                            <asp:ImageButton ID="ImageButton8" runat="server" Height="30px" ImageUrl="~/Recursos/menuicon.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton8" runat="server" Height="30px" ImageUrl="~/Recursos/menuicon.png" Width="30px" OnClick="ImageButton8_Click" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton9" runat="server" Height="30px" ImageUrl="~/Recursos/gamepad.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton9" runat="server" Height="30px" ImageUrl="~/Recursos/gamepad.png" Width="30px" OnClick="ImageButton9_Click" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton10" runat="server" Height="30px" ImageUrl="~/Recursos/casa.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton10" runat="server" Height="30px" ImageUrl="~/Recursos/casa.png" Width="30px" OnClick="ImageButton10_Click" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton12" runat="server" Height="30px" ImageUrl="~/Recursos/usuario.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton12" runat="server" Height="30px" ImageUrl="~/Recursos/usuario.png" Width="30px" OnClick="ImageButton12_Click" />
                         </td>
                     </tr>
                 </table>
             </asp:Panel>
-            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Recursos/Icono BF.png" Width="335px" CssClass="auto-style3" OnClick="ImageButton1_Click" />
-            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Recursos/icono juego.png" Width="335px" CssClass="auto-style4" OnClick="ImageButton2_Click" />
+            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Recursos/Icono Memoria.png" Width="335px" CssClass="auto-style3" OnClick="ImageButton1_Click" />
+            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Recursos/icono pareo.png" Width="335px" CssClass="auto-style4" OnClick="ImageButton2_Click" />
         </div>
         <p>
             <table class="auto-style8">
@@ -99,7 +99,7 @@
                     </td>
                 </tr>
             </table>
-            <asp:Label ID="Label2" runat="server" CssClass="auto-style12" Text="Menú"></asp:Label>
+            <asp:Label ID="Label2" runat="server" CssClass="auto-style12" Text="Menú Juegos"></asp:Label>
         </p>
     </form>
 </body>

@@ -57,26 +57,47 @@
             top: 192px;
         }
         .auto-style16 {
-            height: 415px;
+            height: 420px;
             position: absolute;
-            left: 796px;
-            top: 194px;
+            left: 787px;
+            top: 122px;
             width: 41%;
             margin-top: 0px;
+            margin-bottom: 0px;
         }
         .auto-style17 {
-            height: 102px;
+            height: 71px;
         }
         .auto-style18 {
-            height: 102px;
-            width: 217px;
+            height: 71px;
+            width: 259px;
         }
         .auto-style19 {
-            height: 102px;
+            height: 71px;
             width: 216px;
         }
         .auto-style20 {
-            background-color: #C0C0C0;
+            background-color: #FFFFFF;
+        }
+        .auto-style21 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+        }
+        .auto-style22 {
+            height: 314px;
+        }
+        .auto-style25 {
+            height: 72px;
+        }
+        .auto-style26 {
+            width: 266px;
+            height: 19px;
+            position: absolute;
+            left: 5px;
+            top: 108px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+            color: #808080;
         }
     </style>
 </head>
@@ -88,10 +109,10 @@
                 <table class="auto-style5">
                     <tr>
                         <td class="auto-style6">
-                            <asp:ImageButton ID="ImageButton8" runat="server" Height="30px" ImageUrl="~/Recursos/menuicon.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton8" runat="server" Height="30px" ImageUrl="~/Recursos/menuicon.png" Width="30px" OnClick="ImageButton8_Click" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton9" runat="server" Height="30px" ImageUrl="~/Recursos/gamepad.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton9" runat="server" Height="30px" ImageUrl="~/Recursos/gamepad.png" Width="30px" OnClick="ImageButton9_Click" />
                         </td>
                         <td>
                             <asp:ImageButton ID="ImageButton10" runat="server" Height="30px" ImageUrl="~/Recursos/casa.png" Width="30px" OnClick="ImageButton10_Click" />
@@ -100,7 +121,7 @@
                             <asp:ImageButton ID="ImageButton11" runat="server" Height="30px" ImageUrl="~/Recursos/ajustes.png" Width="30px" OnClick="ImageButton11_Click" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton12" runat="server" Height="30px" ImageUrl="~/Recursos/usuario.png" Width="30px" />
+                            <asp:ImageButton ID="ImageButton12" runat="server" Height="30px" ImageUrl="~/Recursos/usuario.png" Width="30px" OnClick="ImageButton12_Click" />
                         </td>
                     </tr>
                 </table>
@@ -123,16 +144,23 @@
         <table class="auto-style16">
             <tr>
                 <td class="auto-style19">
-                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Label" CssClass="auto-style21" Visible="False"></asp:Label>
                 </td>
-                <td class="auto-style18"></td>
+                <td class="auto-style18">
+                    <asp:Label ID="Label5" runat="server" Text="Ruta" Visible="False"></asp:Label>
+                </td>
                 <td class="auto-style17">
-                    <asp:ImageButton ID="ImageButton13" runat="server" />
+                    <asp:ImageButton ID="ReproducirFonema" runat="server" OnClick="ImageButton13_Click" Height="70px" ImageUrl="~/Recursos/altavoz.png" Width="70px" />
                 </td>
             </tr>
             <tr>
-                <td colspan="3">
-                    <asp:Panel ID="Panel2" runat="server" CssClass="auto-style20" Height="301px">
+                <td class="auto-style25" colspan="3">
+                    <asp:Label ID="Label4" runat="server" CssClass="auto-style26" Text="Ejemplos"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="auto-style22">
+                    <asp:Panel ID="Panel2" runat="server" CssClass="auto-style20" Height="309px" Width="364px">
                     </asp:Panel>
                 </td>
             </tr>

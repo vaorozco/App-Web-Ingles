@@ -18,6 +18,7 @@ namespace Fonet_Web
         //private int tamañoimagen;
         private byte[] sonido;
         private byte[] imagen;
+        public string IDFonema { get; set; }
         // This is the static method that controls the access to the singleton
         // instance. On the first run, it creates a singleton object and places
         // it into the static field. On subsequent runs, it returns the client

@@ -160,12 +160,6 @@ namespace Fonet_Web
                     row["APELLIDO"] = myReader.GetValue(3).ToString();
                     row["CORREO"] = myReader.GetValue(4).ToString();
                     row["CONTRASEÑA"] = myReader.GetValue(5).ToString();
-                    Console.WriteLine(myReader.GetValue(0).ToString());
-                    Console.WriteLine(myReader.GetValue(1).ToString());
-                    Console.WriteLine(myReader.GetValue(2).ToString());
-                    Console.WriteLine(myReader.GetValue(3).ToString());
-                    Console.WriteLine(myReader.GetValue(4).ToString());
-                    Console.WriteLine(myReader.GetValue(4).ToString());
                     table.Rows.Add(row);
                 }
 
@@ -322,6 +316,32 @@ namespace Fonet_Web
             }
         }
 
+        public List<Fonema> SeleccionarFonemas2()
+        {
+            List<Fonema> lista = new List<Fonema>();
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                string strSelect = "Select IDFonema,imagen,sonido From Fonema";
+                SqlCommand cmd = new SqlCommand(strSelect, conn);
+                SqlDataReader myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    // Assuming your desired value is the name as the 3rd field
+                    Fonema fonema = new Fonema();
+                    fonema.nombre = myReader.GetValue(0).ToString();
+                    //fonema.imagen = myReader.GetStream(1);
+                    fonema.imagen = (byte[])myReader["imagen"];
+                    fonema.sonido = (byte[])myReader["sonido"];
+                    lista.Add(fonema);
+                }
+
+                myReader.Close();
+                conn.Close();
+                return lista;
+            }
+        }
+
         public string login(string correo, string contraseña)
         {
             string isTrue = null;
@@ -432,6 +452,27 @@ namespace Fonet_Web
                 myReader.Close();
                 conn.Close();
                 return table;
+            }
+        }
+
+        public List<Palabra> SeleccionarPalabras(int idfonema)
+        {
+            List<Palabra> listapalabras = new List<Palabra>();
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SeleccionarPalabrasFonema", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@idfonema", idfonema));
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Palabra palabra = SeleccionarPalabra(int.Parse(rdr.GetValue(0).ToString()));
+                    listapalabras.Add(palabra);
+                }
+                rdr.Close();
+                conn.Close();
+                return listapalabras;
             }
         }
 
@@ -555,7 +596,7 @@ namespace Fonet_Web
             }
         }
 
-        public string InsertarPalabraXFonema(string idfonema,string idpalabra)
+        public string InsertarPalabraXFonema(int idfonema,string idpalabra)
         {
             string isTrue = "";
             using (SqlConnection conn = new SqlConnection(conexion))
@@ -563,7 +604,7 @@ namespace Fonet_Web
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("InsertarPalabraXFonema", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@fonema", idfonema));
+                cmd.Parameters.Add(new SqlParameter("@idfonema", idfonema));
                 cmd.Parameters.Add(new SqlParameter("@palabra", idpalabra));
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -573,6 +614,46 @@ namespace Fonet_Web
                 rdr.Close();
                 conn.Close();
                 return isTrue;
+            }
+        }
+
+        public int ContarPalabras()
+        {
+            int cantidad = 0;
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                string strSelect = "Select count(IDPalabra) From Palabra";
+                SqlCommand cmd = new SqlCommand(strSelect, conn);
+                SqlDataReader myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    cantidad = int.Parse(myReader.GetValue(0).ToString());
+                }
+
+                myReader.Close();
+                conn.Close();
+                return cantidad;
+            }
+        }
+
+        public int ContarFonemas()
+        {
+            int cantidad = 0;
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                string strSelect = "Select count(IDFonema) From Fonema";
+                SqlCommand cmd = new SqlCommand(strSelect, conn);
+                SqlDataReader myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    cantidad = int.Parse(myReader.GetValue(0).ToString());
+                }
+
+                myReader.Close();
+                conn.Close();
+                return cantidad;
             }
         }
     }

@@ -38,7 +38,7 @@ namespace Fonet_Web
                 byte[] imagen = ControladorUI.Instance.get_imagen();
 
                 string isTrue = conexion.InsertarPalabra(TextBox1.Text, imagen, sonido);
-                string isTrue2 = conexion.InsertarPalabraXFonema(DropDownList1.SelectedValue, TextBox1.Text);
+                string isTrue2 = conexion.InsertarPalabraXFonema(int.Parse(DropDownList1.SelectedValue), TextBox1.Text);
                 if (isTrue == "0" || isTrue2 == "0")
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('La palabra no se guardó ya existe');", true);
