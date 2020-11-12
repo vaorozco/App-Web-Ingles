@@ -121,6 +121,11 @@ Gestor de Contenido Web
 Aplicación Móvil
 - Se colabora con la aplicación móvil, se ejecutan procedimientos almacenados en Comparar Palabra y se finaliza la funcionalidad.
 
+Gestor de Contenido Web
+-Se agregan caracteristicas de la ventana Memoria.
+-Se cargan las imagenes del juego y un poco de lógica.
+-Se mejora el diseño de la ventana Click Fonema.
+
 
 
 Víctor Alonso Orozco Calderón - 2016240613
