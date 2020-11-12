@@ -6,121 +6,122 @@ Ariel Valverde Ramírez - 2016177544
 
 3/10/2020
 Base de Datos
--Se crea la base de datos en Azure SQL Database.
--Se agregan las tablas.
+- Se crea la base de datos en Azure SQL Database.
+- Se agregan las tablas.
 
 8/10/2020
 Gestor de Contenido Web
--Se crea el proyecto y se agrega a GitHub.
--Se agrega las ventana y caracteristicas de Login.
+- Se crea el proyecto y se agrega a GitHub.
+- Se agrega las ventana y caracteristicas de Login.
 
 10/10/2020
 Gestor de Contenido Web
--Se crean las ventanas y se agregan los componentes de Menu Admin y Gestionar Usuario.
+- Se crean las ventanas y se agregan los componentes de Menu Admin y Gestionar Usuario.
 
 12/10/2020
 Aplicación móvil
--Se corrige el problema en la conexión con la base de datos Azure SQL Database.
+- Se corrige el problema en la conexión con la base de datos Azure SQL Database.
 
 Base de Datos
--Se agregan direcciones IP al firewall para permitir la conexión desde cualquier dispositivo.
--Se crean los stored procedures de InsertarFonema, InsertarPalabra.
+- Se agregan direcciones IP al firewall para permitir la conexión desde cualquier dispositivo.
+- Se crean los stored procedures de InsertarFonema, InsertarPalabra.
 
 13/10/2020
 Gestor de Contenido Web
--Se agregan las ventanas de Gestionar Fonemas y Gestionar Palabras.
--Se agregan caracteristicas para la modificación de la ventana de Gestionar Usuarios.
--Se agregan los íconos de agregar, editar y borrar.
--Se carga la lista de usuarios al entrar en la ventana de Gestionar Usuarios.
+- Se agregan las ventanas de Gestionar Fonemas y Gestionar Palabras.
+- Se agregan caracteristicas para la modificación de la ventana de Gestionar Usuarios.
+- Se agregan los íconos de agregar, editar y borrar.
+- Se carga la lista de usuarios al entrar en la ventana de Gestionar Usuarios.
 
 14/10/2020
 Gestor de Contenido Web
--Se agrega la función de login en la conexion con la base de datos.
--Se agrega la caracteristica para gestionar los fonemas en la ventana de Gestionar Fonemas.
+- Se agrega la función de login en la conexion con la base de datos.
+- Se agrega la caracteristica para gestionar los fonemas en la ventana de Gestionar Fonemas.
 
 Base de Datos
--Se crea el store procedure de loginCredenciales.
+- Se crea el store procedure de loginCredenciales.
 
 16/10/2020
 Gestor de Contenido Web
--Se agregan todas las funcionalidades de la ventana Gestionar Usuarios.
+- Se agregan todas las funcionalidades de la ventana Gestionar Usuarios.
 
 Base de Datos
--Se crean los store procedure de ModificarUsuario, BorrarUsuario.
+- Se crean los store procedure de ModificarUsuario, BorrarUsuario.
 
 19/10/2020
 Gestor de Contenido Web
--Se agregan caracteristicas para las funcionalidades de la ventana de Gestionar Fonema.
+- Se agregan caracteristicas para las funcionalidades de la ventana de Gestionar Fonema.
 
 20/10/2020
 Gestor de Contenido Web
--Se agregan las funcionalidades para la ventana de Gestionar Fonema.
+- Se agregan las funcionalidades para la ventana de Gestionar Fonema.
 
 21/10/2020
 Gestor de Contenido Web
--Se agregan caracteristicas para las funcionalidades de la ventana de Gestionar Palabra.
--Se agregan caracteristicas de la funcion de recuperar contraseña.
+- Se agregan caracteristicas para las funcionalidades de la ventana de Gestionar Palabra.
+- Se agregan caracteristicas de la funcion de recuperar contraseña.
 
 22/10/2020
 Gestor de Contenido Web
--Se agregan las funcionalidades de la ventana de Gestionar Palabra
--Se modifica el diseño de las ventanas.
+- Se agregan las funcionalidades de la ventana de Gestionar Palabra
+- Se modifica el diseño de las ventanas.
 
 23/10/2020
 Gestor de Contenido Web
--Se modifica el diseño de las ventanas.
+- Se modifica el diseño de las ventanas.
 
--Se realizan las pruebas.
+- Se realizan las pruebas.
 
 24/10/2020
 Gestor de Contenido Web
--Se agrega la ventana de BancoFonemas.
--Se mejora el diseño de las ventanas Gestionar.
+- Se agrega la ventana de BancoFonemas.
+- Se mejora el diseño de las ventanas Gestionar.
 
 26/10/2020
 Gestor de Conteido Web
--Se agrega la ventana de ClickFonema
--Se mejora el diseño de las ventanas Gestionar.
+- Se agrega la ventana de ClickFonema
+- Se mejora el diseño de las ventanas Gestionar.
 
 27/10/2020
 Gestor de Contenido Web
--Se mejora el diseño de las ventanas Gestionar.
+- Se mejora el diseño de las ventanas Gestionar.
 
 Base de Datos
--Se crea los stored procedured de seleccionarfonemapalabra y seleccionarpalabrafonema.
+- Se crea los stored procedured de seleccionarfonemapalabra y seleccionarpalabrafonema.
 
 28/10/2020
 Gestor de Contenido Web
--Se prueba la funcionalidad para agregar la imagen de los fonemas de manera dinamica para la ventana de Banco de Fonemas.
--Se agrega diseño de la ventana de banco de fonemas.
+- Se prueba la funcionalidad para agregar la imagen de los fonemas de manera dinamica para la ventana de Banco de Fonemas.
+- Se agrega diseño de la ventana de banco de fonemas.
 
 2/11/2020
 Gestor de Contenido Web
--Se añaden las pantallas de Menú Juegos, Memoria y Pareo
--Se añaden caracteristicas de diseño de la ventana de Click Fonema
+- Se añaden las pantallas de Menú Juegos, Memoria y Pareo
+- Se añaden caracteristicas de diseño de la ventana de Click Fonema
 
 7/11/2020
 Gestor de Contenido Web
--Se mejoran caracteristicas de la ventana de banco de fonemas
+- Se mejoran caracteristicas de la ventana de banco de fonemas
 
 8/11/2020
 Gestor de Contenido Web
--Se agrega la lógica para cargar la imagen en el click fonema.
+- Se agrega la lógica para cargar la imagen en el click fonema.
 
 9/11/2020
 Gestor de Contenido Web
--Se agregan caracteristicas de diseño a la ventana de Click Fonema para cargar las palabras de ejemplo del fonema.
--Se agrega la función de cargar las imagenes y el nombre de las palabras de ejemplo del fonema.
+- Se agregan caracteristicas de diseño a la ventana de Click Fonema para cargar las palabras de ejemplo del fonema.
+- Se agrega la función de cargar las imagenes y el nombre de las palabras de ejemplo del fonema.
 
 10/11/2020
 Gestor de Contenido Web
--Se agrega las función para reproducir el sonido del fonemas.
--Se agrega la función para reproducir el sonido de las palabras.
-
-Aplicación Móvil
+- Se agrega las función para reproducir el sonido del fonemas.
+- Se agrega la función para reproducir el sonido de las palabras.
 
 11/11/2020
+Aplicación Móvil
 - Se colabora con la aplicación móvil, se ejecutan procedimientos almacenados en Comparar Palabra y se finaliza la funcionalidad.
+
+
 
 Víctor Alonso Orozco Calderón - 2016240613
 
