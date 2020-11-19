@@ -43,12 +43,6 @@ public class Palabra {
         return listaPalabras;
     }
 
-    /*public ArrayList listaNombresPalabras(int a){
-        ArrayList listaNombresPalabras = new ArrayList<>();
-        listaNombresPalabras.add(listaPalabras.get(a));
-        return listaNombresPalabras;
-    }*/
-
     public void agregarPalabra(Palabra palabra){
         this.listaPalabras.add(palabra);
     }

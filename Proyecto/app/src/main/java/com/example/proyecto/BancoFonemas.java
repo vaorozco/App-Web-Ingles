@@ -30,8 +30,8 @@ public class BancoFonemas extends AppCompatActivity implements View.OnClickListe
 
     TextView nombreFonema, textView19;
     Fonema fonema = new Fonema();
-    ImageView[] listaImageView = {fonema1, fonema2, fonema3, fonema4, fonema5};/*, fonema6, fonema7, fonema8, fonema9, fonema10, fonema11, fonema12, fonema13, fonema14, fonema15,
-              fonema16, fonema17,fonema18,fonema19,fonema20,fonema21,fonema22,fonema23,fonema24,fonema25,fonema26,fonema27,fonema28,fonema29,fonema30,fonema31,
+    ImageView[] listaImageView = {fonema1, fonema2, fonema3, fonema4, fonema5, fonema6, fonema7, fonema8, fonema9, fonema10, fonema11, fonema12, fonema13, fonema14, fonema15,
+              fonema16};/*, fonema17,fonema18,fonema19,fonema20,fonema21,fonema22,fonema23,fonema24,fonema25,fonema26,fonema27,fonema28,fonema29,fonema30,fonema31,
               fonema32,fonema33,fonema34,fonema35,fonema36};*/
 
 

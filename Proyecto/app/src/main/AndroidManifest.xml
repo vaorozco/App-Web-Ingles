@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Pareo"></activity>
+        <activity android:name=".Adivinar"></activity>
+        <activity android:name=".Pareo" />
         <activity android:name=".Memoria" />
         <activity android:name=".VerFonema" />
         <activity android:name=".BancoFonemas" />

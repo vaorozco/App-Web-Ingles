@@ -34,6 +34,8 @@ dependencies {
     implementation files('libs\\jtds-1.2.7.jar')
     implementation files('libs\\javax.mail.jar')
     implementation files('libs\\activation.jar')
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
