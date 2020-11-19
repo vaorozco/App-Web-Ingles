@@ -126,6 +126,11 @@ Gestor de Contenido Web
 -Se cargan las imagenes del juego y un poco de lógica.
 -Se mejora el diseño de la ventana Click Fonema.
 
+18/11/2020
+Aplicación Móvil
+- Se realiza Juego Memoria
+
+
 
 
 Víctor Alonso Orozco Calderón - 2016240613
@@ -194,3 +199,6 @@ Aplicación Móvil
 11/11/2020
 - Se ejecuta procedimiento almacenado en la sección de ver fonema
 - Se realizan ajustes en la interfaz
+
+18/11/2020
+- Se realiza Juego Adivinanza
