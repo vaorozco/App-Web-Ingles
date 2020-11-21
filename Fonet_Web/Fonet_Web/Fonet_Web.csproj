@@ -98,8 +98,8 @@
     <Content Include="MenúEstudiante.aspx" />
     <Content Include="MenúAdmin.aspx" />
     <Content Include="MenúJuegos.aspx" />
-    <Content Include="Pareo.aspx" />
     <Content Include="BancoFonemas.aspx" />
+    <Content Include="Pareo2.aspx" />
     <Content Include="Pruebas.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="Recursos\ajustes.png" />
@@ -203,12 +203,12 @@
       <DependentUpon>MenúJuegos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Palabra.cs" />
-    <Compile Include="Pareo.aspx.cs">
-      <DependentUpon>Pareo.aspx</DependentUpon>
+    <Compile Include="Pareo2.aspx.cs">
+      <DependentUpon>Pareo2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pareo.aspx.designer.cs">
-      <DependentUpon>Pareo.aspx</DependentUpon>
+    <Compile Include="Pareo2.aspx.designer.cs">
+      <DependentUpon>Pareo2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BancoFonemas.aspx.cs">

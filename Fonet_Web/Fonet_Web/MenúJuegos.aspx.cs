@@ -21,7 +21,7 @@ namespace Fonet_Web
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("Pareo2.aspx");
         }
 
         protected void ImageButton8_Click(object sender, ImageClickEventArgs e)

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClickFonema.aspx.cs" Inherits="Fonet_Web.ClickFonema" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Pareo2.aspx.cs" Inherits="Fonet_Web.Pareo2" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
             top: 16px;
         }
         .auto-style6 {
-            width: 66px;
+            width: 71px;
         }
         .auto-style7 {
             height: 23px;
@@ -46,58 +46,50 @@
             background-color: #006600;
         }
         .auto-style14 {
-            color: #FFFFFF;
             font-family: Arial, Helvetica, sans-serif;
+            color: #FFFFFF;
         }
         .auto-style15 {
-            width: 524px;
-            height: 412px;
+            width: 448px;
+            height: 393px;
             position: absolute;
-            left: 51px;
-            top: 192px;
-        }
-        .auto-style16 {
-            height: 420px;
-            position: absolute;
-            left: 787px;
-            top: 122px;
-            width: 41%;
-            margin-top: 0px;
-            margin-bottom: 0px;
-        }
-        .auto-style17 {
-            height: 71px;
+            left: 52px;
+            top: 135px;
         }
         .auto-style18 {
-            height: 71px;
-            width: 259px;
+            width: 577px;
+            height: 96px;
+            position: absolute;
+            left: 785px;
+            top: 171px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+            color: #000000;
         }
         .auto-style19 {
-            height: 71px;
-            width: 216px;
+            width: 141px;
+            height: 43px;
+            position: absolute;
+            left: 1148px;
+            top: 585px;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+            background-color: #009900;
         }
         .auto-style20 {
-            background-color: #FFFFFF;
+            height: 142px;
+            position: absolute;
+            left: 786px;
+            top: 252px;
+            width: 37%;
         }
         .auto-style21 {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-large;
+            background-color: #FFFFFF;
         }
         .auto-style22 {
-            height: 314px;
-        }
-        .auto-style25 {
-            height: 72px;
-        }
-        .auto-style26 {
-            width: 266px;
-            height: 19px;
-            position: absolute;
-            left: 5px;
-            top: 108px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-large;
-            color: #808080;
+            background-color: #FFFFFF;
+            font-size: x-large;
         }
     </style>
 </head>
@@ -118,9 +110,6 @@
                             <asp:ImageButton ID="ImageButton10" runat="server" Height="30px" ImageUrl="~/Recursos/casa.png" Width="30px" OnClick="ImageButton10_Click" />
                         </td>
                         <td>
-                            <asp:ImageButton ID="ImageButton11" runat="server" Height="30px" ImageUrl="~/Recursos/ajustes.png" Width="30px" OnClick="ImageButton11_Click" />
-                        </td>
-                        <td>
                             <asp:ImageButton ID="ImageButton12" runat="server" Height="30px" ImageUrl="~/Recursos/usuario.png" Width="30px" OnClick="ImageButton12_Click" />
                         </td>
                     </tr>
@@ -131,40 +120,33 @@
             <table class="auto-style8">
                 <tr>
                     <td class="auto-style9">
-                        <asp:Label ID="Label1" runat="server" Text="Label" CssClass="auto-style14" Visible="False"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Label" CssClass="auto-style14"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:Button ID="Button2" runat="server" BorderStyle="None" CssClass="auto-style13" OnClick="Button2_Click" style="height: 22px" Text="Cerrar Sesión" Width="115px" />
+                        <asp:Button ID="Button2" runat="server" BorderStyle="None" CssClass="auto-style13" OnClick="Button2_Click" Text="Cerrar Sesión" Width="115px" />
                     </td>
                 </tr>
             </table>
-            <asp:Label ID="Label2" runat="server" CssClass="auto-style12" Text="Fonema"></asp:Label>
+            <asp:Label ID="Label2" runat="server" CssClass="auto-style12" Text="Adivinanza"></asp:Label>
         </p>
-        <asp:Image ID="Image1" runat="server" CssClass="auto-style15" Height="420px" />
-        <table class="auto-style16">
+        <asp:ImageButton ID="Altavoz" runat="server" CssClass="auto-style15" Height="500px" ImageUrl="~/Recursos/altavoz.png" OnClick="Altavoz_Click" Width="500px" />
+        <asp:Label ID="Label3" runat="server" CssClass="auto-style18" Text="¿Sabes cúal palabra es la siguiente?"></asp:Label>
+        <table class="auto-style20">
             <tr>
-                <td class="auto-style19">
-                    <asp:Label ID="Label3" runat="server" Text="Label" CssClass="auto-style21" Visible="False"></asp:Label>
+                <td>
+                    <asp:Button ID="Palabra1" runat="server" CssClass="auto-style22" Height="145px" Text="Palabra 1" Width="145px" OnClick="Palabra1_Click" />
                 </td>
-                <td class="auto-style18">
-                    <asp:Label ID="Label5" runat="server" Text="Ruta" Visible="False"></asp:Label>
+                <td>
+                    <asp:Button ID="Palabra2" runat="server" CssClass="auto-style22" Height="145px" Text="Palabra 2" Width="145px" OnClick="Palabra2_Click" />
                 </td>
-                <td class="auto-style17">
-                    <asp:ImageButton ID="ReproducirFonema" runat="server" OnClick="ImageButton13_Click" Height="70px" ImageUrl="~/Recursos/altavoz.png" Width="70px" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style25" colspan="3">
-                    <asp:Label ID="Label4" runat="server" CssClass="auto-style26" Text="Ejemplos"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" class="auto-style22">
-                    <asp:Panel ID="Panel2" runat="server" CssClass="auto-style20" Height="309px" Width="364px">
-                    </asp:Panel>
+                <td>
+                    <asp:Button ID="Palabra3" runat="server" CssClass="auto-style22" Height="145px" Text="Palabra 3" Width="145px" OnClick="Palabra3_Click" />
                 </td>
             </tr>
         </table>
+        <p>
+        <asp:Button ID="Cargar" runat="server" BorderStyle="None" CssClass="auto-style19" OnClick="Cargar_Click" Text="Cargar" />
+        </p>
     </form>
 </body>
 </html>

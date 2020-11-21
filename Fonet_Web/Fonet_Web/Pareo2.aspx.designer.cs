@@ -11,7 +11,7 @@ namespace Fonet_Web
 {
 
 
-    public partial class Memoria
+    public partial class Pareo2
     {
 
         /// <summary>
@@ -105,102 +105,57 @@ namespace Fonet_Web
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// ib1 control.
+        /// Altavoz control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ib1;
+        protected global::System.Web.UI.WebControls.ImageButton Altavoz;
 
         /// <summary>
-        /// b2 control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button b2;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// ib3 control.
+        /// Palabra1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ib3;
+        protected global::System.Web.UI.WebControls.Button Palabra1;
 
         /// <summary>
-        /// b4 control.
+        /// Palabra2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button b4;
+        protected global::System.Web.UI.WebControls.Button Palabra2;
 
         /// <summary>
-        /// ib5 control.
+        /// Palabra3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ib5;
+        protected global::System.Web.UI.WebControls.Button Palabra3;
 
         /// <summary>
-        /// b1 control.
+        /// Cargar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button b1;
-
-        /// <summary>
-        /// ib2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ib2;
-
-        /// <summary>
-        /// b3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button b3;
-
-        /// <summary>
-        /// ib4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ib4;
-
-        /// <summary>
-        /// b5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button b5;
-
-        /// <summary>
-        /// Comenzar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Comenzar;
+        protected global::System.Web.UI.WebControls.Button Cargar;
     }
 }

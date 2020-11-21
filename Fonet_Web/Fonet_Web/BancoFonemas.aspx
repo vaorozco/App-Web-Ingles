@@ -88,7 +88,7 @@
             <table class="auto-style8">
                 <tr>
                     <td class="auto-style9">
-                        <asp:Label ID="Label1" runat="server" Text="Label" CssClass="auto-style14"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Label" CssClass="auto-style14" Visible="False"></asp:Label>
                     </td>
                     <td class="auto-style7">
                         <asp:Button ID="Button2" runat="server" BorderStyle="None" CssClass="auto-style13" style="height: 22px" Text="Cerrar Sesión" Width="115px" />

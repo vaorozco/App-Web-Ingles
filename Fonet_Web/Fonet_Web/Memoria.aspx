@@ -110,39 +110,39 @@
             </table>
             <asp:Label ID="Label2" runat="server" CssClass="auto-style12" Text="Memoria"></asp:Label>
         </p>
-        <table class="auto-style15">
+        <table class="auto-style15" id="Tabla1">
             <tr>
                 <td>
-                    <asp:ImageButton ID="ImageButton13" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                    <asp:ImageButton ID="ib1" runat="server" Height="200px" OnClick="ib1_Click" Width="200px" ImageUrl="~/Recursos/Icono Memoria.png" />
                 </td>
                 <td>
-                    <asp:Button ID="Button4" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                    <asp:Button ID="b2" runat="server" CssClass="auto-style17" Height="200px" OnClick="b2_Click" Width="200px" Text="Memoria" />
                 </td>
                 <td>
-                    <asp:ImageButton ID="ImageButton17" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                    <asp:ImageButton ID="ib3" runat="server" Height="200px" OnClick="ib3_Click" Width="200px" ImageUrl="~/Recursos/Icono Memoria.png" />
                 </td>
                 <td>
-                    <asp:Button ID="Button6" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                    <asp:Button ID="b4" runat="server" CssClass="auto-style17" Height="200px" OnClick="b4_Click" Width="200px" Text="Memoria" />
                 </td>
                 <td>
-                    <asp:ImageButton ID="ImageButton21" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                    <asp:ImageButton ID="ib5" runat="server" Height="200px" OnClick="ib5_Click" Width="200px" ImageUrl="~/Recursos/Icono Memoria.png" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="Button3" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                    <asp:Button ID="b1" runat="server" CssClass="auto-style17" Height="200px" OnClick="b1_Click" Width="200px" Text="Memoria" />
                 </td>
                 <td>
-                    <asp:ImageButton ID="ImageButton16" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                    <asp:ImageButton ID="ib2" runat="server" Height="200px" OnClick="ib2_Click" Width="200px" ImageUrl="~/Recursos/Icono Memoria.png" />
                 </td>
                 <td>
-                    <asp:Button ID="Button5" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                    <asp:Button ID="b3" runat="server" CssClass="auto-style17" Height="200px" OnClick="b3_Click" Width="200px" Text="Memoria" />
                 </td>
                 <td>
-                    <asp:ImageButton ID="ImageButton20" runat="server" Height="200px" OnClick="EncontrarPareja" Visible="False" Width="200px" />
+                    <asp:ImageButton ID="ib4" runat="server" Height="200px" OnClick="ib4_Click" Width="200px" ImageUrl="~/Recursos/Icono Memoria.png" />
                 </td>
                 <td>
-                    <asp:Button ID="Button7" runat="server" CssClass="auto-style17" Height="200px" OnClick="EncontrarPareja2" Visible="False" Width="200px" />
+                    <asp:Button ID="b5" runat="server" CssClass="auto-style17" Height="200px" OnClick="b5_Click" Width="200px" Text="Memoria" />
                 </td>
             </tr>
         </table>
