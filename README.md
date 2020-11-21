@@ -96,7 +96,7 @@ Gestor de Contenido Web
 
 2/11/2020
 Gestor de Contenido Web
-- Se añaden las pantallas de Menú Juegos, Memoria y Pareo
+- Se añaden las pantallas de Menú Juegos, Memoria y Adivinanza
 - Se añaden caracteristicas de diseño de la ventana de Click Fonema
 
 7/11/2020
@@ -130,7 +130,9 @@ Gestor de Contenido Web
 Aplicación Móvil
 - Se realiza Juego Memoria
 
-
+20/11/2020
+Gestor de Contenido Web
+-Mejoras de las caracteristicas y diseño de los juegos.
 
 
 Víctor Alonso Orozco Calderón - 2016240613
