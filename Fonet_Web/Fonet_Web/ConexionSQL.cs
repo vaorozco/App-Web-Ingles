@@ -293,6 +293,32 @@ namespace Fonet_Web
             }
         }
 
+        public Usuario SeleccionarUsuario(string correo, string contraseña)
+        {
+            Usuario usuario = new Usuario();
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SeleccionarUsuario", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@correo", correo));
+                cmd.Parameters.Add(new SqlParameter("@contraseña", contraseña));
+                SqlDataReader myReader = cmd.ExecuteReader();
+                while (myReader.Read())
+                {
+                    usuario.nombre = myReader.GetValue(0).ToString();
+                    usuario.apellido = myReader.GetValue(1).ToString();
+                    usuario.correo = myReader.GetValue(2).ToString();
+                    usuario.contraseña = myReader.GetValue(3).ToString();
+                    usuario.tipousuario = myReader.GetValue(4).ToString();
+                }
+
+                myReader.Close();
+                conn.Close();
+                return usuario;
+            }
+        }
+
         public List<ListItem> SeleccionarFonemas()
         {
             List<ListItem> lista = new List<ListItem>();

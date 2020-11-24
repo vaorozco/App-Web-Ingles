@@ -13,6 +13,7 @@ namespace Fonet_Web
         protected void Page_Load(object sender, EventArgs e)
         {
             ConexionSQL conexion = new ConexionSQL();
+            Label1.Text = ControladorGeneral.Instance.usuario.nombre + " " + ControladorGeneral.Instance.usuario.apellido;
             if (!this.IsPostBack)
             {
                 DataTable dt = conexion.SeleccionarUsuario();
@@ -87,6 +88,21 @@ namespace Fonet_Web
             }
         }
 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
+
+        protected void ImageButton8_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("BancoFonemas.aspx");
+        }
+
+        protected void ImageButton9_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("MenúJuegos.aspx");
+        }
+
         protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("MenúAdmin.aspx");
@@ -94,12 +110,12 @@ namespace Fonet_Web
 
         protected void ImageButton11_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("MenuGestionar.aspx");
+            Response.Redirect("MenúGestionar.aspx");
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void ImageButton12_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("login.aspx");
+            Response.Redirect("Perfil.aspx");
         }
     }
 }

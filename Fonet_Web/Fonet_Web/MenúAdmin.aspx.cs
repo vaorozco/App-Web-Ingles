@@ -11,12 +11,12 @@ namespace Fonet_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label1.Text = ControladorGeneral.Instance.usuario.nombre +" "+ ControladorGeneral.Instance.usuario.apellido;
         }
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("MenuGestionar.aspx");
+            Response.Redirect("MenúGestionar.aspx");
         }
 
         protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
@@ -26,11 +26,12 @@ namespace Fonet_Web
 
         protected void ImageButton11_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("MenuGestionar.aspx");
+            Response.Redirect("MenúGestionar.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            ControladorGeneral.Instance.usuario = null;
             Response.Redirect("login.aspx");
         }
 
@@ -42,6 +43,21 @@ namespace Fonet_Web
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("BancoFonemas.aspx");
+        }
+
+        protected void ImageButton8_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("BancoFonemas.aspx");
+        }
+
+        protected void ImageButton9_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("MenúJuegos.aspx");
+        }
+
+        protected void ImageButton12_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Perfil.aspx");
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Fonet_Web
 {
 
 
-    public partial class MenuGestionar
+    public partial class MenúGestionar
     {
 
         /// <summary>

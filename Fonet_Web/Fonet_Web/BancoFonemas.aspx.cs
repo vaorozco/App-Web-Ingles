@@ -12,6 +12,11 @@ namespace Fonet_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (ControladorGeneral.Instance.usuario.tipousuario == "2")
+            {
+                ImageButton11.Visible = false;
+            }
+            Label1.Text = ControladorGeneral.Instance.usuario.nombre + " " + ControladorGeneral.Instance.usuario.apellido;
             ConexionSQL conexion = new ConexionSQL();
             List<Fonema> fonemas = conexion.SeleccionarFonemas2();
             for (int i = 0; i < fonemas.Count; i++)
@@ -51,7 +56,31 @@ namespace Fonet_Web
         {
             ImageButton button = (ImageButton)sender;
             ControladorUI.Instance.IDFonema = button.ID;
-            Server.Transfer("ClickFonema.aspx");
+            Response.Redirect("ClickFonema.aspx");
+        }
+
+        protected void ImageButton8_Click(object sender, ImageClickEventArgs e)
+        {
+        }
+
+        protected void ImageButton9_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("MenúJuegos.aspx");
+        }
+
+        protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("MenúAdmin.aspx");
+        }
+
+        protected void ImageButton11_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("MenúGestionar.aspx");
+        }
+
+        protected void ImageButton12_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Perfil.aspx");
         }
     }
 }

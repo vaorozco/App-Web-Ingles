@@ -21,9 +21,9 @@
             height: 657px;
         }
         .auto-style2 {
-            width: 294px;
-            height: 220px;
-            top: 195px;
+            width: 331px;
+            height: 231px;
+            top: 184px;
             left: 115px;
             position: absolute;
         }
@@ -66,10 +66,10 @@
         }
         .auto-style8 {
             top: 252px;
-            left: 146px;
+            left: 144px;
             position: absolute;
             height: 26px;
-            width: 153px;
+            width: 155px;
         }
         .auto-style9 {
             top: 120px;

@@ -69,6 +69,15 @@ namespace Fonet_Web
         protected global::System.Web.UI.WebControls.ImageButton ImageButton10;
 
         /// <summary>
+        /// ImageButton11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton11;
+
+        /// <summary>
         /// ImageButton12 control.
         /// </summary>
         /// <remarks>

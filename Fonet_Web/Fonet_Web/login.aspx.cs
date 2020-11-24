@@ -36,10 +36,12 @@ namespace Fonet_Web
         {
             ConexionSQL conexion = new ConexionSQL();
             String isTrue = conexion.login(this.TextBox1.Text, this.TextBox2.Text);
+            Usuario usuario = conexion.SeleccionarUsuario(this.TextBox1.Text, this.TextBox2.Text);
             if (isTrue == "1")
             {
                 String isTrueAdmin = conexion.loginAdmin(this.TextBox1.Text, this.TextBox2.Text);
-                if(isTrueAdmin == "1")
+                ControladorGeneral.Instance.usuario = usuario;
+                if (isTrueAdmin == "1")
                 {
                     Response.Redirect("MenúAdmin.aspx");
                 }

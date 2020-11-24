@@ -13,7 +13,11 @@ namespace Fonet_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (ControladorGeneral.Instance.usuario.tipousuario == "2")
+            {
+                ImageButton11.Visible = false;
+            }
+            Label1.Text = ControladorGeneral.Instance.usuario.nombre + " " + ControladorGeneral.Instance.usuario.apellido;
         }
 
         public List<int> Generar_LRandom(int maximo)
@@ -35,22 +39,27 @@ namespace Fonet_Web
 
         protected void ImageButton8_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("BancoFonemas.aspx");
         }
 
         protected void ImageButton9_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("MenúJuegos.aspx");
         }
 
         protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
         {
+            Response.Redirect("MenúAdmin.aspx");
+        }
 
+        protected void ImageButton11_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("MenúGestionar.aspx");
         }
 
         protected void ImageButton12_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("Perfil.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)

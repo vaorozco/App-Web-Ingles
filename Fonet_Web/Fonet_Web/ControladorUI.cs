@@ -35,26 +35,6 @@ namespace Fonet_Web
             }
         }
 
-        /*public void set_imagen(Stream pimage)
-        {
-            imagen = pimage;
-        }
-
-        public void set_tamañoimagen(int pti)
-        {
-            tamañoimagen = pti;
-        }
-
-        public Stream get_imagen()
-        {
-            return imagen;
-        }
-
-        public int get_tamañoimagen()
-        {
-            return tamañoimagen;
-        }*/
-
         public void set_sonido(byte[] psonido)
         {
             sonido = psonido;

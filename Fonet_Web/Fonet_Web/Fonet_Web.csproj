@@ -94,13 +94,13 @@
     <Content Include="GestionarUsuarios.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Memoria.aspx" />
-    <Content Include="MenuGestionar.aspx" />
+    <Content Include="MenúGestionar.aspx" />
     <Content Include="MenúEstudiante.aspx" />
     <Content Include="MenúAdmin.aspx" />
     <Content Include="MenúJuegos.aspx" />
     <Content Include="BancoFonemas.aspx" />
     <Content Include="Pareo2.aspx" />
-    <Content Include="Pruebas.aspx" />
+    <Content Include="Perfil.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="Recursos\ajustes.png" />
     <Content Include="Recursos\altavoz.png" />
@@ -109,6 +109,7 @@
     <Content Include="Recursos\cerrar.png" />
     <Content Include="Recursos\comprobar.png" />
     <Content Include="Recursos\gamepad.png" />
+    <Content Include="Recursos\Icono Adivinanza.png" />
     <Content Include="Recursos\Icono BF.png" />
     <Content Include="Recursos\icono CF.png" />
     <Content Include="Recursos\icono CP.png" />
@@ -136,6 +137,7 @@
       <DependentUpon>ClickFonema.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConexionSQL.cs" />
+    <Compile Include="ControladorGeneral.cs" />
     <Compile Include="ControladorJuegos.cs" />
     <Compile Include="ControladorUI.cs" />
     <Compile Include="Fonema.cs" />
@@ -174,12 +176,12 @@
     <Compile Include="Memoria.aspx.designer.cs">
       <DependentUpon>Memoria.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MenuGestionar.aspx.cs">
-      <DependentUpon>MenuGestionar.aspx</DependentUpon>
+    <Compile Include="MenúGestionar.aspx.cs">
+      <DependentUpon>MenúGestionar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MenuGestionar.aspx.designer.cs">
-      <DependentUpon>MenuGestionar.aspx</DependentUpon>
+    <Compile Include="MenúGestionar.aspx.designer.cs">
+      <DependentUpon>MenúGestionar.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenúEstudiante.aspx.cs">
       <DependentUpon>MenúEstudiante.aspx</DependentUpon>
@@ -210,6 +212,13 @@
     <Compile Include="Pareo2.aspx.designer.cs">
       <DependentUpon>Pareo2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BancoFonemas.aspx.cs">
       <DependentUpon>BancoFonemas.aspx</DependentUpon>
@@ -217,13 +226,6 @@
     </Compile>
     <Compile Include="BancoFonemas.aspx.designer.cs">
       <DependentUpon>BancoFonemas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pruebas.aspx.cs">
-      <DependentUpon>Pruebas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pruebas.aspx.designer.cs">
-      <DependentUpon>Pruebas.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecuperarC.cs" />
     <Compile Include="RecuperarContraseña.aspx.cs">
@@ -240,6 +242,7 @@
     <Compile Include="registrar.aspx.designer.cs">
       <DependentUpon>registrar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
