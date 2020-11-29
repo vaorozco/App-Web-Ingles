@@ -30,9 +30,9 @@ public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavi
         DrawerLayout drawerLayout;
         NavigationView navigationView;
         Toolbar toolbar;
-        TextView textView, nombre, apellido, correo, contraseña;
-        Button modificarPerfil;
-        String nombreModificado, apellidoModificado, contraseñaModificada;
+        TextView textView, nombre, apellido, correo;//, contraseña;
+        //Button modificarPerfil;
+        //String nombreModificado, apellidoModificado, contraseñaModificada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavi
         nombre = findViewById(R.id.nombrePerfil);
         apellido = findViewById(R.id.apellidoPerfil);
         correo = findViewById(R.id.correoPerfil);
-        contraseña = findViewById(R.id.contraseñaPerfil);
+        //contraseña = findViewById(R.id.contraseñaPerfil);
         /*-------------------------------------Toolbar-------------------------------------*/
         //setSupportActionBar(toolbar);
         navigationView.bringToFront();
@@ -60,7 +60,7 @@ public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavi
         nombre.setText(usuario.getNombre()); //nombre del usuario registrado
         apellido.setText(usuario.getApellido()); //nombre del usuario registrado
         correo.setText(usuario.getCorreo()); //nombre del usuario registrado
-        contraseña.setText(usuario.getContraseña()); //nombre del usuario registrado
+        //contraseña.setText(usuario.getContraseña()); //nombre del usuario registrado
     }
     @Override
     public void onBackPressed(){

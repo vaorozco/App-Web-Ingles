@@ -57,65 +57,86 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="151dp"
         android:layout_marginRight="151dp"
-        android:layout_marginBottom="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/palabra2"
+        android:layout_marginBottom="113dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23"
         app:srcCompat="@drawable/parlante" />
 
-    <TextView
-        android:id="@+id/palabra1"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
         android:layout_width="118dp"
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="358dp"
+        android:layout_marginTop="346dp"
         android:layout_marginEnd="143dp"
         android:layout_marginRight="143dp"
-        android:layout_marginBottom="146dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:text="Palabra"
-        android:textSize="30sp"
+        android:layout_marginBottom="133dp"
+        app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/palabra3"
+        app:layout_constraintEnd_toStartOf="@+id/cardView3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintTop_toBottomOf="@+id/textView23">
 
-    <TextView
-        android:id="@+id/palabra2"
+        <TextView
+            android:id="@+id/palabra1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="Palabra"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
         android:layout_width="118dp"
         android:layout_height="42dp"
-        android:layout_marginStart="146dp"
-        android:layout_marginLeft="146dp"
-        android:layout_marginEnd="147dp"
-        android:layout_marginRight="147dp"
-        android:layout_marginBottom="229dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:text="Palabra"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parlanteAdivinar" />
-
-    <TextView
-        android:id="@+id/palabra3"
-        android:layout_width="118dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="358dp"
+        android:layout_marginTop="346dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="146dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:text="Palabra"
-        android:textSize="30sp"
+        android:layout_marginBottom="133dp"
+        app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/palabra1"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintStart_toEndOf="@+id/cardView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView23">
+
+        <TextView
+            android:id="@+id/palabra3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="Palabra"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="118dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="151dp"
+        android:layout_marginLeft="151dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginRight="142dp"
+        android:layout_marginBottom="242dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parlanteAdivinar">
+
+        <TextView
+            android:id="@+id/palabra2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="Palabra"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

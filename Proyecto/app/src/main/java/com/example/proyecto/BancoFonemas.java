@@ -98,7 +98,6 @@ public class BancoFonemas extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("sonidoFonema",fonema.getListaFonemas().get(idFonema-1).getSonido());
         Toast.makeText(BancoFonemas.this,"Cargando datos ...",Toast.LENGTH_SHORT).show();
         startActivity(intent);
-
     }
     /*private MediaPlayer mediaPlayer = new MediaPlayer();
     private void reproducirFonema(byte[] mp3SoundByteArray) {

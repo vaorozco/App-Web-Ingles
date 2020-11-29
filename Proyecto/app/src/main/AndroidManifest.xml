@@ -14,7 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Adivinar"></activity>
-        <activity android:name=".Pareo" />
         <activity android:name=".Memoria" />
         <activity android:name=".VerFonema" />
         <activity android:name=".BancoFonemas" />
@@ -25,7 +24,6 @@
         <activity android:name=".MenuPrincipal" />
         <activity android:name=".Registro" />
         <activity android:name=".RecuperarContrasena" />
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".Login"
             android:theme="@style/AppTheme">
