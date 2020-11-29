@@ -204,3 +204,6 @@ Aplicación Móvil
 
 18/11/2020
 - Se realiza Juego Adivinanza
+
+29/11/2020
+- Se cambia logo en sección Juegos
