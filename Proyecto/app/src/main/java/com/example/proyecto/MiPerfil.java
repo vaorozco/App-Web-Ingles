@@ -25,12 +25,13 @@ import java.sql.SQLException;
 import static android.text.TextUtils.isEmpty;
 import static com.example.proyecto.ConnectionHelper.conexionBD;
 
-public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
         DrawerLayout drawerLayout;
         NavigationView navigationView;
         Toolbar toolbar;
-        TextView textView, nombre, apellido, correo;//, contraseña;
+        TextView textView, nombre, apellido, correo, contraseña;
+        Button guardarCambios;
         //Button modificarPerfil;
         //String nombreModificado, apellidoModificado, contraseñaModificada;
 
@@ -44,7 +45,9 @@ public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavi
         nombre = findViewById(R.id.nombrePerfil);
         apellido = findViewById(R.id.apellidoPerfil);
         correo = findViewById(R.id.correoPerfil);
-        //contraseña = findViewById(R.id.contraseñaPerfil);
+        contraseña = findViewById(R.id.contraseñaPerfil2);
+        guardarCambios = findViewById(R.id.modificarPerfil);
+        guardarCambios.setOnClickListener(this);
         /*-------------------------------------Toolbar-------------------------------------*/
         //setSupportActionBar(toolbar);
         navigationView.bringToFront();
@@ -60,8 +63,23 @@ public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavi
         nombre.setText(usuario.getNombre()); //nombre del usuario registrado
         apellido.setText(usuario.getApellido()); //nombre del usuario registrado
         correo.setText(usuario.getCorreo()); //nombre del usuario registrado
-        //contraseña.setText(usuario.getContraseña()); //nombre del usuario registrado
+        contraseña.setText(usuario.getContraseña()); //nombre del usuario registrado
     }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.modificarPerfil){
+            Usuario usuario = new Usuario();
+            usuario.setNombre(nombre.getText().toString());
+            usuario.setApellido(apellido.getText().toString());
+            usuario.setCorreo(correo.getText().toString());
+            usuario.setContraseña(contraseña.getText().toString());
+            Toast.makeText(this,"Se han realizado los cambios",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MenuPrincipal.class);
+            startActivity(intent);
+        }
+    }
+
     @Override
     public void onBackPressed(){
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
@@ -89,6 +107,4 @@ public class MiPerfil extends AppCompatActivity implements NavigationView.OnNavi
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }
