@@ -134,6 +134,19 @@ Aplicación Móvil
 Gestor de Contenido Web
 -Mejoras de las caracteristicas y diseño de los juegos.
 
+24/11/2020
+Gestor de Contenido Web
+-Se agrega la ventana del juego adivinanza.
+
+27/11/2020
+Gestor de Contenido Web
+-Se agregan caracteristicas del juego adivinanza.
+-Se agrega la ventana perfil.
+
+2/11/2020
+Gestor de Contenido Web
+-Se agregan caracterisicas y diseño a la ventana de perfil
+
 
 Víctor Alonso Orozco Calderón - 2016240613
 
