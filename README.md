@@ -207,3 +207,6 @@ Aplicación Móvil
 
 29/11/2020
 - Se cambia logo en sección Juegos
+
+2/12/2020
+- Arreglo interfaz Mi Perfil
