@@ -223,3 +223,6 @@ Aplicación Móvil
 
 2/12/2020
 - Arreglo interfaz Mi Perfil
+
+7/12/2020
+-Arreglos en Interfaz
