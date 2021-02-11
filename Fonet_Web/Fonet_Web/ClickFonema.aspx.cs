@@ -82,7 +82,8 @@ namespace Fonet_Web
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+            ControladorGeneral.Instance.usuario = null;
+            Response.Redirect("login.aspx");
         }
 
         public System.Drawing.Image byteArrayToImage(byte[] bytesArr)
@@ -115,7 +116,14 @@ namespace Fonet_Web
 
         protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("MenúAdmin.aspx");
+            if (ControladorGeneral.Instance.usuario.tipousuario == "1")
+            {
+                Response.Redirect("MenúAdmin.aspx");
+            }
+            else
+            {
+                Response.Redirect("MenúEstudiante.aspx");
+            }
         }
 
         protected void ImageButton11_Click(object sender, ImageClickEventArgs e)

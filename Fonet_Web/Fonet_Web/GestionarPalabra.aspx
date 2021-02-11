@@ -9,9 +9,9 @@
         .auto-style1 {
             height: 69px;
             position: absolute;
-            left: 808px;
+            left: 776px;
             top: 173px;
-            width: 41%;
+            width: 43%;
         }
         .auto-style5 {
             width: 26%;
@@ -31,23 +31,22 @@
         .auto-style8 {
             top: 173px;
             left: 44px;
-            position: absolute;
             height: 348px;
             width: 621px;
         }
         .auto-style9 {
-            top: 477px;
-            left: 1303px;
+            top: 484px;
+            left: 1270px;
             position: absolute;
         }
         .auto-style10 {
-            top: 478px;
-            left: 1223px;
+            top: 483px;
+            left: 1175px;
             position: absolute;
         }
         .auto-style11 {
-            top: 478px;
-            left: 1137px;
+            top: 484px;
+            left: 1082px;
             position: absolute;
         }
         .auto-style12 {
@@ -87,14 +86,30 @@
             width: 266px;
             height: 19px;
             position: absolute;
-            left: 805px;
-            top: 86px;
+            left: 773px;
+            top: 85px;
             font-family: Arial, Helvetica, sans-serif;
             font-size: xx-large;
             color: #808080;
         }
         .auto-style22 {
             width: 290px;
+        }
+        .auto-style23 {
+            width: 67px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+
+        .auto-style24 {
+            position: absolute;
+            left: 50px;
+            top: 161px;
+            width: 638px;
+            height: 387px;
+            overflow: scroll;
+            margin-right: 94px;
+            margin-top: 0px;
         }
         </style>
 </head>
@@ -116,52 +131,56 @@
         <asp:ImageButton ID="ImageButton1" runat="server" Height="61px" Width="62px" ImageUrl="~/Recursos/anadir.png" OnClick="ImageButton1_Click" CssClass="auto-style9" />
         <asp:ImageButton ID="ImageButton2" runat="server" Height="60px" Width="58px" ImageUrl="~/Recursos/comprobar.png" OnClick="ImageButton2_Click" CssClass="auto-style10" />
         <asp:ImageButton ID="ImageButton3" runat="server" Height="61px" Width="56px" ImageUrl="~/Recursos/cerrar.png" OnClick="ImageButton3_Click" CssClass="auto-style11" />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" CssClass="auto-style8" ForeColor="#333333" GridLines="None">
-            <AlternatingRowStyle BackColor="White" />
-            <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#E3EAEB" />
-            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#F8FAFA" />
-            <SortedAscendingHeaderStyle BackColor="#246B61" />
-            <SortedDescendingCellStyle BackColor="#D4DFE1" />
-            <SortedDescendingHeaderStyle BackColor="#15524A" />
-        </asp:GridView>
+        <div class="auto-style24">     
+            <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" CssClass="auto-style8" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:CommandField SelectText="&gt;&gt;" ShowSelectButton="True" />
+                </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
+            </asp:GridView>
+        </div> 
         <p>
             &nbsp;</p>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style7">Nombre:</td>
+                <td class="auto-style23">Nombre:</td>
                 <td colspan="2">
                     <asp:TextBox ID="TextBox1" runat="server" Width="469px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style7">Imagen:</td>
+                <td class="auto-style23">Imagen:</td>
                 <td class="auto-style18">
                     <asp:Image ID="Image1" runat="server" Height="200px" Width="200px" />
                 </td>
-                <td class="auto-style22">
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                <td>
+                    <asp:FileUpload ID="FileUpload1" runat="server" Width="176px"/>
                     <asp:ImageButton ID="ImageButton4" runat="server" Height="22px" ImageUrl="~/Recursos/anadir.png" OnClick="ImageButton4_Click" Width="22px" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style7">Sonido:</td>
+                <td class="auto-style23">Sonido:</td>
                 <td class="auto-style18">
                     <asp:Label ID="Label1" runat="server" Text="Ruta" CssClass="auto-style7" Visible="False"></asp:Label>
                     <asp:Label ID="Label5" runat="server" CssClass="auto-style7" Text="Nombre"></asp:Label>
                 </td>
-                <td class="auto-style22">
-                    <asp:FileUpload ID="FileUpload2" runat="server" />
+                <td>
+                    <asp:FileUpload ID="FileUpload2" runat="server" Width="176px"/>
                     <asp:ImageButton ID="ImageButton14" runat="server" Height="22px" ImageUrl="~/Recursos/anadir.png" OnClick="ImageButton14_Click" Width="22px" />
-                    <asp:ImageButton ID="ImageButton5" runat="server" Height="22px" ImageUrl="~/Recursos/altavoz.png" Width="22px" OnClick="ImageButton5_Click1" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style7">Fonema:</td>
+                <td class="auto-style23">Fonema:</td>
                 <td class="auto-style18">
                     <asp:DropDownList ID="DropDownList1" runat="server" Width="199px">
                     </asp:DropDownList>
@@ -182,7 +201,7 @@
                     <asp:ImageButton ID="ImageButton10" runat="server" Height="30px" ImageUrl="~/Recursos/casa.png" Width="30px" OnClick="ImageButton10_Click" />
                 </td>
                 <td>
-                    <asp:ImageButton ID="ImageButton11" runat="server" Height="30px" ImageUrl="~/Recursos/ajustes.png" Width="30px" />
+                    <asp:ImageButton ID="ImageButton11" runat="server" Height="30px" ImageUrl="~/Recursos/ajustes.png" Width="30px" OnClick="ImageButton11_Click" />
                 </td>
                 <td>
                     <asp:ImageButton ID="ImageButton12" runat="server" Height="30px" ImageUrl="~/Recursos/usuario.png" Width="30px" OnClick="ImageButton12_Click" />

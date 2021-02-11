@@ -56,6 +56,7 @@ namespace Fonet_Web
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            ControladorGeneral.Instance.usuario = null;
             Response.Redirect("login.aspx");
         }
     }

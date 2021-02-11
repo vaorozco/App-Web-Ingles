@@ -306,11 +306,12 @@ namespace Fonet_Web
                 SqlDataReader myReader = cmd.ExecuteReader();
                 while (myReader.Read())
                 {
-                    usuario.nombre = myReader.GetValue(0).ToString();
-                    usuario.apellido = myReader.GetValue(1).ToString();
-                    usuario.correo = myReader.GetValue(2).ToString();
-                    usuario.contraseña = myReader.GetValue(3).ToString();
-                    usuario.tipousuario = myReader.GetValue(4).ToString();
+                    usuario.id = myReader.GetValue(0).ToString();
+                    usuario.nombre = myReader.GetValue(1).ToString();
+                    usuario.apellido = myReader.GetValue(2).ToString();
+                    usuario.correo = myReader.GetValue(3).ToString();
+                    usuario.contraseña = myReader.GetValue(4).ToString();
+                    usuario.tipousuario = myReader.GetValue(5).ToString();
                 }
 
                 myReader.Close();

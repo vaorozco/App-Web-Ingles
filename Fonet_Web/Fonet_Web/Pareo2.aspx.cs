@@ -22,10 +22,20 @@ namespace Fonet_Web
 
         protected void Altavoz_Click(object sender, ImageClickEventArgs e)
         {
-            SoundPlayer _sm = new SoundPlayer();
-            string folderPath = Server.MapPath("~/Recursos/");
-            _sm.SoundLocation = folderPath + ControladorJuegos.Instance.palabra.nombre + ".wav";
-            _sm.PlaySync();
+            try
+            {
+                SoundPlayer _sm = new SoundPlayer();
+                string folderPath = Server.MapPath("~/Recursos/");
+                if (ControladorJuegos.Instance.palabra != null)
+                {
+                    _sm.SoundLocation = folderPath + ControladorJuegos.Instance.palabra.nombre + ".wav";
+                    _sm.PlaySync();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("No se puede");
+            }
         }
 
         protected void Revisar_Click(object sender, EventArgs e)
@@ -62,7 +72,14 @@ namespace Fonet_Web
 
         protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("MenúAdmin.aspx");
+            if (ControladorGeneral.Instance.usuario.tipousuario == "1")
+            {
+                Response.Redirect("MenúAdmin.aspx");
+            }
+            else
+            {
+                Response.Redirect("MenúEstudiante.aspx");
+            }
         }
 
         protected void ImageButton11_Click(object sender, ImageClickEventArgs e)
@@ -77,7 +94,8 @@ namespace Fonet_Web
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+            ControladorGeneral.Instance.usuario = null;
+            Response.Redirect("login.aspx");
         }
 
         protected void Cargar_Click(object sender, EventArgs e)
@@ -111,6 +129,8 @@ namespace Fonet_Web
             if(Palabra1.Text== ControladorJuegos.Instance.palabra.nombre)
             {
                 Palabra1.ForeColor = System.Drawing.Color.Green;
+                ControladorJuegos.Instance.palabra = null;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Palabra Correcta'); window.location='" + Request.ApplicationPath + "Pareo2.aspx';", true);
             }
             else
             {
@@ -123,6 +143,8 @@ namespace Fonet_Web
             if (Palabra2.Text == ControladorJuegos.Instance.palabra.nombre)
             {
                 Palabra2.ForeColor = System.Drawing.Color.Green;
+                ControladorJuegos.Instance.palabra = null;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Palabra Correcta'); window.location='" + Request.ApplicationPath + "Pareo2.aspx';", true);
             }
             else
             {
@@ -135,6 +157,8 @@ namespace Fonet_Web
             if (Palabra3.Text == ControladorJuegos.Instance.palabra.nombre)
             {
                 Palabra3.ForeColor = System.Drawing.Color.Green;
+                ControladorJuegos.Instance.palabra = null;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Palabra Correcta'); window.location='" + Request.ApplicationPath + "Pareo2.aspx';", true);
             }
             else
             {

@@ -9,8 +9,8 @@
         .auto-style1 {
             height: 209px;
             position: absolute;
-            left: 801px;
-            top: 159px;
+            left: 769px;
+            top: 158px;
             width: 39%;
         }
         .auto-style3 {
@@ -41,7 +41,6 @@
         .auto-style9 {
             top: 160px;
             left: 53px;
-            position: absolute;
             height: 348px;
             width: 550px;
         }
@@ -79,29 +78,41 @@
             width: 266px;
             height: 19px;
             position: absolute;
-            left: 805px;
-            top: 86px;
+            left: 768px;
+            top: 89px;
             font-family: Arial, Helvetica, sans-serif;
             font-size: xx-large;
             color: #808080;
         }
         .auto-style22 {
-            top: 369px;
-            left: 1223px;
+            top: 386px;
+            left: 1180px;
             position: absolute;
         }
         .auto-style23 {
-            top: 370px;
-            left: 1144px;
+            top: 384px;
+            left: 1090px;
             position: absolute;
-            right: 179px;
+            right: 233px;
         }
         .auto-style24 {
-            top: 368px;
-            left: 1299px;
+            top: 385px;
+            left: 1265px;
             position: absolute;
             margin-top: 0px;
         }
+        
+        .auto-style25 {
+            position: absolute;
+            left: 50px;
+            top: 161px;
+            width: 638px;
+            height: 387px;
+            overflow: scroll;
+            margin-right: 94px;
+            margin-top: 0px;
+        }
+
         
     </style>
 </head>
@@ -123,19 +134,24 @@
         <asp:ImageButton ID="ImageButton1" runat="server" Height="61px" Width="62px" ImageUrl="~/Recursos/anadir.png" OnClick="ImageButton1_Click" CssClass="auto-style24" />
         <asp:ImageButton ID="ImageButton2" runat="server" Height="60px" Width="58px" ImageUrl="~/Recursos/comprobar.png" OnClick="ImageButton2_Click" CssClass="auto-style22" />
         <asp:ImageButton ID="ImageButton3" runat="server" Height="61px" Width="56px" ImageUrl="~/Recursos/cerrar.png" OnClick="ImageButton3_Click" CssClass="auto-style23" />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" CssClass="auto-style9" ForeColor="#333333" GridLines="None">
-            <AlternatingRowStyle BackColor="White" />
-            <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#E3EAEB" />
-            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#F8FAFA" />
-            <SortedAscendingHeaderStyle BackColor="#246B61" />
-            <SortedDescendingCellStyle BackColor="#D4DFE1" />
-            <SortedDescendingHeaderStyle BackColor="#15524A" />
-        </asp:GridView>
+        <div class="auto-style25">      
+            <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" CssClass="auto-style9" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:CommandField SelectText="&gt;&gt;" ShowSelectButton="True" />
+                </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
+            </asp:GridView>
+        </div>  
         <table class="auto-style1">
             <tr>
                 <td class="auto-style3">

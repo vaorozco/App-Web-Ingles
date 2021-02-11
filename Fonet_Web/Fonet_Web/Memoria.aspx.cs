@@ -49,7 +49,14 @@ namespace Fonet_Web
 
         protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("MenúAdmin.aspx");
+            if (ControladorGeneral.Instance.usuario.tipousuario == "1")
+            {
+                Response.Redirect("MenúAdmin.aspx");
+            }
+            else
+            {
+                Response.Redirect("MenúEstudiante.aspx");
+            }
         }
 
         protected void ImageButton11_Click(object sender, ImageClickEventArgs e)
@@ -64,7 +71,8 @@ namespace Fonet_Web
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+            ControladorGeneral.Instance.usuario = null;
+            Response.Redirect("login.aspx");
         }
 
         public System.Drawing.Image byteArrayToImage(byte[] bytesArr)
@@ -549,6 +557,7 @@ namespace Fonet_Web
                     if (componente.ID == id)
                     {
                         componente.Visible = false;
+                        verificar();
                     }
                 }
             }
@@ -563,9 +572,33 @@ namespace Fonet_Web
                     if (componente.ID == id)
                     {
                         componente.Visible = false;
+                        verificar();
                     }
                 }
             }
         }
+
+        public bool verificar()
+        {
+            if (ib1.Visible == false &&
+            ib2.Visible == false &&
+            ib3.Visible == false &&
+            ib4.Visible == false &&
+            ib5.Visible == false &&
+            b1.Visible == false &&
+            b2.Visible == false &&
+            b3.Visible == false &&
+            b4.Visible == false &&
+            b5.Visible == false)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('Juego Terminado'); window.location='" + Request.ApplicationPath + "Memoria.aspx';", true);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

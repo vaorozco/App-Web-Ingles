@@ -168,15 +168,6 @@ namespace Fonet_Web
         protected global::System.Web.UI.WebControls.ImageButton ImageButton14;
 
         /// <summary>
-        /// ImageButton5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton5;
-
-        /// <summary>
         /// DropDownList1 control.
         /// </summary>
         /// <remarks>

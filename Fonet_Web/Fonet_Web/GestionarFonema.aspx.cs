@@ -35,15 +35,7 @@ namespace Fonet_Web
             
             ConexionSQL conexion = new ConexionSQL();
             byte[] sonido = ControladorUI.Instance.get_sonido();
-            /*BinaryReader br = new BinaryReader(FileUpload2.PostedFile.InputStream);
-            sonido = br.ReadBytes((int)FileUpload2.PostedFile.InputStream.Length);*/
-
-            /*int tamaño = FileUpload1.PostedFile.ContentLength;
-            byte[] imagenoriginal = new byte[tamaño];
-            FileUpload1.PostedFile.InputStream.Read(imagenoriginal, 0, tamaño);*/
-
             byte[] imagen = ControladorUI.Instance.get_imagen();
-            //Bitmap ImagenOriginalBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
             try
             {
                 string isTrue = conexion.InsertarFonema(TextBox1.Text, imagen, sonido);
@@ -72,7 +64,6 @@ namespace Fonet_Web
                 ControladorUI.Instance.set_sonido(fonema.sonido);
                 ControladorUI.Instance.set_imagen(fonema.imagen);
                 TextBox1.Text = fonema.nombre;
-                //System.Drawing.Image imagen = System.Drawing.Image.FromStream(fonema.imagen);
                 System.Drawing.Image imagen = byteArrayToImage(fonema.imagen);
                 string folderPath = Server.MapPath("~/Recursos/");
                 imagen.Save(folderPath + fonema.nombre + ".png");
@@ -92,20 +83,12 @@ namespace Fonet_Web
             try
             {
                 string folderPath = Server.MapPath("~/Recursos/");
-
-                //Check whether Directory (Folder) exists.
                 if (!Directory.Exists(folderPath))
                 {
-                    //If Directory (Folder) does not exists Create it.
                     Directory.CreateDirectory(folderPath);
                 }
-
-                //Save the File to the Directory (Folder).
                 FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
-
-                //Display the Picture in Image control.
                 Image1.ImageUrl = "~/Recursos/" + Path.GetFileName(FileUpload1.FileName);
-
                 int tamaño = FileUpload1.PostedFile.ContentLength;
                 byte[] imagenoriginal = new byte[tamaño];
                 FileUpload1.PostedFile.InputStream.Read(imagenoriginal, 0, tamaño);
@@ -142,21 +125,7 @@ namespace Fonet_Web
             try
             {
                 SoundPlayer _sm = new SoundPlayer();
-                if (Label1.Text == "Ruta")
-                {
-                    string folderPath = Server.MapPath("~/Recursos/");
-                    if (!Directory.Exists(folderPath))
-                    {
-                        Directory.CreateDirectory(folderPath);
-                    }
-                    FileUpload2.SaveAs(folderPath + Path.GetFileName(FileUpload2.FileName));
-                    _sm.SoundLocation = folderPath + Path.GetFileName(FileUpload2.FileName);
-                    _sm.PlaySync();
-                }
-                else
-                {
-                    _sm.SoundLocation = Label1.Text;
-                }
+                _sm.SoundLocation = Label1.Text;
                 _sm.PlaySync();
             }
             catch
@@ -209,6 +178,7 @@ namespace Fonet_Web
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            ControladorGeneral.Instance.usuario = null;
             Response.Redirect("login.aspx");
         }
 

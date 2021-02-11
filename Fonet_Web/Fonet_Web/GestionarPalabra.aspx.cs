@@ -117,21 +117,7 @@ namespace Fonet_Web
             try
             {
                 SoundPlayer _sm = new SoundPlayer();
-                if (Label1.Text == "Ruta")
-                {
-                    string folderPath = Server.MapPath("~/Recursos/");
-                    if (!Directory.Exists(folderPath))
-                    {
-                        Directory.CreateDirectory(folderPath);
-                    }
-                    FileUpload2.SaveAs(folderPath + Path.GetFileName(FileUpload2.FileName));
-                    _sm.SoundLocation = folderPath + Path.GetFileName(FileUpload2.FileName);
-                    _sm.PlaySync();
-                }
-                else
-                {
-                    _sm.SoundLocation = Label1.Text;
-                }
+                _sm.SoundLocation = Label1.Text;
                 _sm.PlaySync();
             }
             catch
@@ -175,6 +161,7 @@ namespace Fonet_Web
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            ControladorGeneral.Instance.usuario = null;
             Response.Redirect("login.aspx");
         }
         public System.Drawing.Image byteArrayToImage(byte[] bytesArr)
